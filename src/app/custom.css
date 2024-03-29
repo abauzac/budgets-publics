@@ -6,3 +6,12 @@
     justify-items: stretch;
     align-items: stretch;
 }
+
+.square-legend{
+    /* draw a square in span */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+
+}

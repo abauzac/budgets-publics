@@ -5,7 +5,8 @@ import CommuneGraphBudget from "./communeGraphBudget";
 import { useRouter } from "next/navigation";
 import CommuneGraphGlobal from "./communeGraphGlobal";
 import GraphOneLine from "./graphOneLine";
-import { GraphTypeVueGlobalCommune } from "../utils/charts";
+import { GraphTypeVueGlobalCommune, communeFonctionnementProduitCharge, communeFonctionnementProduitListe } from "../utils/charts";
+import GraphMultiLines from "./graphMultiLines";
 
 export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
@@ -106,7 +107,17 @@ export default function Communes() {
             <p>Besoin/Capa de fi. des inv. = Resources d'investissements - Emplois d'investissement + solde des opérations compte de tiers</p>
           </div>
           )}
-      </div>)}
+        {typeVue === 'budget' && (
+          <div style={{textAlign: 'center'}}>
+            <h2>Budget fonctionnel pour la commune de {commune.NCCENR}</h2>
+            <GraphMultiLines commune={commune} graphs={communeFonctionnementProduitCharge}></GraphMultiLines>
+            <hr />
+            <h5 >Produits de fonctionnement</h5>
+            <GraphMultiLines commune={commune} graphs={communeFonctionnementProduitListe}></GraphMultiLines>
+          </div>
+          )}
+      </div>
+      )}
     </>
   );
 }
