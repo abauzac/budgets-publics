@@ -1,0 +1,99 @@
+/* -------------------------------------------------------------------------- */
+.d-flex {
+    display: flex;
+    /* alignment */
+  }
+  .d-flex.flex-row {
+    flex-direction: row;
+  }
+  .d-flex.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .d-flex.flex-column {
+    flex-direction: column;
+  }
+  .d-flex.flex-column-reverse {
+    flex-direction: column-reverse;
+    /* justify content */
+  }
+  .d-flex.justify-content-start {
+    justify-content: start;
+  }
+  .d-flex.justify-content-end {
+    justify-content: end;
+  }
+  .d-flex.justify-content-center {
+    justify-content: center;
+  }
+  .d-flex.justify-content-between {
+    justify-content: space-between;
+  }
+  .d-flex.justify-content-around {
+    justify-content: space-around;
+    /* align items */
+  }
+  .d-flex.align-items-start {
+    align-items: flex-start;
+  }
+  .d-flex.align-items-end {
+    align-items: flex-end;
+  }
+  .d-flex.align-items-center {
+    align-items: center;
+  }
+  .d-flex.align-items-baseline {
+    align-items: baseline;
+  }
+  .d-flex.align-items-stretch {
+    align-items: stretch;
+    /* align content */
+  }
+  .d-flex.align-content-start {
+    align-content: flex-start;
+  }
+  .d-flex.align-content-end {
+    align-content: flex-end;
+  }
+  .d-flex.align-content-center {
+    align-content: center;
+  }
+  .d-flex.align-content-around {
+    align-content: space-around;
+  }
+  .d-flex.align-content-between {
+    align-content: space-between;
+  }
+  .d-flex.align-content-stretch {
+    align-content: stretch;
+    /* wrapping */
+  }
+  .d-flex.flex-wrap {
+    flex-wrap: wrap;
+  }
+  .d-flex.flex-nowrap {
+    flex-wrap: nowrap;
+    /* self align */
+  }
+  .d-flex .align-self-start {
+    align-self: flex-start;
+  }
+  .d-flex .align-self-end {
+    align-self: flex-end;
+  }
+  .d-flex .align-self-center {
+    align-self: center;
+  }
+  .d-flex .align-self-baseline {
+    align-self: baseline;
+  }
+  .d-flex .align-self-stretch {
+    align-self: stretch;
+    /* fill equal spaces */
+  }
+  .d-flex .flex-fill {
+    flex: 1 1 auto !important;
+  }
+  .d-inline-flex {
+    display: inline-flex;
+  }
+  
