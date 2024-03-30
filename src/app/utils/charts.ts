@@ -1,5 +1,7 @@
 export const urlChartCommunes =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/analyze/?refine.dep=[DEPARTEMENT]&refine.icom=[CODECOMM]&dataChart=[DATACHART]&static=false&datasetcard=false";
+export const urlChartDepartement =
+  "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques0/analyze/?refine.dep=[DEPARTEMENT]&dataChart=[DATACHART]&static=false&datasetcard=false";
 
 export enum GraphTypeBudgetFonctCommune {
   ProduitDeFonctionnementCAF = "pfcaf",
@@ -52,13 +54,13 @@ export function getChartsOneLine(type: string, color: string = "#000000") {
   ];
 }
 
-export function getDataChart(config: any, charts: any[], stacked = false) {
+export function getDataChart(config: any, charts: any[], xAxis:string, stacked = false) {
   return {
     queries: [
       {
         config: config,
         charts: charts,
-        xAxis: "an",
+        xAxis: xAxis,
         maxpoints: null,
         sort: "",
         stacked: stacked ? "normal" : "",

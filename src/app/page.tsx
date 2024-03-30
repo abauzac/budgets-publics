@@ -4,7 +4,8 @@ import "./pico.min.css";
 import "./custom.css";
 import "./flexbox-utils.css";
 import { useState } from "react";
-import Communes from "./components/communes";
+import Communes from "./components/commune";
+import Departement from "./components/departement";
 
 export default function Home() {
   const [type, setType] = useState("communes");
@@ -40,6 +41,9 @@ export default function Home() {
       <main>
       {type === "communes" && (
         <Communes />
+      )}
+      {type === "departements" && (
+        <Departement />
       )}
       </main>
     </>
