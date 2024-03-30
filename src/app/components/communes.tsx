@@ -131,6 +131,49 @@ export default function Communes() {
             <hr />
             <h5>Dépenses d'investissements</h5>
             <GraphMultiLines commune={commune} graphs={communeInvestissementsEmploisListe}></GraphMultiLines>
+            <hr />
+            <h5>Soldes des operations pour compte de tiers</h5>
+            <GraphOneLine commune={commune} type={'solde'}></GraphOneLine>
+          </div>
+          )}
+        {typeVue === 'dette' && (
+          <div style={{textAlign: 'center'}}>
+            <h2>Dette et Capacité d'autofinancement pour la commune de {commune.NCCENR}</h2>
+            <br/>
+
+            <h3>Fonds de roulement</h3>
+            <GraphOneLine commune={commune} type={'fdr'}></GraphOneLine>
+            <hr />
+
+            <h3>Dette</h3>
+            <h5>Encours total de la dette au 31 décembre N</h5>
+            <GraphOneLine commune={commune} type={'dette'}></GraphOneLine>
+            <hr />
+
+            {/* <h5>Encours des dettes bancaires et assimilées</h5>
+            <GraphOneLine commune={commune} type={'det2cal'}></GraphOneLine>
+            <hr />
+            <h5>Encours des dettes bancaires net de l'aide du fonds de soutien pour la sortie des emprunts toxiques</h5>
+            <GraphOneLine commune={commune} type={'encdbr'}></GraphOneLine>
+            <hr /> */}
+            <h5>Annuité de la dette</h5>
+            <GraphOneLine commune={commune} type={'annu'}></GraphOneLine>
+            <hr />
+            <h5>Avance du trésor</h5>
+            <GraphOneLine commune={commune} type={'avance'}></GraphOneLine>
+            <hr />
+            <h3>Autofinancement</h3>
+            <h5>Excédent brut d'exploitation</h5>
+            <GraphOneLine commune={commune} type={'ebf'}></GraphOneLine>
+            <hr />
+            <h5>Capacité d'autofinancement = CAF</h5>
+            <GraphOneLine commune={commune} type={'caf'}></GraphOneLine>
+            <hr />
+            <h5>CAF nette du remboursement en capital des emprunts</h5>
+            <GraphOneLine commune={commune} type={'cafn'}></GraphOneLine>
+            <hr />
+
+
           </div>
           )}
       </div>
