@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import departements from "../../../public/json/departements.json";
 import communes from "../../../public/json/communes.json";
-import CommuneGraphBudget from "./communeGraphBudget";
-import { useRouter } from "next/navigation";
-import CommuneGraphGlobal from "./communeGraphGlobal";
 import GraphOneLine from "./graphOneLine";
-import { GraphTypeVueGlobalCommune, communeFonctionnementProduitCharge, communeFonctionnementProduitListe } from "../utils/charts";
+import { GraphTypeVueGlobalCommune, communeFonctionnementChargeListe, communeFonctionnementProduitCharge, communeFonctionnementProduitListe, communeInvestissementResourcesEmplois, communeInvestissementsEmploisListe, communeInvestissementsResourcesListe } from "../utils/charts";
 import GraphMultiLines from "./graphMultiLines";
 
 export default function Communes() {
@@ -99,8 +97,8 @@ export default function Communes() {
             <p>Résultat d'ensemble = Résultat comptable + Besoin/Capacité de financement section investissement</p>
             <hr />
             <h5 >Résultat comptable</h5>
-            <p>Résultat comptable = Produits de fonctionnement - Charges de fonctionnement</p>
             <GraphOneLine commune={commune} type={GraphTypeVueGlobalCommune.ResultatComptable}></GraphOneLine>
+            <p>Résultat comptable = Produits de fonctionnement - Charges de fonctionnement</p>
             <hr />
             <h5 >Besoin ou capacité de financement de la section investissement</h5>
             <GraphOneLine commune={commune} type={GraphTypeVueGlobalCommune.BesoinFinancementInvestissement}></GraphOneLine>
@@ -110,10 +108,29 @@ export default function Communes() {
         {typeVue === 'budget' && (
           <div style={{textAlign: 'center'}}>
             <h2>Budget fonctionnel pour la commune de {commune.NCCENR}</h2>
+            <br/>
+            <h5 >Total des produits et charges de fonctionnement</h5>
             <GraphMultiLines commune={commune} graphs={communeFonctionnementProduitCharge}></GraphMultiLines>
             <hr />
             <h5 >Produits de fonctionnement</h5>
             <GraphMultiLines commune={commune} graphs={communeFonctionnementProduitListe}></GraphMultiLines>
+            <hr />
+            <h5 >Charges de fonctionnement</h5>
+            <GraphMultiLines commune={commune} graphs={communeFonctionnementChargeListe}></GraphMultiLines>
+          </div>
+          )}
+        {typeVue === 'investissements' && (
+          <div style={{textAlign: 'center'}}>
+            <h2>Investissements et resources d'investissement pour la commune de {commune.NCCENR}</h2>
+            <br/>
+            <h5 >Total des resources et dépenses d'investissement</h5>
+            <GraphMultiLines commune={commune} graphs={communeInvestissementResourcesEmplois}></GraphMultiLines>
+            <hr />
+            <h5>Resources d'investissements</h5>
+            <GraphMultiLines commune={commune} graphs={communeInvestissementsResourcesListe}></GraphMultiLines>
+            <hr />
+            <h5>Dépenses d'investissements</h5>
+            <GraphMultiLines commune={commune} graphs={communeInvestissementsEmploisListe}></GraphMultiLines>
           </div>
           )}
       </div>

@@ -25,10 +25,10 @@ export default function GraphMultiLines({ commune, graphs }) {
     <div className="d-flex flex-column align-items-center">
       <iframe src={urlFinale} width="600" height="400" frameBorder="0"></iframe>
       <br/>
-      {graphs.map((graph) => {
+      {graphs.map((graph,i) => {
         return (
-          <div key={graph}>
-            <span className="square-legend" style={{backgroundColor: graph.color}}></span> {graph.description}
+          <div key={btoa(JSON.stringify(graph))+i}>
+            <span className="square-legend" style={{backgroundColor: graph.color}}></span> {graph.description}&nbsp;({graph.yAxis})
           </div>
         );
       })}

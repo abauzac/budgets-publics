@@ -84,6 +84,9 @@ export function getCharts(datas: { yAxis: string; color: string }[]) {
   });
 }
 
+
+// budget fonctionnel
+
 export const communeFonctionnementProduitCharge = [
   {
     yAxis: "prod",
@@ -104,17 +107,6 @@ export const communeFonctionnementProduitListe = [
     description: "Impôts locaux",
   },
   {
-    yAxis: "pfcaf",
-    // red
-    color: "#ff292f",
-    description: "Produits de fonctionnement CAF",
-  },
-  // {
-  //   yAxis: "fiscrev",
-  //   color: "#ff292f", // red
-  //   description: "Fiscalité reversée par les groupements à fiscalité propre",
-  // },
-  {
     yAxis: "impo2",
     color: "#0000ff", // blue
     description: "Autres impôts et taxes",
@@ -124,13 +116,120 @@ export const communeFonctionnementProduitListe = [
     color: "#000000", // black
     description: "Dotation globale de fonctionnement",
   },
+];
+
+export const communeFonctionnementChargeListe = [
   {
-    yAxis: "autdot",
-    // orange
-    color: "#ff6600",
-    description: "Autres dotations et participations",
+    yAxis: "perso",
+    color: "#ff292f",
+    description: "Charges de personnel",
+  },
+  {
+    yAxis: "achat",
+    // blue
+    color: "#0000ff",
+    description: "Achats et charges externes",
+  },
+  {
+    yAxis: "fin",
+    // green
+    color: "#447049",
+    description: "Charges financières",
+  },
+  {
+    yAxis: "cont",
+    // yellow
+    color: "#ffcc00",
+    description: "Contingents",
+  },
+  {
+    yAxis: "subv",
+    // cyan
+    color: "#00ffff",
+    description: "Subventions versées",
   },
 ];
+
+// investissements
+/**
+ * recinv	TOTAL DES RESSOURCES D'INVESTISSEMENT = C		
+emp	dont : Emprunts bancaires et dettes assimilées		
+subr	          Subventions reçues		
+tamen	          Taxe d’aménagement		
+fctva	          FCTVA		
+raff	          Retour de biens affectés, concédés, ...		
+depinv	TOTAL DES EMPLOIS D'INVESTISSEMENT = D		
+equip	  dont : Dépenses d'équipement		
+remb	          Remboursement d'emprunts et dettes assimilées		
+repart	          Charges à répartir		
+daff	          Immobilisations affectées, concédées, ...		
+bf1	Besoin ou capacité de financement résiduel de la section d'investissement = D - C		
+solde	+ Solde des opérations pour le compte de tiers		
+bf2	Besoin ou capacité de financement de la section d'investissement = E		
+
+ */
+
+export const communeInvestissementResourcesEmplois = [
+  {
+    yAxis: "recinv",
+    color: "#447049",
+    description: "Ressources d'investissement",
+  },
+  {
+    yAxis: "depinv",
+    color: "#ff292f",
+    description: "Emplois d'investissement",
+  },
+];
+
+export const communeInvestissementsResourcesListe = [
+  {
+    yAxis: "emp",
+    color: "#ff292f",
+    description: "Emprunts bancaires et dettes assimilées",
+  }, 
+  {
+    yAxis: "subr",
+    color: "#447049",
+    description: "Subventions reçues",
+  },
+  {
+    yAxis: "fctva",
+    color: "#0000ff",
+    description: "FCTVA",
+  },
+  {
+    yAxis: "raff",
+    color: "#000000",
+    description: "Retour de biens affectés, concédés, ...",
+  },
+];
+
+export const communeInvestissementsEmploisListe = [
+  {
+    yAxis: "equip",
+    color: "#ff292f",
+    description: "Dépenses d'équipement",
+  },
+  {
+    yAxis: "remb",
+    color: "#447049",
+    description: "Remboursement d'emprunts et dettes assimilées",
+  },
+  {
+    yAxis: "repart",
+    color: "#0000ff",
+    description: "Charges à répartir",
+  },
+  {
+    yAxis: "daff",
+    color: "#000000",
+    description: "Immobilisations affectées, concédées, ...",
+  },
+];
+
+
+// common
 
 export const commonChartObjects = {
   alignMonth: true,
@@ -140,14 +239,3 @@ export const commonChartObjects = {
   scientificDisplay: true,
   color: "#447049",
 };
-
-export const communeGlobalResultatEnsemble = [
-  {
-    alignMonth: true,
-    type: "line",
-    func: "AVG",
-    yAxis: "res2",
-    scientificDisplay: true,
-    color: "#000000",
-  },
-];
