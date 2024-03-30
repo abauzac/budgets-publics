@@ -10,7 +10,7 @@ export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
   const [listeCommunes, setListeCommunes] = useState<any[]>([]); // liste des communes du département sélectionné
   const [commune, setCommune] = useState<any>(null); // objet commune
-  const [typeVue, setTypeVue] = useState<'global'|'budget'|'investissements'|'dette'>("global"); 
+  const [typeVue, setTypeVue] = useState<'global'|'budget'|'investissements'|'dette'|'fiscalite'>("global"); 
   const router = useRouter();
   useEffect(() => {
     if (departement !== "") {
@@ -44,6 +44,9 @@ export default function Communes() {
               </li>
               <li>
                 <a href="#" onClick={() => { setTypeVue('dette') }}>Dette</a>
+              </li>
+              <li>
+                <a href="#" onClick={() => { setTypeVue('fiscalite') }}>Fiscalité</a>
               </li>
             </ul>
           </nav>
@@ -84,9 +87,7 @@ export default function Communes() {
                 ))}
             </select>
           </div>
-        </div>
-      </div>
-      {commune && (
+          {commune && (
         <div>
         {typeVue === 'global' && (
           <div style={{textAlign: 'center'}}>
@@ -150,12 +151,6 @@ export default function Communes() {
             <GraphOneLine commune={commune} type={'dette'}></GraphOneLine>
             <hr />
 
-            {/* <h5>Encours des dettes bancaires et assimilées</h5>
-            <GraphOneLine commune={commune} type={'det2cal'}></GraphOneLine>
-            <hr />
-            <h5>Encours des dettes bancaires net de l'aide du fonds de soutien pour la sortie des emprunts toxiques</h5>
-            <GraphOneLine commune={commune} type={'encdbr'}></GraphOneLine>
-            <hr /> */}
             <h5>Annuité de la dette</h5>
             <GraphOneLine commune={commune} type={'annu'}></GraphOneLine>
             <hr />
@@ -172,12 +167,34 @@ export default function Communes() {
             <h5>CAF nette du remboursement en capital des emprunts</h5>
             <GraphOneLine commune={commune} type={'cafn'}></GraphOneLine>
             <hr />
-
-
+          </div>
+          )}
+        {typeVue === 'fiscalite' && (
+          <div style={{textAlign: 'center'}}>
+            <h2>Fiscalité pour la commune de {commune.NCCENR}</h2>
+            <br/>
+            <h5>Taxe d'habitation</h5>
+            <GraphOneLine commune={commune} type={'pth'}></GraphOneLine>
+            <hr />
+            <h5>Taxe foncière sur les propriétés bâties</h5>
+            <GraphOneLine commune={commune} type={'pfb'}></GraphOneLine>
+            <hr />
+            <h5>Taxe foncière sur les propriétés non bâties</h5>
+            <GraphOneLine commune={commune} type={'pfnb'}></GraphOneLine>
+            <hr />
+            <h5>Potentiel fiscal</h5>
+            <GraphOneLine commune={commune} type={'potfis'}></GraphOneLine>
+            <hr />
+            {/* <h5>Cotisation foncière des entreprises</h5>
+            <GraphOneLine commune={commune} type={'pcfe'}></GraphOneLine>
+            <hr /> */}
           </div>
           )}
       </div>
       )}
+        </div>
+      </div>
+
     </>
   );
 }
