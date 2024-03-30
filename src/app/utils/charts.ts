@@ -2,6 +2,8 @@ export const urlChartCommunes =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/analyze/?refine.dep=[DEPARTEMENT]&refine.icom=[CODECOMM]&dataChart=[DATACHART]&static=false&datasetcard=false";
 export const urlChartDepartement =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques0/analyze/?refine.dep=[DEPARTEMENT]&dataChart=[DATACHART]&static=false&datasetcard=false";
+export const urlChartRegion =
+  "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-regions-fichier-global/analyze/?refine.reg=[REGION]&dataChart=[DATACHART]&static=false&datasetcard=false";
 
 export enum GraphTypeBudgetFonctCommune {
   ProduitDeFonctionnementCAF = "pfcaf",
@@ -228,6 +230,223 @@ export const communeInvestissementsEmploisListe = [
     color: "#000000",
     description: "Immobilisations affectées, concédées, ...",
   },
+];
+
+
+// departement
+
+// fonctionnement
+
+export const depFonctionnementProduitCharge = [
+  {
+    yAxis: "tpf",
+    color: "#447049",
+    description: "Produits de fonctionnement",
+  },
+  {
+    yAxis: "tcf",
+    color: "#ff292f",
+    description: "Charges de fonctionnement",
+  },
+];
+
+export const depFonctionnementProduitListe = [
+  {
+    yAxis: "imd",
+    color: "#447049", // green
+    description: "Impôts locaux",
+  },
+  {
+    yAxis: "dgf",
+    // yellow
+    color: "#ffcc00",
+    description: "Dotation globale de fonctionnement",
+  },
+  {
+    yAxis: "imt",
+    color: "#0000ff", // blue
+    description: "Autres impôts et taxes",
+  },
+  {
+    yAxis: "tdp",
+    // light blue
+    color: "#00ccff",
+    description: "Dont : Taxe départementale de publicité foncière et droits d'enregistrement",
+  },
+  // {
+  //   yAxis: "f1dtam",
+  //   color: "#999999", // grey
+  //   description: "dont : Taxe d'aménagement",
+  // },
+];
+
+// investissement
+export const depInvestissementResourcesEmplois = [
+  {
+    yAxis: "tri",
+    color: "#447049",
+    description: "Ressources d'investissement",
+  },
+  {
+    yAxis: "tib",
+    color: "#ff292f",
+    description: "Emplois d'investissement",
+  },
+];
+
+
+
+export const depFonctionnementChargeListe = [
+  {
+    yAxis: "cfr",
+    color: "#ff292f",
+    description: "Charges de fonctionnement CAF",
+  },
+  {
+    yAxis: "chp",
+    color: "#ff292f",
+    description: "dont : Charges de personnel",
+  },
+  {
+    yAxis: "ace",
+    // blue
+    color: "#0000ff",
+    description: "dont : Achats et charges externes",
+  },
+  {
+    yAxis: "chf",
+    // green
+    color: "#447049",
+    description: "dont : Charges financières",
+  },
+  {
+    yAxis: "sub",
+    // cyan
+    color: "#00ffff",
+    description: "dont : Subventions versées",
+  },
+  {
+    yAxis: "aid",
+    // yellow
+    color: "#ffcc00",
+    description: "dont : Aide à la personne",
+  },
+  {
+    yAxis: "fsh",
+    // orange
+    color: "#ff6600",
+    description: "dont : Frais de séjours et d'hébergement",
+  },
+];
+
+export const depInvestissementsResourcesListe = [
+  {
+    yAxis: "emp",
+    color: "#ff292f",
+    description: "Emprunts bancaires et dettes assimilées",
+  }, 
+  {
+    yAxis: "sir",
+    color: "#447049",
+    description: "Subventions reçues",
+  },
+  {
+    yAxis: "fct",
+    color: "#0000ff",
+    description: "FCTVA",
+  },
+];
+
+
+export const depInvestissementsEmploisListe = [
+  {
+    yAxis: "ded",
+    color: "#ff292f",
+    description: "Dépenses d'équipement",
+  },
+  {
+    yAxis: "rce",
+    color: "#447049",
+    description: "Remboursement d'emprunts et dettes assimilées",
+  },
+  {
+    yAxis: "sev",
+    color: "#0000ff",
+    description: "Subventions d'équipements versées",
+  },
+];
+
+
+// region 
+
+
+export const regFonctionnementProduitListe = [
+  // {
+  //   yAxis: "f2rpfr",
+  //   color: "#000000", 
+  //   description: "Produit de fonctionnement CAF",
+  // },
+  {
+    yAxis: "imd",
+    color: "#447049", // green
+    description: "Impôts locaux",
+  },
+  {
+    yAxis: "imt",
+    // lightgreen
+    color: "#00cc00",
+    description: "Autres impôts et taxes",
+  },
+  {
+    yAxis: "dgf",
+    // yellow
+    color: "#ffcc00",
+    description: "Dotation globale de fonctionnement",
+  },
+  //tip
+  {
+    yAxis: "tip",
+    // blue
+    color: "#0000ff",
+    description: "TICPE",
+  },
+
+];
+
+
+
+export const regFonctionnementChargeListe = [
+
+  {
+    yAxis: "chp",
+    color: "#ff292f",
+    description: "Charges de personnel",
+  },
+  {
+    yAxis: "ace",
+    // blue
+    color: "#0000ff",
+    description: "Achats et charges externes",
+  },
+  {
+    yAxis: "chf",
+    // green
+    color: "#447049",
+    description: "Charges financières",
+  },
+  {
+    yAxis: "sub",
+    // cyan
+    color: "#00ffff",
+    description: "Subventions versées",
+  },
+  {
+    yAxis: "cop",
+    // orange
+    color: "#ff6600",
+    description: "Contributions obligatoires et versements",
+  },
+
 ];
 
 

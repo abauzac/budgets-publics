@@ -6,6 +6,7 @@ import "./flexbox-utils.css";
 import { useState } from "react";
 import Communes from "./components/commune";
 import Departement from "./components/departement";
+import Region from "./components/region";
 
 export default function Home() {
   const [type, setType] = useState("communes");
@@ -44,6 +45,9 @@ export default function Home() {
       )}
       {type === "departements" && (
         <Departement />
+      )}
+      {type === "regions" && (
+        <Region />
       )}
       </main>
     </>
