@@ -14,7 +14,7 @@ import GraphMultiLines from "./graphMultiLines";
 
 export default function Region() {
   const [regionCode, setRegionCode] = useState(""); // "01", "02", "03", ... "95
-  const [region, setRegion] = useState(null); // "01", "02", "03", ... "95
+  const [region, setRegion] = useState<any>(null); // "01", "02", "03", ... "95
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
