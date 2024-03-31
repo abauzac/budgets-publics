@@ -1,6 +1,6 @@
 import { getUrlForCollectivite } from "../utils/utils";
 
-export default function GraphOneLine({ code, collectivite, typeChart }) {
+export default function GraphOneLine({ code, collectivite, typeChart }: { code: string, collectivite: string, typeChart: string }) {
 
   const urlFinale = getUrlForCollectivite(collectivite, code, typeChart);
 

@@ -1,6 +1,6 @@
 import {  getUrlForCollectivite } from "../utils/utils";
 
-export default function GraphMultiLines({ code, collectivite, graphs }) {
+export default function GraphMultiLines({ code, collectivite, graphs }: { code: string, collectivite: string, graphs: any[] }) {
   const urlFinale = getUrlForCollectivite(collectivite, code, graphs);
 
   return (

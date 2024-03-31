@@ -13,7 +13,7 @@ import GraphMultiLines from "./graphMultiLines";
 
 export default function Departement() {
   const [departementCode, setDepartementCode] = useState(""); // "01", "02", "03", ... "95
-  const [departement, setDepartement] = useState(null); // "01", "02", "03", ... "95
+  const [departement, setDepartement] = useState<any>(null); // "01", "02", "03", ... "95
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
