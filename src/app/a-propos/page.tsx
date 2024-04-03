@@ -1,0 +1,51 @@
+export default function APropos() {
+  return (
+    <>
+      <h1>A propos</h1>
+      <p>
+        Ce site web est un tableau de bord des finances locales en France. Il
+        permet de visualiser les données de comptabilité des collectivités
+        locales (communes, départements, régions) en France.
+      </p>
+      <p>
+        Les données sont issues de la base de données du Ministère de l'économie
+        :
+      </p>
+      <ul>
+        <li>
+          Communes :{" "}
+          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/table/">
+            Comptes individuels des communes
+          </a>
+        </li>
+        <li>
+          Départements :{" "}
+          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques0/table/">
+            Comptes individuels des départements & collectivités territoriales
+            uniques
+          </a>
+        </li>
+        <li>
+          Régions :{" "}
+          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-regions-fichier-global/table/">
+            Comptes individuels des régions
+          </a>
+        </li>
+        <li>
+          Collectivités :{" "}
+          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-/table/">
+            Comptes individuels des groupements à fiscalité propre
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <p>
+        Site édité par :{" "}
+        <a href="https://www.linkedin.com/in/amaury-bauzac-08829717/">
+          Amaury Bauzac
+        </a>
+      </p>
+      <p>Site hébergé par : Github Inc.</p>
+    </>
+  );
+}

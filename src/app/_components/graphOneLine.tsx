@@ -1,4 +1,4 @@
-import { getUrlForCollectivite } from "../utils/utils";
+import { getUrlForCollectivite } from "../_utils/utils";
 
 export default function GraphOneLine({ code, collectivite, typeChart }: { code: string, collectivite: string, typeChart: string }) {
 
