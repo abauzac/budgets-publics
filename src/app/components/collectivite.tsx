@@ -30,13 +30,16 @@ export default function Collectivite() {
     if (dep.length === 2 && dep[0] === "0") {
       setDepartement(dep[1]);  
     }
-    // "2A" => "02A"
-    else if (dep.length === 2) {
-      setDepartement("0" + dep);
+    // "02A"
+    else if (dep.length === 3 && dep.startsWith("02")) {
+      setDepartement(dep);
     }
     // "971" => "101"
     else if (dep.length === 3 && dep.startsWith("97")) {
       setDepartement("10" + dep[2]);
+    }
+    else {
+      setDepartement(dep);
     }
   }
 

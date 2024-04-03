@@ -43,8 +43,13 @@ export function getUrlForCollectivite(
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
     return urlFinale;
   } else if (collectivite == "departement") {
-    const dep = code;
-    const codeDep = dep.length === 2 ? `0${dep}` : dep;
+    let codeDep = code;
+    if(code.length === 2) {
+      codeDep = `0${code}`;
+    }
+    else if(code.length === 3){
+      codeDep = `10${code.substring(2)}`
+    }
     const charts =
       typeof typeChart == "string"
         ? getChartsOneLine(typeChart)
