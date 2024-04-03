@@ -1,9 +1,10 @@
+"use client"
+
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import departements from "../../../public/json/departements.json";
 import communes from "../../../public/json/communes.json";
 import GraphOneLine from "./graphOneLine";
-import { GraphTypeVueGlobalCommune, communeFonctionnementChargeListe, communeFonctionnementProduitCharge, communeFonctionnementProduitListe, communeInvestissementResourcesEmplois, communeInvestissementsEmploisListe, communeInvestissementsResourcesListe } from "../utils/charts";
+import { GraphTypeVueGlobalCommune, communeFonctionnementChargeListe, communeFonctionnementProduitCharge, communeFonctionnementProduitListe, communeInvestissementResourcesEmplois, communeInvestissementsEmploisListe, communeInvestissementsResourcesListe } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
 
 export default function Communes() {
@@ -11,7 +12,7 @@ export default function Communes() {
   const [listeCommunes, setListeCommunes] = useState<any[]>([]); // liste des communes du département sélectionné
   const [commune, setCommune] = useState<any>(null); // objet commune
   const [typeVue, setTypeVue] = useState<'global'|'budget'|'investissements'|'dette'|'fiscalite'>("global"); 
-  const router = useRouter();
+
   useEffect(() => {
     if (departement !== "") {
       const liste = (communes as any[])
@@ -52,6 +53,8 @@ export default function Communes() {
           </nav>
         </aside>
         <div>
+          <h1 style={{textAlign: "center"}}>Comptabilité des communes</h1>
+          <h4 style={{textAlign: "center"}}>Chiffres en milliers d'euro</h4>
           <div className="grid">
             <select
               style={{ width: "300px", justifySelf: "center" }}
