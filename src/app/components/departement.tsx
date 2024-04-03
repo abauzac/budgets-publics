@@ -177,7 +177,7 @@ export default function Departement() {
               {typeVue === "investissements" && (
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Investissements et resources d'investissement du département{" "}
+                    Budgets d'investissements du département{" "}
                     {departement.NCCENR}
                   </h2>
                   <br />
