@@ -122,7 +122,7 @@ export default function Communes() {
           )}
         {typeVue === 'investissements' && (
           <div style={{textAlign: 'center'}}>
-            <h2>Investissements et resources d'investissement pour la commune de {commune.NCCENR}</h2>
+            <h2>Budgets d'investissements pour la commune de {commune.NCCENR}</h2>
             <br/>
             <h5 >Total des resources et dépenses d'investissement</h5>
             <GraphMultiLines collectivite={'commune'} code={commune.COM} graphs={communeInvestissementResourcesEmplois}></GraphMultiLines>

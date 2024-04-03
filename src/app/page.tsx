@@ -7,6 +7,7 @@ import { useState } from "react";
 import Communes from "./components/commune";
 import Departement from "./components/departement";
 import Region from "./components/region";
+import Collectivite from "./components/collectivite";
 
 export default function Home() {
   const [type, setType] = useState("communes");
@@ -24,6 +25,11 @@ export default function Home() {
           <li>
             <a href="#" className="secondary" onClick={() => { setType("communes") }}>
               Communes
+            </a>
+          </li>
+          <li>
+            <a href="#" className="secondary" onClick={() => { setType("collectivites") }}>
+              Collectivités
             </a>
           </li>
           <li>
@@ -48,6 +54,9 @@ export default function Home() {
       )}
       {type === "regions" && (
         <Region />
+      )}
+      {type === "collectivites" && (
+        <Collectivite />
       )}
       </main>
     </>

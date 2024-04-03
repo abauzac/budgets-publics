@@ -4,6 +4,8 @@ export const urlChartDepartement =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques0/analyze/?refine.dep=[DEPARTEMENT]&dataChart=[DATACHART]&static=false&datasetcard=false";
 export const urlChartRegion =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-regions-fichier-global/analyze/?refine.reg=[REGION]&dataChart=[DATACHART]&static=false&datasetcard=false";
+export const urlChartCollectivite =
+  "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-/analyze/?refine.siren=[SIREN]&dataChart=[DATACHART]&static=false&datasetcard=false";
 
 export enum GraphTypeBudgetFonctCommune {
   ProduitDeFonctionnementCAF = "pfcaf",
@@ -449,6 +451,143 @@ export const regFonctionnementChargeListe = [
 
 ];
 
+// collectivités
+
+export const collFonctionnementProduitCharge = [
+  {
+    yAxis: "pftot",
+    color: "#447049",
+    description: "Produits de fonctionnement",
+  },
+  {
+    yAxis: "cftot",
+    color: "#ff292f",
+    description: "Charges de fonctionnement",
+  },
+];
+
+
+export const collFonctionnementProduitListe = [
+  // {
+  //   yAxis: "Produits de fonctionnement CAF",
+  //   color: "#00ffff",
+  //   description: "Charges de personnel",
+  // },
+  {
+    yAxis: "iltot",
+    color: "#447049", // green
+    description: "Impôts locaux",
+  },
+  {
+    yAxis: "revtot",
+    color: "#0000ff", // blue
+    description: "Fiscalité reversée",
+  },
+  {
+    yAxis: "aittot",
+    color: "#000000", // black
+    description: "Autres impôts et taxes",
+  },
+  {
+    yAxis: "dgftot",
+    color: "#ffcc00", // yellow
+    description: "Dotation globale de fonctionnement",
+  },
+  // {
+  //   yAxis: "adp",
+  //   color: "#ff6600",
+  //   description: "Autres dotations et participations",
+  // },
+  // {
+  //   yAxis: "pserdom",
+  //   color: "#cccccc",
+  //   description: "Produits des services et du domaine",
+  // },
+
+];
+
+
+export const collFonctionnementChargeListe = [
+  // {
+  //   yAxis: "Charges de fonctionnement CAF",
+  //   color: "#00ffff",
+  //   description: "Charges de personnel",
+  // },
+  {
+    yAxis: "perstot",
+    color: "#ff292f",
+    description: "Charges de personnel",
+  },
+  {
+    yAxis: "acetot",
+    // blue
+    color: "#0000ff",
+    description: "Achats et charges externes",
+  },
+  {
+    yAxis: "cfitot",
+    // green
+    color: "#447049",
+    description: "Charges financières",
+  },
+  // {
+  //   yAxis: "cont",
+  //   // yellow
+  //   color: "#ffcc00",
+  //   description: "Contingents",
+  // },
+  {
+    yAxis: "suvftot",
+    // cyan
+    color: "#00ffff",
+    description: "Subventions versées",
+  },
+];
+
+export const collInvestissementResourcesEmplois = [
+  {
+    yAxis: "ritot",
+    color: "#447049",
+    description: "Ressources d'investissement",
+  },
+  {
+    yAxis: "eitot",
+    color: "#ff292f",
+    description: "Emplois d'investissement",
+  },
+];
+
+
+export const collInvestissementsResourcesListe = [
+  {
+    yAxis: "rdettot",
+    color: "#ff292f",
+    description: "Emprunts bancaires et dettes assimilées",
+  }, 
+  {
+    yAxis: "subvitot",
+    color: "#447049",
+    description: "Subventions reçues",
+  },
+  {
+    yAxis: "fattot",
+    color: "#0000ff",
+    description: "FCTVA",
+  },
+];
+
+export const collInvestissementsEmploisListe = [
+  {
+    yAxis: "detot",
+    color: "#ff292f",
+    description: "Dépenses d'équipement",
+  },
+  {
+    yAxis: "edettot",
+    color: "#447049",
+    description: "Remboursement d'emprunts et dettes assimilées",
+  },
+];
 
 // common
 

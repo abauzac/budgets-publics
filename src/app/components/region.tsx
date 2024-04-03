@@ -179,7 +179,7 @@ export default function Region() {
               {typeVue === "investissements" && (
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Investissements et resources d'investissement de la région{" "}
+                    Budgets d'investissements de la région{" "}
                     {region.NCCENR}
                   </h2>
                   <br />
