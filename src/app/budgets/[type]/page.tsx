@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function Type({ params }) {
+export default function Type({ params }: { params: { type: string } }) {
   const type = params.type;
   
   return (
