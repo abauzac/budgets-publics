@@ -24,8 +24,8 @@ export function getUrlForCollectivite(
     const dep = code.startsWith("97")
       ? code.substring(0, 3)
       : code.substring(0, 2);
-    const idCommune = code.replace(dep, "");
-    const codeDep = dep.length === 2 ? `0${dep}` : dep;
+    const idCommune = code.startsWith("97") ? code.replace("97", "") : code.replace(dep, "");
+    const codeDep = code.startsWith("97") ? `10${dep.replace("97", "")}` : `0${dep}` ;
     const charts =
       typeof typeChart == "string"
         ? getChartsOneLine(typeChart)
