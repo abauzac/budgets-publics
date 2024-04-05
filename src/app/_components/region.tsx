@@ -13,6 +13,7 @@ import {
   regFonctionnementProduitListe,
 } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Region() {
   const [regionCode, setRegionCode] = useState(""); // "01", "02", "03", ... "95
@@ -20,6 +21,17 @@ export default function Region() {
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
+  const params = useSearchParams();
+  const router = useRouter();
+
+  // on component mount
+  useEffect(() => {
+    if (params.get("region")) {
+      setRegionCode(params.get("region") as string);
+    }
+  }, []);
+
+
 
   useEffect(() => {
     if (regionCode !== "") {
@@ -96,8 +108,10 @@ export default function Region() {
               style={{ width: "300px", justifySelf: "center" }}
               name="regions"
               aria-label="Régions"
+              value={regionCode}
               onChange={(event) => {
                 setRegionCode(event.target.value);
+                router.push('/budgets/regions?region=' + event.target.value);
               }}
               required
             >

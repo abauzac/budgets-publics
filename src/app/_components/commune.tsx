@@ -138,6 +138,7 @@ export default function Communes() {
               style={{ width: "300px", justifySelf: "center" }}
               name="departements"
               aria-label="Départements"
+              value={departement}
               onChange={(event) => {
                 setDepartement(event.target.value);
               }}
@@ -154,6 +155,7 @@ export default function Communes() {
               style={{ width: "300px", justifySelf: "center" }}
               name="communes"
               aria-label="Communes"
+              value={commune ? commune.index : ""}
               onChange={(event) => {
                 setCommune((communes as any[])[parseInt(event.target.value)]);
                 router.push(
