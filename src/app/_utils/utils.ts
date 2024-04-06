@@ -165,9 +165,9 @@ export function transformDepCodeToCollectiviteDept(depCode: string) {
      return dep[1];  
   }
   // "02A"
-  // else if (dep.length === 3 && dep.startsWith("02")) {
-  //   return dep;
-  // }
+  else if (["2A", "2B"].includes(dep)) {
+    return "0"+dep;
+  }
   // "971" => "101"
   else if (dep.length === 3 && dep.startsWith("97")) {
     return "10" + dep[2];
