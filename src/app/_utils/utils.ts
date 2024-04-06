@@ -24,8 +24,8 @@ export function getUrlForCollectivite(
     const dep = code.startsWith("97")
       ? code.substring(0, 3)
       : code.substring(0, 2);
-    const idCommune = code.replace(dep, "");
-    const codeDep = dep.length === 2 ? `0${dep}` : dep;
+    const idCommune = code.startsWith("97") ? code.replace("97", "") : code.replace(dep, "");
+    const codeDep = code.startsWith("97") ? `10${dep.replace("97", "")}` : `0${dep}` ;
     const charts =
       typeof typeChart == "string"
         ? getChartsOneLine(typeChart)
@@ -137,4 +137,42 @@ export function getRegionQueryConfig(
       "refine.reg": codeReg,
     },
   };
+}
+
+export function extractDepCodeFromCollectiviteDept(collDept:string){
+  // "101" => "971", "1" => "01", "22" => "22", "02A" => "2A
+  if(collDept.length === 1) {
+    return `0${collDept}`;
+  }
+  else if(collDept.length === 2) {
+    return collDept;
+  }
+  else if(collDept.length === 3 && collDept.startsWith("10")) {
+    return `97${collDept.substring(2)}`;
+  }
+  else if(collDept.length === 3 && collDept.startsWith("02")) {
+    return collDept.substring(1);
+  }
+  return null;
+}
+
+export function transformDepCodeToCollectiviteDept(depCode: string) {
+  if(depCode === "") 
+    return;
+  let dep = depCode; // "06", "77", "2A"...
+  // "06" => "6"
+  if (dep.length === 2 && dep[0] === "0") {
+     return dep[1];  
+  }
+  // "02A"
+  // else if (dep.length === 3 && dep.startsWith("02")) {
+  //   return dep;
+  // }
+  // "971" => "101"
+  else if (dep.length === 3 && dep.startsWith("97")) {
+    return "10" + dep[2];
+  }
+  else {
+    return dep;
+  }
 }

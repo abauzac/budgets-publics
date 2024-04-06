@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import departements from "../../../public/json/departements.json";
 import collectivites from "../../../public/json/collectivites.json";
 import GraphOneLine from "./graphOneLine";
@@ -14,46 +14,64 @@ import {
   collInvestissementsResourcesListe,
 } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
+import { extractDepCodeFromCollectiviteDept, transformDepCodeToCollectiviteDept } from "../_utils/utils";
 
 export default function Collectivite() {
   const [departement, setDepartement] = useState("");
   const [listeCollectivites, setListeCollectivites] = useState<any[]>([]); // liste des collectivites du département sélectionné
-  const [collectivite, setCollectivite] = useState<any>(null); // objet commune
+  const [collectivite, setCollectivite] = useState<any>(null); // objet collectivite
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
   const router = useRouter();
+  const params = useSearchParams();
 
-  function handleDepartementChange(event: any) {
-    if(event.target.value === "") 
-      return;
-    let dep = event.target.value; // "06", "77", "2A"...
-    // "06" => "6"
-    if (dep.length === 2 && dep[0] === "0") {
-      setDepartement(dep[1]);  
+  // on component mount
+  useEffect(() => {
+    const paramColl = params.get("collectivite");
+    if (paramColl !== null) {
+      //debugger;
+      const collIndex = (collectivites as any[]).findIndex(
+        (c) => c.siren === paramColl
+      );
+      if (collIndex !== -1) {
+        const collFound = (collectivites as any[])[collIndex];
+        collFound.index = collIndex;
+        setCollectivite(collFound);
+
+        const codeDep = extractDepCodeFromCollectiviteDept(collFound.ndept)
+
+        const dep = departements.find((d) => d.DEP === codeDep);
+        if (dep) {
+          setDepartement(dep.DEP);
+          setListeCollectivites(
+            (collectivites as any[])
+              .map((c, i) => {
+                c.index = i;
+                return c;
+              })
+              .filter((coll, index) =>
+                (coll.ndept as string) === collFound.ndept
+              )
+          );
+        }
+      }
     }
-    // "02A"
-    else if (dep.length === 3 && dep.startsWith("02")) {
-      setDepartement(dep);
-    }
-    // "971" => "101"
-    else if (dep.length === 3 && dep.startsWith("97")) {
-      setDepartement("10" + dep[2]);
-    }
-    else {
-      setDepartement(dep);
-    }
-  }
+  }, []);
+
+
+
 
   useEffect(() => {
     if (departement !== "") {
+      const depCode = transformDepCodeToCollectiviteDept(departement);
       const liste = (collectivites as any[])
         .map((c, i) => {
           c.index = i;
           return c;
         })
         .filter((collectivite, index) =>
-          (collectivite.ndept as string) === departement
+          (collectivite.ndept as string) === depCode
         );
       setListeCollectivites(liste);
     }
@@ -126,13 +144,16 @@ export default function Collectivite() {
               style={{ width: "300px", justifySelf: "center" }}
               name="departements"
               aria-label="Départements"
-              onChange={handleDepartementChange}
+              onChange={(event) => {
+                setDepartement(event.target.value);
+              }}
+              value={departement}
               required
             >
               <option value="">Départements</option>
-              {departements.map((departement) => (
-                <option key={departement.DEP} value={departement.DEP}>
-                  {departement.DEP} - {departement.NCCENR}
+              {departements.map((dep) => (
+                <option key={dep.DEP} value={dep.DEP}>
+                  {dep.DEP} - {dep.NCCENR}
                 </option>
               ))}
             </select>
@@ -140,10 +161,12 @@ export default function Collectivite() {
               style={{ width: "300px", justifySelf: "center" }}
               name="collectivites"
               aria-label="Collectivités"
+              value={collectivite ? collectivite.index : ""}
               onChange={(event) => {
                 setCollectivite(
                   (collectivites as any[])[parseInt(event.target.value)]
                 );
+                router.push("/budgets/collectivites?collectivite="+(collectivites as any[])[parseInt(event.target.value)].siren);
               }}
               required
             >

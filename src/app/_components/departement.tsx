@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import departements from "../../../public/json/departements.json";
@@ -12,19 +12,29 @@ import {
   depInvestissementsResourcesListe,
 } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Departement() {
   const [departementCode, setDepartementCode] = useState(""); // "01", "02", "03", ... "95
-  const [departement, setDepartement] = useState<any>(null); 
+  const [departement, setDepartement] = useState<any>(null);
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
+  const params = useSearchParams();
+  const router = useRouter();
+
+  // on component mount
+  useEffect(() => {
+    if (params.get("departement")) {
+      setDepartementCode(params.get("departement") as string);
+    }
+  }, []);
+
   useEffect(() => {
     if (departementCode !== "") {
       setDepartement(departements.find((d) => d.DEP === departementCode));
     }
-  }
-  , [departementCode]);
+  }, [departementCode]);
 
   return (
     <>
@@ -86,16 +96,20 @@ export default function Departement() {
           </nav>
         </aside>
         <div>
-          <h1 style={{textAlign: "center"}}>Comptabilité des départements</h1>
-          <h4 style={{textAlign: "center"}}>Chiffres en milliers d'euro</h4>
+          <h1 style={{ textAlign: "center" }}>Comptabilité des départements</h1>
+          <h4 style={{ textAlign: "center" }}>Chiffres en milliers d'euro</h4>
 
           <div className="grid">
             <select
               style={{ width: "300px", justifySelf: "center" }}
               name="departements"
               aria-label="Départements"
+              value={departementCode}
               onChange={(event) => {
                 setDepartementCode(event.target.value);
+                router.push(
+                  `/budgets/departements?departement=${event.target.value}`
+                );
               }}
               required
             >
