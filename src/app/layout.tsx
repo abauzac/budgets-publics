@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import "./pico.min.css";
 import "./custom.css";
 import "./flexbox-utils.css";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tableau de bord des finances locales",
