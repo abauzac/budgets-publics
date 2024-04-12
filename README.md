@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# Tableau de bord des communes et collectivités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Site permettant d'afficher les graphiques disponibles sur le site du ministère de l'économie.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ces graphiques étant très mal documentés mais disponible sous forme d'IFrame, il devient possible de les afficher sous une forme plus ou moins logique.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Les légendes sont basées sur la documentation fournie par le ministère au format Excel mais certaines données supposées être disponibles ne le sont pas.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Technique
 
-## Learn More
+Site sous NextJS
 
-To learn more about Next.js, take a look at the following resources:
+Pour lancer le site en local :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# CI 
 
-## Deploy on Vercel
+Une CI avec déploiement automatique sur Github Pages est active sur le compte @abauzac
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Licence
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Tableau de bord des communes et collectivités](https://abauzac.github.io/budgets-publics/) © 2024 by [Amaury Bauzac](https://www.linkedin.com/in/amaury-bauzac-08829717/) is licensed under CC BY 4.0 
+
+https://creativecommons.org/licenses/by/4.0/deed.fr
