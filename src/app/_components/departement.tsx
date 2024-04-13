@@ -20,6 +20,8 @@ export default function Departement() {
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
+  const [prefix, setPrefix] = useState<string>("");
+
   const params = useSearchParams();
   const router = useRouter();
 
@@ -97,29 +99,64 @@ export default function Departement() {
         </aside>
         <div>
           <h1 style={{ textAlign: "center" }}>Comptabilité des départements</h1>
-          <h4 style={{ textAlign: "center" }}>Chiffres en milliers d'euro</h4>
 
           <div className="grid">
-            <select
-              style={{ width: "300px", justifySelf: "center" }}
-              name="departements"
-              aria-label="Départements"
-              value={departementCode}
-              onChange={(event) => {
-                setDepartementCode(event.target.value);
-                router.push(
-                  `/budgets/departements?departement=${event.target.value}`
-                );
-              }}
-              required
-            >
-              <option value="">Départements</option>
-              {departements.map((departement) => (
-                <option key={departement.DEP} value={departement.DEP}>
-                  {departement.DEP} - {departement.NCCENR}
-                </option>
-              ))}
-            </select>
+            <div className="d-flex justify-content-center">
+              <select
+                style={{ width: "300px", "height": 'fit-content' }}
+                name="departements"
+                aria-label="Départements"
+                value={departementCode}
+                onChange={(event) => {
+                  setDepartementCode(event.target.value);
+                  router.push(
+                    `/budgets/departements?departement=${event.target.value}`
+                  );
+                }}
+                required
+              >
+                <option value="">Départements</option>
+                {departements.map((departement) => (
+                  <option key={departement.DEP} value={departement.DEP}>
+                    {departement.DEP} - {departement.NCCENR}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <fieldset className="d-flex flex-column align-items-center">
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={prefix == ""}
+                  onClick={(e) => setPrefix("")}
+                />
+                Total en milliers d'euros
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={prefix == "f"}
+                  onClick={(e) => setPrefix("f")}
+                />
+                Euros par habitant
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  id="strate"
+                  name="prefix"
+                  checked={prefix == "m"}
+                  onClick={(e) => setPrefix("m")}
+                />
+                Comparé à la strate
+              </label>
+            </fieldset>
           </div>
           {departement && (
             <div>
@@ -131,6 +168,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"res"}
                   ></GraphOneLine>
                   <p>
@@ -142,6 +180,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"rec"}
                   ></GraphOneLine>
                   <p>
@@ -156,6 +195,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"bfi"}
                   ></GraphOneLine>
                   <p>
@@ -175,6 +215,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depFonctionnementProduitCharge}
                   ></GraphMultiLines>
                   <hr />
@@ -182,6 +223,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depFonctionnementProduitListe}
                   ></GraphMultiLines>
                   <hr />
@@ -189,6 +231,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depFonctionnementChargeListe}
                   ></GraphMultiLines>
                 </div>
@@ -204,6 +247,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depInvestissementResourcesEmplois}
                   ></GraphMultiLines>
                   <hr />
@@ -211,6 +255,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depInvestissementsResourcesListe}
                   ></GraphMultiLines>
                   <hr />
@@ -218,6 +263,7 @@ export default function Departement() {
                   <GraphMultiLines
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     graphs={depInvestissementsEmploisListe}
                   ></GraphMultiLines>
                   <hr />
@@ -225,6 +271,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"soc"}
                   ></GraphOneLine>
                 </div>
@@ -241,6 +288,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"fdr"}
                   ></GraphOneLine>
                   <hr />
@@ -250,6 +298,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"f1detd"}
                   ></GraphOneLine>
                   <hr />
@@ -258,6 +307,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"adb"}
                   ></GraphOneLine>
                   <hr />
@@ -267,6 +317,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"ebf"}
                   ></GraphOneLine>
                   <hr />
@@ -274,6 +325,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"caf"}
                   ></GraphOneLine>
                   <hr />
@@ -281,6 +333,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"cnr"}
                   ></GraphOneLine>
                   <hr />
@@ -294,6 +347,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"cvaed"}
                   ></GraphOneLine>
                   <hr />
@@ -301,6 +355,7 @@ export default function Departement() {
                   <GraphOneLine
                     collectivite={"departement"}
                     code={departement.DEP}
+                    prefix={prefix}
                     typeChart={"tvad"}
                   ></GraphOneLine>
 

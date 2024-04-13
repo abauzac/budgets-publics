@@ -40,9 +40,7 @@ export default function APropos() {
       </ul>
       <hr />
        <p >
-        <a href="https://abauzac.github.io/budgets-publics/">Tableau de bord des collectivités</a> 
-        by <a  href="https://www.linkedin.com/in/amaury-bauzac-08829717/">Amaury Bauzac</a>
-        is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style={{display: "inline-block"}}>CC BY 4.0</a>
+        <a href="https://abauzac.github.io/budgets-publics/">Tableau de bord des collectivités</a> by <a  href="https://www.linkedin.com/in/amaury-bauzac-08829717/">Amaury Bauzac</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style={{display: "inline-block"}}>CC BY 4.0</a>
         </p> 
     </>
   );
