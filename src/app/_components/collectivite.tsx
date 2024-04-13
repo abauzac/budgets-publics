@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -14,7 +14,10 @@ import {
   collInvestissementsResourcesListe,
 } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
-import { extractDepCodeFromCollectiviteDept, transformDepCodeToCollectiviteDept } from "../_utils/utils";
+import {
+  extractDepCodeFromCollectiviteDept,
+  transformDepCodeToCollectiviteDept,
+} from "../_utils/utils";
 
 export default function Collectivite() {
   const [departement, setDepartement] = useState("");
@@ -23,6 +26,7 @@ export default function Collectivite() {
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
+  const [suffix, setSuffix] = useState<string>("");
   const router = useRouter();
   const params = useSearchParams();
 
@@ -39,7 +43,7 @@ export default function Collectivite() {
         collFound.index = collIndex;
         setCollectivite(collFound);
 
-        const codeDep = extractDepCodeFromCollectiviteDept(collFound.ndept)
+        const codeDep = extractDepCodeFromCollectiviteDept(collFound.ndept);
 
         const dep = departements.find((d) => d.DEP === codeDep);
         if (dep) {
@@ -50,17 +54,14 @@ export default function Collectivite() {
                 c.index = i;
                 return c;
               })
-              .filter((coll, index) =>
-                (coll.ndept as string) === collFound.ndept
+              .filter(
+                (coll, index) => (coll.ndept as string) === collFound.ndept
               )
           );
         }
       }
     }
   }, []);
-
-
-
 
   useEffect(() => {
     if (departement !== "") {
@@ -70,8 +71,8 @@ export default function Collectivite() {
           c.index = i;
           return c;
         })
-        .filter((collectivite, index) =>
-          (collectivite.ndept as string) === depCode
+        .filter(
+          (collectivite, index) => (collectivite.ndept as string) === depCode
         );
       setListeCollectivites(liste);
     }
@@ -136,48 +137,80 @@ export default function Collectivite() {
           </nav>
         </aside>
         <div>
-          <h1 style={{textAlign: "center"}}>Comptabilité des collectivités inter-urbaines</h1>
-          <h4 style={{textAlign: "center"}}>Chiffres en milliers d'euro</h4>
+          <h1 style={{ textAlign: "center" }}>
+            Comptabilité des collectivités inter-urbaines
+          </h1>
 
           <div className="grid">
-            <select
-              style={{ width: "300px", justifySelf: "center" }}
-              name="departements"
-              aria-label="Départements"
-              onChange={(event) => {
-                setDepartement(event.target.value);
-              }}
-              value={departement}
-              required
-            >
-              <option value="">Départements</option>
-              {departements.map((dep) => (
-                <option key={dep.DEP} value={dep.DEP}>
-                  {dep.DEP} - {dep.NCCENR}
-                </option>
-              ))}
-            </select>
-            <select
-              style={{ width: "300px", justifySelf: "center" }}
-              name="collectivites"
-              aria-label="Collectivités"
-              value={collectivite ? collectivite.index : ""}
-              onChange={(event) => {
-                setCollectivite(
-                  (collectivites as any[])[parseInt(event.target.value)]
-                );
-                router.push("/budgets/collectivites?collectivite="+(collectivites as any[])[parseInt(event.target.value)].siren);
-              }}
-              required
-            >
-              <option value="">Collectivités</option>
-              {listeCollectivites.length > 0 &&
-                listeCollectivites.map((coll) => (
-                  <option key={coll.siren} value={coll.index}>
-                    {coll.lbudg}
+            <div className="d-flex flex-column align-items-center">
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                name="departements"
+                aria-label="Départements"
+                onChange={(event) => {
+                  setDepartement(event.target.value);
+                }}
+                value={departement}
+                required
+              >
+                <option value="">Départements</option>
+                {departements.map((dep) => (
+                  <option key={dep.DEP} value={dep.DEP}>
+                    {dep.DEP} - {dep.NCCENR}
                   </option>
                 ))}
-            </select>
+              </select>
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                name="collectivites"
+                aria-label="Collectivités"
+                value={collectivite ? collectivite.index : ""}
+                onChange={(event) => {
+                  setCollectivite(
+                    (collectivites as any[])[parseInt(event.target.value)]
+                  );
+                  router.push(
+                    "/budgets/collectivites?collectivite=" +
+                      (collectivites as any[])[parseInt(event.target.value)]
+                        .siren
+                  );
+                }}
+                required
+              >
+                <option value="">Collectivités</option>
+                {listeCollectivites.length > 0 &&
+                  listeCollectivites.map((coll) => (
+                    <option key={coll.siren} value={coll.index}>
+                      {coll.lbudg}
+                    </option>
+                  ))}
+              </select>
+            </div>
+
+            <fieldset className="d-flex flex-column align-items-center">
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={suffix == ""}
+                  onClick={(e) => setSuffix("")}
+                />
+                Total en milliers d'euros
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={suffix == "hab"}
+                  onClick={(e) => setSuffix("hab")}
+                />
+                Euros par habitant
+              </label>
+
+            </fieldset>
           </div>
           {collectivite && (
             <div>
@@ -200,6 +233,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"rtot"}
                   ></GraphOneLine>
                   <p>
@@ -235,6 +269,7 @@ export default function Collectivite() {
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collFonctionnementProduitCharge}
                   ></GraphMultiLines>
                   <hr />
@@ -242,6 +277,7 @@ export default function Collectivite() {
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collFonctionnementProduitListe}
                   ></GraphMultiLines>
                   <hr />
@@ -249,6 +285,7 @@ export default function Collectivite() {
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collFonctionnementChargeListe}
                   ></GraphMultiLines>
                 </div>
@@ -256,13 +293,15 @@ export default function Collectivite() {
               {typeVue === "investissements" && (
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Budgets d'investissements pour la collectivité {collectivite.lbudg}
+                    Budgets d'investissements pour la collectivité{" "}
+                    {collectivite.lbudg}
                   </h2>
                   <br />
                   <h5>Total des resources et dépenses d'investissement</h5>
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collInvestissementResourcesEmplois}
                   ></GraphMultiLines>
                   <hr />
@@ -270,6 +309,7 @@ export default function Collectivite() {
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collInvestissementsResourcesListe}
                   ></GraphMultiLines>
                   <hr />
@@ -277,6 +317,7 @@ export default function Collectivite() {
                   <GraphMultiLines
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     graphs={collInvestissementsEmploisListe}
                   ></GraphMultiLines>
                 </div>
@@ -284,7 +325,7 @@ export default function Collectivite() {
               {typeVue === "dette" && (
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Dette et Capacité d'autofinancement pour la collectivité {" "}
+                    Dette et Capacité d'autofinancement pour la collectivité{" "}
                     {collectivite.lbudg}
                   </h2>
                   <br />
@@ -294,6 +335,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"entot"}
                   ></GraphOneLine>
                   <hr />
@@ -302,6 +344,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"antot"}
                   ></GraphOneLine>
                   <hr />
@@ -309,6 +352,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"encdb"}
                   ></GraphOneLine>
                   <hr />
@@ -317,6 +361,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"caftot"}
                   ></GraphOneLine>
                   <hr />
@@ -324,6 +369,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"cafntot"}
                   ></GraphOneLine>
                   <hr />
@@ -337,6 +383,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"pth"}
                   ></GraphOneLine>
                   <hr />
@@ -344,6 +391,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"pfb"}
                   ></GraphOneLine>
                   <hr />
@@ -351,6 +399,7 @@ export default function Collectivite() {
                   <GraphOneLine
                     collectivite={"collectivite"}
                     code={collectivite.siren}
+                    suffix={suffix}
                     typeChart={"pfnb"}
                   ></GraphOneLine>
                   {/* <hr />

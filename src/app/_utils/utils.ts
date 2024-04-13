@@ -1,3 +1,4 @@
+import { Graph } from "../_components/graphMultiLines";
 import {
   getCharts,
   getChartsOneLine,
@@ -24,8 +25,12 @@ export function getUrlForCollectivite(
     const dep = code.startsWith("97")
       ? code.substring(0, 3)
       : code.substring(0, 2);
-    const idCommune = code.startsWith("97") ? code.replace("97", "") : code.replace(dep, "");
-    const codeDep = code.startsWith("97") ? `10${dep.replace("97", "")}` : `0${dep}` ;
+    const idCommune = code.startsWith("97")
+      ? code.replace("97", "")
+      : code.replace(dep, "");
+    const codeDep = code.startsWith("97")
+      ? `10${dep.replace("97", "")}`
+      : `0${dep}`;
     const charts =
       typeof typeChart == "string"
         ? getChartsOneLine(typeChart)
@@ -44,11 +49,10 @@ export function getUrlForCollectivite(
     return urlFinale;
   } else if (collectivite == "departement") {
     let codeDep = code;
-    if(code.length === 2) {
+    if (code.length === 2) {
       codeDep = `0${code}`;
-    }
-    else if(code.length === 3){
-      codeDep = `10${code.substring(2)}`
+    } else if (code.length === 3) {
+      codeDep = `10${code.substring(2)}`;
     }
     const charts =
       typeof typeChart == "string"
@@ -64,11 +68,9 @@ export function getUrlForCollectivite(
       .replace("[DEPARTEMENT]", codeDep)
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
     return urlFinale;
-  }
-  else if (collectivite == "region") {
-
+  } else if (collectivite == "region") {
     const reg = code;
-    const regCode = reg.startsWith("0") ? `1${reg}`: `0${reg}`;
+    const regCode = reg.startsWith("0") ? `1${reg}` : `0${reg}`;
     const charts =
       typeof typeChart == "string"
         ? getChartsOneLine(typeChart)
@@ -83,8 +85,7 @@ export function getUrlForCollectivite(
       .replace("[REGION]", regCode)
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
     return urlFinale;
-  }
-  else if (collectivite == "collectivite") {
+  } else if (collectivite == "collectivite") {
     const siren = code;
     const charts =
       typeof typeChart == "string"
@@ -127,10 +128,7 @@ export function getDepartementQueryConfig(
     },
   };
 }
-export function getRegionQueryConfig(
-  dataset: TypeDataSet,
-  codeReg: string
-) {
+export function getRegionQueryConfig(dataset: TypeDataSet, codeReg: string) {
   return {
     dataset: dataset,
     options: {
@@ -139,40 +137,60 @@ export function getRegionQueryConfig(
   };
 }
 
-export function extractDepCodeFromCollectiviteDept(collDept:string){
+export function extractDepCodeFromCollectiviteDept(collDept: string) {
   // "101" => "971", "1" => "01", "22" => "22", "02A" => "2A
-  if(collDept.length === 1) {
+  if (collDept.length === 1) {
     return `0${collDept}`;
-  }
-  else if(collDept.length === 2) {
+  } else if (collDept.length === 2) {
     return collDept;
-  }
-  else if(collDept.length === 3 && collDept.startsWith("10")) {
+  } else if (collDept.length === 3 && collDept.startsWith("10")) {
     return `97${collDept.substring(2)}`;
-  }
-  else if(collDept.length === 3 && collDept.startsWith("02")) {
+  } else if (collDept.length === 3 && collDept.startsWith("02")) {
     return collDept.substring(1);
   }
   return null;
 }
 
 export function transformDepCodeToCollectiviteDept(depCode: string) {
-  if(depCode === "") 
-    return;
+  if (depCode === "") return;
   let dep = depCode; // "06", "77", "2A"...
   // "06" => "6"
   if (dep.length === 2 && dep[0] === "0") {
-     return dep[1];  
+    return dep[1];
   }
   // "02A"
   else if (["2A", "2B"].includes(dep)) {
-    return "0"+dep;
+    return "0" + dep;
   }
   // "971" => "101"
   else if (dep.length === 3 && dep.startsWith("97")) {
     return "10" + dep[2];
-  }
-  else {
+  } else {
     return dep;
   }
+}
+
+export function getTypeChart(
+  typeChart: string,
+  prefix: string | undefined,
+  suffix: string | undefined
+) {
+  if (prefix) {
+    typeChart = `${prefix}${typeChart}`;
+  }
+  if (suffix) {
+    typeChart = `${typeChart}${suffix}`;
+  }
+  return typeChart;
+}
+
+export function getTypeCharts(
+  typeCharts: Graph[],
+  prefix: string | undefined,
+  suffix: string | undefined
+) {
+  return typeCharts.map((typeChart) => ({
+    ...typeChart,
+    yAxis: `${prefix || ""}${typeChart.yAxis}${suffix || ""}`,
+  }));
 }

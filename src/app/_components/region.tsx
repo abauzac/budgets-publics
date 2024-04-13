@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import regions from "../../../public/json/regions.json";
 import GraphOneLine from "./graphOneLine";
 import {
-
   depFonctionnementProduitCharge,
   depInvestissementResourcesEmplois,
   depInvestissementsEmploisListe,
@@ -21,6 +20,7 @@ export default function Region() {
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
+  const [prefix, setPrefix] = useState<string>("");
   const params = useSearchParams();
   const router = useRouter();
 
@@ -31,14 +31,11 @@ export default function Region() {
     }
   }, []);
 
-
-
   useEffect(() => {
     if (regionCode !== "") {
       setRegion(regions.find((d) => d.REG === regionCode));
     }
-  }
-  , [regionCode]);
+  }, [regionCode]);
 
   return (
     <>
@@ -100,28 +97,63 @@ export default function Region() {
           </nav>
         </aside>
         <div>
-          <h1 style={{textAlign: "center"}}>Comptabilité des régions</h1>
-          <h4 style={{textAlign: "center"}}>Chiffres en milliers d'euro</h4>
+          <h1 style={{ textAlign: "center" }}>Comptabilité des régions</h1>
 
           <div className="grid">
-            <select
-              style={{ width: "300px", justifySelf: "center" }}
-              name="regions"
-              aria-label="Régions"
-              value={regionCode}
-              onChange={(event) => {
-                setRegionCode(event.target.value);
-                router.push('/budgets/regions?region=' + event.target.value);
-              }}
-              required
-            >
-              <option value="">Régions</option>
-              {regions.map((reg) => (
-                <option key={reg.REG} value={reg.REG}>
-                  {reg.REG} - {reg.NCCENR}
-                </option>
-              ))}
-            </select>
+            <div className="d-flex justify-content-center">
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                name="regions"
+                aria-label="Régions"
+                value={regionCode}
+                onChange={(event) => {
+                  setRegionCode(event.target.value);
+                  router.push("/budgets/regions?region=" + event.target.value);
+                }}
+                required
+              >
+                <option value="">Régions</option>
+                {regions.map((reg) => (
+                  <option key={reg.REG} value={reg.REG}>
+                    {reg.REG} - {reg.NCCENR}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <fieldset className="d-flex flex-column align-items-center">
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={prefix == ""}
+                  onClick={(e) => setPrefix("")}
+                />
+                Total en milliers d'euros
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  id="ratio"
+                  name="prefix"
+                  checked={prefix == "f"}
+                  onClick={(e) => setPrefix("f")}
+                />
+                Euros par habitant
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  id="strate"
+                  name="prefix"
+                  checked={prefix == "m"}
+                  onClick={(e) => setPrefix("m")}
+                />
+                Comparé à la strate
+              </label>
+            </fieldset>
           </div>
           {region && (
             <div>
@@ -133,6 +165,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"res"}
                   ></GraphOneLine>
                   <p>
@@ -144,6 +177,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"rec"}
                   ></GraphOneLine>
                   <p>
@@ -158,6 +192,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"bfi"}
                   ></GraphOneLine>
                   <p>
@@ -169,14 +204,13 @@ export default function Region() {
               )}
               {typeVue === "budget" && (
                 <div style={{ textAlign: "center" }}>
-                  <h2>
-                    Budget fonctionnel de la région {region.NCCENR}
-                  </h2>
+                  <h2>Budget fonctionnel de la région {region.NCCENR}</h2>
                   <br />
                   <h5>Total des produits et charges de fonctionnement</h5>
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={depFonctionnementProduitCharge}
                   ></GraphMultiLines>
                   <hr />
@@ -184,6 +218,7 @@ export default function Region() {
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={regFonctionnementProduitListe}
                   ></GraphMultiLines>
                   <hr />
@@ -191,6 +226,7 @@ export default function Region() {
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={regFonctionnementChargeListe}
                   ></GraphMultiLines>
                 </div>
@@ -198,14 +234,14 @@ export default function Region() {
               {typeVue === "investissements" && (
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Budgets d'investissements de la région{" "}
-                    {region.NCCENR}
+                    Budgets d'investissements de la région {region.NCCENR}
                   </h2>
                   <br />
                   <h5>Total des resources et dépenses d'investissement</h5>
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={depInvestissementResourcesEmplois}
                   ></GraphMultiLines>
                   <hr />
@@ -213,6 +249,7 @@ export default function Region() {
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={depInvestissementsResourcesListe}
                   ></GraphMultiLines>
                   <hr />
@@ -220,6 +257,7 @@ export default function Region() {
                   <GraphMultiLines
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     graphs={depInvestissementsEmploisListe}
                   ></GraphMultiLines>
                   <hr />
@@ -227,6 +265,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"soc"}
                   ></GraphOneLine>
                 </div>
@@ -243,6 +282,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"fdr"}
                   ></GraphOneLine>
                   <hr />
@@ -252,6 +292,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"dba"}
                   ></GraphOneLine>
                   <hr />
@@ -260,6 +301,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"adb"}
                   ></GraphOneLine>
                   <hr />
@@ -269,6 +311,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"ebf"}
                   ></GraphOneLine>
                   <hr />
@@ -276,6 +319,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"caf"}
                   ></GraphOneLine>
                   <hr />
@@ -283,6 +327,7 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"cnr"}
                   ></GraphOneLine>
                   <hr />
@@ -296,13 +341,18 @@ export default function Region() {
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"iferr"}
                   ></GraphOneLine>
                   <hr />
-                  <h5>Taxe intérieure sur la consommation des produits énergétiques (TICPE)</h5>
+                  <h5>
+                    Taxe intérieure sur la consommation des produits
+                    énergétiques (TICPE)
+                  </h5>
                   <GraphOneLine
                     collectivite={"region"}
                     code={region.REG}
+                    prefix={prefix}
                     typeChart={"tip"}
                   ></GraphOneLine>
                   <hr />
