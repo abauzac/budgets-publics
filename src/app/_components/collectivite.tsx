@@ -193,7 +193,7 @@ export default function Collectivite() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={suffix == ""}
+                  defaultChecked={suffix == ""}
                   onClick={(e) => setSuffix("")}
                 />
                 Total en milliers d'euros
@@ -204,7 +204,7 @@ export default function Collectivite() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={suffix == "hab"}
+                  defaultChecked={suffix == "hab"}
                   onClick={(e) => setSuffix("hab")}
                 />
                 Euros par habitant

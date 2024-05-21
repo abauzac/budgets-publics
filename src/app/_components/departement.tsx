@@ -129,7 +129,7 @@ export default function Departement() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={prefix == ""}
+                  defaultChecked={prefix == ""}
                   onClick={(e) => setPrefix("")}
                 />
                 Total en milliers d'euros
@@ -140,7 +140,7 @@ export default function Departement() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={prefix == "f"}
+                  defaultChecked={prefix == "f"}
                   onClick={(e) => setPrefix("f")}
                 />
                 Euros par habitant
@@ -151,7 +151,7 @@ export default function Departement() {
                   type="radio"
                   id="strate"
                   name="prefix"
-                  checked={prefix == "m"}
+                  defaultChecked={prefix == "m"}
                   onClick={(e) => setPrefix("m")}
                 />
                 Comparé à la strate

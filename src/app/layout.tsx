@@ -16,7 +16,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className="container">
@@ -26,31 +25,45 @@ export default function RootLayout({
               <strong>Budgets publics</strong>
             </li>
           </ul>
-          <ul>
+          <ul className="nav-links-desktop">
             <li>
-              <Link href="/budgets/communes">
-                Communes
-              </Link>
+              <Link href="/budgets/communes">Communes</Link>
             </li>
             <li>
-              <Link href="/budgets/collectivites">
-                Collectivités
-              </Link>
+              <Link href="/budgets/collectivites">Collectivités</Link>
             </li>
             <li>
-              <Link href="/budgets/departements">
-                Départements
-              </Link>
+              <Link href="/budgets/departements">Départements</Link>
             </li>
             <li>
-              <Link href="/budgets/regions">
-                Régions
-              </Link>
+              <Link href="/budgets/regions">Régions</Link>
             </li>
             <li>
-              <Link href="/a-propos">
-                A propos
-              </Link>
+              <Link href="/a-propos">A propos</Link>
+            </li>
+          </ul>
+          <ul className="nav-links-mobile">
+            <li>
+            <details className="dropdown">
+              <summary>Menu</summary>
+              <ul dir="rtl">
+                <li>
+                  <Link href="/budgets/communes">Communes</Link>
+                </li>
+                <li>
+                  <Link href="/budgets/collectivites">Collectivités</Link>
+                </li>
+                <li>
+                  <Link href="/budgets/departements">Départements</Link>
+                </li>
+                <li>
+                  <Link href="/budgets/regions">Régions</Link>
+                </li>
+                <li>
+                  <Link href="/a-propos">A propos</Link>
+                </li>
+              </ul>
+            </details>
             </li>
           </ul>
         </nav>
