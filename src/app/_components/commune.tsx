@@ -183,7 +183,7 @@ export default function Communes() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={prefix == ""}
+                  defaultChecked={prefix == ""}
                   onClick={(e) =>
                     setPrefix("")
                   }
@@ -196,7 +196,7 @@ export default function Communes() {
                   type="radio"
                   id="ratio"
                   name="prefix"
-                  checked={prefix == "f"}
+                  defaultChecked={prefix == "f"}
                   onClick={(e) =>
                      setPrefix("f")
                   }
@@ -209,7 +209,7 @@ export default function Communes() {
                   type="radio"
                   id="strate"
                   name="prefix"
-                  checked={prefix == "m"}
+                  defaultChecked={prefix == "m"}
                   onClick={(e) =>
                      setPrefix("m")
                   }
