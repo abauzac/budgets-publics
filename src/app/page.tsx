@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -10,40 +11,40 @@ export default function Home() {
       <h2>Les plus grandes communes :</h2>
       
       <ul>
-        <li><a href="/budgets/communes?commune=75056">Paris</a></li>
-        <li><a href="/budgets/communes?commune=13055">Marseille</a></li>
-        <li><a href="/budgets/communes?commune=69123">Lyon</a></li>
-        <li><a href="/budgets/communes?commune=31555">Toulouse</a></li>
-        <li><a href="/budgets/communes?commune=06088">Nice</a></li>
-        <li><a href="/budgets/communes?commune=44109">Nantes</a></li>
-        <li><a href="/budgets/communes?commune=34172">Montpellier</a></li>
-        <li><a href="/budgets/communes?commune=67482">Strasbourg</a></li>
-        <li><a href="/budgets/communes?commune=33063">Bordeaux</a></li>
-        <li><a href="/budgets/communes?commune=59350">Lille</a></li>
+        <li><Link href="/budgets/communes?commune=75056">Paris</Link></li>
+        <li><Link href="/budgets/communes?commune=13055">Marseille</Link></li>
+        <li><Link href="/budgets/communes?commune=69123">Lyon</Link></li>
+        <li><Link href="/budgets/communes?commune=31555">Toulouse</Link></li>
+        <li><Link href="/budgets/communes?commune=06088">Nice</Link></li>
+        <li><Link href="/budgets/communes?commune=44109">Nantes</Link></li>
+        <li><Link href="/budgets/communes?commune=34172">Montpellier</Link></li>
+        <li><Link href="/budgets/communes?commune=67482">Strasbourg</Link></li>
+        <li><Link href="/budgets/communes?commune=33063">Bordeaux</Link></li>
+        <li><Link href="/budgets/communes?commune=59350">Lille</Link></li>
       </ul>
 
       <h2>Les plus grands départements :</h2> 
       <ul>
-        <li><a href="/budgets/departements?departement=75">Paris</a></li>
-        <li><a href="/budgets/departements?departement=13">Bouches-du-Rhône</a></li>
-        <li><a href="/budgets/departements?departement=59">Nord</a></li>
-        <li><a href="/budgets/departements?departement=69">Rhône</a></li>
-        <li><a href="/budgets/departements?departement=92">Hauts-de-Seine</a></li>
-        <li><a href="/budgets/departements?departement=93">Seine-Saint-Denis</a></li>
-        <li><a href="/budgets/departements?departement=94">Val-de-Marne</a></li>
-        <li><a href="/budgets/departements?departement=33">Gironde</a></li>
+        <li><Link href="/budgets/departements?departement=75">Paris</Link></li>
+        <li><Link href="/budgets/departements?departement=13">Bouches-du-Rhône</Link></li>
+        <li><Link href="/budgets/departements?departement=59">Nord</Link></li>
+        <li><Link href="/budgets/departements?departement=69">Rhône</Link></li>
+        <li><Link href="/budgets/departements?departement=92">Hauts-de-Seine</Link></li>
+        <li><Link href="/budgets/departements?departement=93">Seine-Saint-Denis</Link></li>
+        <li><Link href="/budgets/departements?departement=94">Val-de-Marne</Link></li>
+        <li><Link href="/budgets/departements?departement=33">Gironde</Link></li>
       </ul>
 
       <h2>Les plus grandes régions :</h2> 
       <ul>
-        <li><a href="/budgets/regions?region=11">Ile-de-France</a></li>
-        <li><a href="/budgets/regions?region=84">Auvergne-Rhône-Alpes</a></li>
-        <li><a href="/budgets/regions?region=75">Nouvelle-Aquitaine</a></li>
-        <li><a href="/budgets/regions?region=76">Occitanie</a></li>
-        <li><a href="/budgets/regions?region=32">Hauts-de-France</a></li>
-        <li><a href="/budgets/regions?region=93">Provence-Alpes-Côte d'Azur</a></li>
-        <li><a href="/budgets/regions?region=44">Grand Est</a></li>
-        <li><a href="/budgets/regions?region=52">Pays de la Loire</a></li>
+        <li><Link href="/budgets/regions?region=11">Ile-de-France</Link></li>
+        <li><Link href="/budgets/regions?region=84">Auvergne-Rhône-Alpes</Link></li>
+        <li><Link href="/budgets/regions?region=75">Nouvelle-Aquitaine</Link></li>
+        <li><Link href="/budgets/regions?region=76">Occitanie</Link></li>
+        <li><Link href="/budgets/regions?region=32">Hauts-de-France</Link></li>
+        <li><Link href="/budgets/regions?region=93">Provence-Alpes-Côte d'Azur</Link></li>
+        <li><Link href="/budgets/regions?region=44">Grand Est</Link></li>
+        <li><Link href="/budgets/regions?region=52">Pays de la Loire</Link></li>
       </ul>
 
     </>

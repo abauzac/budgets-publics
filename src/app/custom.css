@@ -25,3 +25,16 @@
     margin-right: 5px;
 
 }
+
+.comptaTable details{
+    border: 1px solid lightgray;
+}
+
+.comptaTable summary{
+    padding : 0.5em;
+}
+
+.comptaTable summary h5{
+    margin: 0;
+    display: inline;
+}

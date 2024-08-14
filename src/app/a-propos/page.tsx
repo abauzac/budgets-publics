@@ -16,6 +16,10 @@ export default function APropos() {
           Communes :{" "}
           <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/table/">
             Comptes individuels des communes
+          </a>{" "}
+          et{" "}
+          <a href="https://data.economie.gouv.fr/explore/dataset/balances-comptables-des-communes-en-2023/information/">
+            Balance comptable des communes
           </a>
         </li>
         <li>
@@ -39,9 +43,24 @@ export default function APropos() {
         </li>
       </ul>
       <hr />
-       <p >
-        <a href="https://abauzac.github.io/budgets-publics/">Tableau de bord des collectivités</a> by <a  href="https://www.linkedin.com/in/amaury-bauzac-08829717/">Amaury Bauzac</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style={{display: "inline-block"}}>CC BY 4.0</a>
-        </p> 
+      <p>
+        <a href="https://abauzac.github.io/budgets-publics/">
+          Tableau de bord des collectivités
+        </a>{" "}
+        by{" "}
+        <a href="https://www.linkedin.com/in/amaury-bauzac-08829717/">
+          Amaury Bauzac
+        </a>{" "}
+        is licensed under{" "}
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+          target="_blank"
+          rel="license noopener noreferrer"
+          style={{ display: "inline-block" }}
+        >
+          CC BY 4.0
+        </a>
+      </p>
     </>
   );
 }

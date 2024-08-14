@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import "./pico.min.css";
 import "./custom.css";
 import "./flexbox-utils.css";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tableau de bord des finances locales",
@@ -22,7 +22,7 @@ export default function RootLayout({
         <nav>
           <ul>
             <li>
-              <strong>Budgets publics</strong>
+              <Link href="/"><strong>Budgets publics</strong></Link>
             </li>
           </ul>
           <ul className="nav-links-desktop">
