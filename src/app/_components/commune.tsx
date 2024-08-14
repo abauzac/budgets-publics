@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, Suspense, useEffect, useState } from "react";
 import departements from "../../../public/json/departements.json";
 import communes from "../../../public/json/communes.json";
 import GraphOneLine from "./graphOneLine";
@@ -15,14 +15,21 @@ import {
 } from "../_utils/charts";
 import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
+import TableauComptable from "./tableauComptable";
 
 export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
   const [listeCommunes, setListeCommunes] = useState<any[]>([]); // liste des communes du département sélectionné
   const [commune, setCommune] = useState<any>(null); // objet commune
   const [prefix, setPrefix] = useState<string>("");
+  const [comptaYear, setComptaYear] = useState<number>(2023);
   const [typeVue, setTypeVue] = useState<
-    "global" | "budget" | "investissements" | "dette" | "fiscalite"
+    | "global"
+    | "budget"
+    | "investissements"
+    | "dette"
+    | "fiscalite"
+    | "comptabilite"
   >("global");
   const router = useRouter();
   const params = useSearchParams();
@@ -71,6 +78,7 @@ export default function Communes() {
       setListeCommunes(liste);
     }
   }, [departement]);
+
   return (
     <>
       <div className="wrapper">
@@ -127,6 +135,16 @@ export default function Communes() {
                   Fiscalité
                 </a>
               </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTypeVue("comptabilite");
+                  }}
+                >
+                  Comptabilité
+                </a>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -177,46 +195,42 @@ export default function Communes() {
               </select>
             </div>
 
-            <fieldset className="d-flex flex-column align-items-center">
-              <label >
-                <input
-                  type="radio"
-                  id="ratio"
-                  name="prefix"
-                  defaultChecked={prefix == ""}
-                  onClick={(e) =>
-                    setPrefix("")
-                  }
-                />
-                Total en milliers d'euros
-              </label>
+            {typeVue !== "comptabilite" && (
+              <fieldset className="d-flex flex-column align-items-center">
+                <label>
+                  <input
+                    type="radio"
+                    id="ratio"
+                    name="prefix"
+                    defaultChecked={prefix == ""}
+                    onClick={(e) => setPrefix("")}
+                  />
+                  Total en milliers d'euros
+                </label>
 
-              <label  >
-                <input
-                  type="radio"
-                  id="ratio"
-                  name="prefix"
-                  defaultChecked={prefix == "f"}
-                  onClick={(e) =>
-                     setPrefix("f")
-                  }
-                />
-                Euros par habitant
-              </label>
+                <label>
+                  <input
+                    type="radio"
+                    id="ratio"
+                    name="prefix"
+                    defaultChecked={prefix == "f"}
+                    onClick={(e) => setPrefix("f")}
+                  />
+                  Euros par habitant
+                </label>
 
-              <label  >
-                <input
-                  type="radio"
-                  id="strate"
-                  name="prefix"
-                  defaultChecked={prefix == "m"}
-                  onClick={(e) =>
-                     setPrefix("m")
-                  }
-                />
-                Comparé à la strate
-              </label>
-            </fieldset>
+                <label>
+                  <input
+                    type="radio"
+                    id="strate"
+                    name="prefix"
+                    defaultChecked={prefix == "m"}
+                    onClick={(e) => setPrefix("m")}
+                  />
+                  Comparé à la strate
+                </label>
+              </fieldset>
+            )}
           </div>
           {commune && (
             <div>
@@ -447,6 +461,35 @@ export default function Communes() {
                   {/* <h5>Cotisation foncière des entreprises</h5>
             <GraphOneLine code={commune.COM} typeChart={'pcfe'}></GraphOneLine>
             <hr /> */}
+                </div>
+              )}
+              {typeVue === "comptabilite" && (
+                <div style={{ textAlign: "center" }}>
+                  <h2>Comptabilité</h2>
+                  <select
+                    style={{ width: "300px", justifySelf: "center" }}
+                    name="comptaYear"
+                    aria-label="Année"
+                    value={comptaYear}
+                    onChange={(event) => {
+                      setComptaYear(parseInt(event.target.value));
+                    }}
+                    required
+                  >
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                  </select>
+                  <br />
+                  
+                  <TableauComptable
+                    collectivite={"commune"}
+                    codeCible={commune.COM}
+                    codeParent={departement}
+                    year={comptaYear}
+                  ></TableauComptable>
                 </div>
               )}
             </div>

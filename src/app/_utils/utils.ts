@@ -7,7 +7,9 @@ import {
   urlChartCommunes,
   urlChartDepartement,
   urlChartRegion,
+  urlComptaCommune,
 } from "./charts";
+import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
 
 export enum TypeDataSet {
   Commune = "comptes-individuels-des-communes-fichier-global-a-compter-de-2000",
@@ -104,6 +106,16 @@ export function getUrlForCollectivite(
   }
 }
 
+export function getUrlForComptaCommune(
+  codeDep: string,
+  codeCommune: string,
+  year: number,
+){
+  return urlComptaCommune.replace("[YEAR]", ""+year)
+    .replace("[DEPARTEMENT]", codeDep)
+    .replace("[CODECOMM]", codeCommune)
+}
+
 export function getCommuneQueryConfig(
   dataset: TypeDataSet,
   codeDep: string,
@@ -151,11 +163,13 @@ export function extractDepCodeFromCollectiviteDept(collDept: string) {
   return null;
 }
 
-export function transformDepCodeToCollectiviteDept(depCode: string) {
+export function transformDepCodeToCollectiviteDept(depCode: string, padleft = false) {
   if (depCode === "") return;
   let dep = depCode; // "06", "77", "2A"...
   // "06" => "6"
   if (dep.length === 2 && dep[0] === "0") {
+    if(padleft)
+      return dep[1].padStart(3, "0")
     return dep[1];
   }
   // "02A"
@@ -193,4 +207,32 @@ export function getTypeCharts(
     ...typeChart,
     yAxis: `${prefix || ""}${typeChart.yAxis}${suffix || ""}`,
   }));
+}
+
+export async function getComptesForCommune(url: string){
+  let offset = 0;
+  let results: BalanceCommuneResponse[] = [];
+  let resultTmp = []
+  let loopIdx = 0;
+  while(resultTmp.length == 100 || offset == 0){
+    const urlFinale = url.replace("[OFFSET]", ""+offset)
+    const response = await fetch(urlFinale);
+    if(!response.ok)
+      break;
+
+    const json: BalanceResponse = await response.json()
+    if(json.results.length == 0)
+      break;
+
+    resultTmp = json.results;
+    results.push(...json.results)
+
+    if(json.results.length < 100){
+      break;
+    }
+
+    loopIdx++;
+    offset = loopIdx*100;
+  }
+  return results;
 }

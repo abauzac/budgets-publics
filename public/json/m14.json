@@ -1,0 +1,7014 @@
+[
+    {
+        "c": "1",
+        "lib": "COMPTES DE CAPITAUX"
+    },
+    {
+        "c": "10",
+        "lib": "DOTATIONS, FONDS DIVERS ET RÉSERVES"
+    },
+    {
+        "c": "102",
+        "lib": "Dotations et fonds d’investissement"
+    },
+    {
+        "c": "1021",
+        "lib": "Dotation"
+    },
+    {
+        "c": "1022",
+        "lib": "Fonds d’investissement"
+    },
+    {
+        "c": "10222",
+        "lib": "F.C.T.V.A."
+    },
+    {
+        "c": "10223",
+        "lib": "T.L.E."
+    },
+    {
+        "c": "10226",
+        "lib": "Taxe d’aménagement"
+    },
+    {
+        "c": "10227",
+        "lib": "Versement pour sous-densité"
+    },
+    {
+        "c": "10228",
+        "lib": "Autres fonds"
+    },
+    {
+        "c": "10229",
+        "lib": "Reprise sur F.C.T.V.A. et autres fonds"
+    },
+    {
+        "c": "102291",
+        "lib": "Reprise sur F.C.T.V.A."
+    },
+    {
+        "c": "102296",
+        "lib": "Reprise sur taxe d'aménagement"
+    },
+    {
+        "c": "102297",
+        "lib": "Reprise sur versement pour sous-densité"
+    },
+    {
+        "c": "102298",
+        "lib": "Reprise sur autres fonds"
+    },
+    {
+        "c": "1025",
+        "lib": "Dons et legs en capital"
+    },
+    {
+        "c": "10251",
+        "lib": "Dons et legs en capital"
+    },
+    {
+        "c": "10259",
+        "lib": "Reprise sur dons et legs en capital"
+    },
+    {
+        "c": "1027",
+        "lib": "Mise à disposition (chez le bénéficiaire)2"
+    },
+    {
+        "c": "103",
+        "lib": "Plan de relance FCTVA"
+    },
+    {
+        "c": "106",
+        "lib": "Réserves"
+    },
+    {
+        "c": "1068",
+        "lib": "Excédents de fonctionnement capitalisés"
+    },
+    {
+        "c": "1069",
+        "lib": "Reprise 1997 sur les excédents capitalisés - Neutralisation de l’excédent des charges sur les produits 2"
+    },
+    {
+        "c": "11",
+        "lib": "REPORT À NOUVEAU (solde créditeur ou débiteur)"
+    },
+    {
+        "c": "110",
+        "lib": "Report à nouveau (solde créditeur)"
+    },
+    {
+        "c": "119",
+        "lib": "Report à nouveau (solde débiteur)"
+    },
+    {
+        "c": "12",
+        "lib": "RÉSULTAT DE L'EXERCICE (excédentaire ou déficitaire)1"
+    },
+    {
+        "c": "13",
+        "lib": "SUBVENTIONS D'INVESTISSEMENT"
+    },
+    {
+        "c": "131",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables"
+    },
+    {
+        "c": "1311",
+        "lib": "État et établissements nationaux"
+    },
+    {
+        "c": "1312",
+        "lib": "Régions"
+    },
+    {
+        "c": "1313",
+        "lib": "Départements"
+    },
+    {
+        "c": "1314",
+        "lib": "Communes"
+    },
+    {
+        "c": "13141",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "13146",
+        "lib": "Attributions de compensation d'investissement"
+    },
+    {
+        "c": "13148",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "1315",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "13151",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "13156",
+        "lib": "Attributions de compensation d’investissement"
+    },
+    {
+        "c": "13158",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "1316",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "1317",
+        "lib": "Budget communautaire et fonds structurels"
+    },
+    {
+        "c": "1318",
+        "lib": "Autres"
+    },
+    {
+        "c": "132",
+        "lib": "Subventions d’investissement rattachées aux actifs non amortissables"
+    },
+    {
+        "c": "1321",
+        "lib": "État et établissements nationaux"
+    },
+    {
+        "c": "1322",
+        "lib": "Régions"
+    },
+    {
+        "c": "1323",
+        "lib": "Départements"
+    },
+    {
+        "c": "1324",
+        "lib": "Communes"
+    },
+    {
+        "c": "13241",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "13246",
+        "lib": "Attributions de compensation d'investissement"
+    },
+    {
+        "c": "13248",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "1325",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "13251",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "13256",
+        "lib": "Attributions de compensation d’investissement"
+    },
+    {
+        "c": "13258",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "1326",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "1327",
+        "lib": "Budget communautaire et fonds structurels"
+    },
+    {
+        "c": "1328",
+        "lib": "Autres"
+    },
+    {
+        "c": "133",
+        "lib": "Fonds affectés à l’équipement amortissable"
+    },
+    {
+        "c": "1331",
+        "lib": "Dotation d’équipement des territoires ruraux"
+    },
+    {
+        "c": "1332",
+        "lib": "Amendes de police"
+    },
+    {
+        "c": "1333",
+        "lib": "P.A.E. (Programme d’Aménagement d’Ensemble)"
+    },
+    {
+        "c": "1334",
+        "lib": "Contributions locales temporaires"
+    },
+    {
+        "c": "1335",
+        "lib": "Participations pour non réalisation d’aires de stationnement"
+    },
+    {
+        "c": "1336",
+        "lib": "Participations pour voirie et réseaux"
+    },
+    {
+        "c": "1337",
+        "lib": "Dotation de soutien à l’investissement local"
+    },
+    {
+        "c": "1338",
+        "lib": "Autres"
+    },
+    {
+        "c": "134",
+        "lib": "Fonds affectés à l’équipement non amortissable"
+    },
+    {
+        "c": "1341",
+        "lib": "Dotation d’équipement des territoires ruraux"
+    },
+    {
+        "c": "1342",
+        "lib": "Amendes de police"
+    },
+    {
+        "c": "1343",
+        "lib": "P.A.E. (Programme d’Aménagement d’Ensemble)"
+    },
+    {
+        "c": "1344",
+        "lib": "Contributions locales temporaires"
+    },
+    {
+        "c": "1345",
+        "lib": "Participations pour non réalisation d’aires de stationnement"
+    },
+    {
+        "c": "1346",
+        "lib": "Participations pour voirie et réseaux"
+    },
+    {
+        "c": "1347",
+        "lib": "Dotation de soutien à l’investissement local"
+    },
+    {
+        "c": "1348",
+        "lib": "Autres"
+    },
+    {
+        "c": "138",
+        "lib": "Autres subventions d’investissement non transférables"
+    },
+    {
+        "c": "1381",
+        "lib": "État et établissements nationaux"
+    },
+    {
+        "c": "1382",
+        "lib": "Régions"
+    },
+    {
+        "c": "1383",
+        "lib": "Départements"
+    },
+    {
+        "c": "1384",
+        "lib": "Communes"
+    },
+    {
+        "c": "1385",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "1386",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "1387",
+        "lib": "Budget communautaire et fonds structurels"
+    },
+    {
+        "c": "1388",
+        "lib": "Autres"
+    },
+    {
+        "c": "139",
+        "lib": "Subventions d'investissement transférées au compte de résultat"
+    },
+    {
+        "c": "1391",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables (à subdiviser  comme le compte 131)"
+    },
+    {
+        "c": "1393",
+        "lib": "Fonds affectés à l’équipement"
+    },
+    {
+        "c": "13931",
+        "lib": "Dotation d’équipement des territoires ruraux"
+    },
+    {
+        "c": "13932",
+        "lib": "Amendes de police"
+    },
+    {
+        "c": "13933",
+        "lib": "P.A.E. (Programme d’Aménagement d’Ensemble)"
+    },
+    {
+        "c": "13934",
+        "lib": "Surtaxes locales temporaires"
+    },
+    {
+        "c": "13935",
+        "lib": "Participations pour non réalisation d’aires de stationnement"
+    },
+    {
+        "c": "13936",
+        "lib": "Participations pour voirie et réseaux"
+    },
+    {
+        "c": "13937",
+        "lib": "Dotation de soutien à l’investissement local"
+    },
+    {
+        "c": "13938",
+        "lib": "Autres"
+    },
+    {
+        "c": "15",
+        "lib": "PROVISIONS POUR RISQUES ET CHARGES"
+    },
+    {
+        "c": "151",
+        "lib": "Provisions pour risques"
+    },
+    {
+        "c": "1511",
+        "lib": "Provisions pour litiges"
+    },
+    {
+        "c": "15111",
+        "lib": "Provisions pour litiges (non budgétaires)"
+    },
+    {
+        "c": "15112",
+        "lib": "Provisions pour litiges (budgétaires)"
+    },
+    {
+        "c": "1515",
+        "lib": "Provisions pour pertes de change"
+    },
+    {
+        "c": "15151",
+        "lib": "Provisions pour pertes de change (non budgétaires)"
+    },
+    {
+        "c": "15152",
+        "lib": "Provisions pour pertes de change (budgétaires)"
+    },
+    {
+        "c": "1517",
+        "lib": "Provisions pour garanties d'emprunts"
+    },
+    {
+        "c": "15171",
+        "lib": "Provisions pour garanties d’emprunts (non budgétaires)"
+    },
+    {
+        "c": "15172",
+        "lib": "Provisions pour garanties d’emprunts (budgétaires)"
+    },
+    {
+        "c": "1518",
+        "lib": "Autres provisions pour risques"
+    },
+    {
+        "c": "15181",
+        "lib": "Autres provisions pour risques (non budgétaires)"
+    },
+    {
+        "c": "15182",
+        "lib": "Autres provisions pour risques (budgétaires)"
+    },
+    {
+        "c": "152",
+        "lib": "Provisions pour risques et charges sur emprunts"
+    },
+    {
+        "c": "1521",
+        "lib": "Provisions pour risques et charges sur emprunts (non budgétaire)"
+    },
+    {
+        "c": "1522",
+        "lib": "Provisions pour risques et charges sur emprunts (budgétaire)"
+    },
+    {
+        "c": "157",
+        "lib": "Provisions pour charges à répartir sur plusieurs exercices"
+    },
+    {
+        "c": "1572",
+        "lib": "Provisions pour gros entretien et grandes révisions"
+    },
+    {
+        "c": "15721",
+        "lib": "Provisions pour gros entretien et grandes révisions (non budgétaires)"
+    },
+    {
+        "c": "15722",
+        "lib": "Provisions pour gros entretien et grandes révisions (budgétaires)"
+    },
+    {
+        "c": "158",
+        "lib": "Autres provisions pour charges"
+    },
+    {
+        "c": "1581",
+        "lib": "Autres provisions pour charges (non budgétaires)"
+    },
+    {
+        "c": "1582",
+        "lib": "Autres provisions pour charges (budgétaires)"
+    },
+    {
+        "c": "16",
+        "lib": "EMPRUNTS ET DETTES ASSIMILÉES"
+    },
+    {
+        "c": "163",
+        "lib": "Emprunts obligataires"
+    },
+    {
+        "c": "1631",
+        "lib": "Emprunts obligataires"
+    },
+    {
+        "c": "16311",
+        "lib": "Emprunts remboursables in fine"
+    },
+    {
+        "c": "16318",
+        "lib": "Autres"
+    },
+    {
+        "c": "1632",
+        "lib": "Opérations sur capital non échu des emprunts obligataires remboursables in fine -Anticipation du remboursement en capital"
+    },
+    {
+        "c": "164",
+        "lib": "Emprunts auprès des établissements financiers"
+    },
+    {
+        "c": "1641",
+        "lib": "Emprunts en euros"
+    },
+    {
+        "c": "1643",
+        "lib": "Emprunts en devises"
+    },
+    {
+        "c": "1644",
+        "lib": "Emprunts assortis d’une option de tirage sur ligne de trésorerie"
+    },
+    {
+        "c": "16441",
+        "lib": "Opérations afférentes à l’emprunt"
+    },
+    {
+        "c": "16449",
+        "lib": "Opérations afférentes à l’option de tirage sur ligne de trésorerie"
+    },
+    {
+        "c": "1645",
+        "lib": "Remboursements temporaires sur emprunts auprès des établissements financiers"
+    },
+    {
+        "c": "16451",
+        "lib": "Remboursements temporaires sur emprunts en euros"
+    },
+    {
+        "c": "16452",
+        "lib": "Remboursements temporaires sur emprunts en devises"
+    },
+    {
+        "c": "165",
+        "lib": "Dépôts et cautionnements reçus"
+    },
+    {
+        "c": "166",
+        "lib": "Refinancement de dette"
+    },
+    {
+        "c": "167",
+        "lib": "Emprunts et dettes assortis de conditions particulières"
+    },
+    {
+        "c": "1671",
+        "lib": "Avances consolidées du Trésor"
+    },
+    {
+        "c": "1672",
+        "lib": "Emprunts sur comptes spéciaux du Trésor"
+    },
+    {
+        "c": "1675",
+        "lib": "Dettes afférentes aux M.E.T.P. et P.P.P."
+    },
+    {
+        "c": "1676",
+        "lib": "Dettes envers locataires-acquéreurs"
+    },
+    {
+        "c": "1678",
+        "lib": "Autres emprunts et dettes"
+    },
+    {
+        "c": "168",
+        "lib": "Autres emprunts et dettes assimilées"
+    },
+    {
+        "c": "1681",
+        "lib": "Autres emprunts"
+    },
+    {
+        "c": "16811",
+        "lib": "Organismes d'assurances"
+    },
+    {
+        "c": "16812",
+        "lib": "Entreprises non financières"
+    },
+    {
+        "c": "16813",
+        "lib": "Particuliers"
+    },
+    {
+        "c": "16814",
+        "lib": "Étrangers"
+    },
+    {
+        "c": "16818",
+        "lib": "Autres prêteurs"
+    },
+    {
+        "c": "1682",
+        "lib": "Bons à moyen terme négociables"
+    },
+    {
+        "c": "1687",
+        "lib": "Autres dettes"
+    },
+    {
+        "c": "16871",
+        "lib": "État et établissements nationaux"
+    },
+    {
+        "c": "16872",
+        "lib": "Régions"
+    },
+    {
+        "c": "16873",
+        "lib": "Départements"
+    },
+    {
+        "c": "16874",
+        "lib": "Communes"
+    },
+    {
+        "c": "168741",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "168748",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "16875",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "168751",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "168758",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "16876",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "16878",
+        "lib": "Autres organismes et particuliers"
+    },
+    {
+        "c": "1688",
+        "lib": "Intérêts courus1"
+    },
+    {
+        "c": "16883",
+        "lib": "Intérêts courus sur emprunts obligataires"
+    },
+    {
+        "c": "16884",
+        "lib": "Intérêts courus sur emprunts auprès des établissements financiers"
+    },
+    {
+        "c": "16888",
+        "lib": "Intérêts sur autres emprunts et dettes assimilées"
+    },
+    {
+        "c": "169",
+        "lib": "Primes de remboursement des obligations"
+    },
+    {
+        "c": "18",
+        "lib": "COMPTE DE LIAISON : AFFECTATION (BUDGETS ANNEXES - RÉGIES NON PERSONNALISÉES)"
+    },
+    {
+        "c": "181",
+        "lib": "Compte de liaison : affectation à ......"
+    },
+    {
+        "c": "19",
+        "lib": "NEUTRALISATIONS ET RÉGULARISATIONS D'OPÉRATIONS"
+    },
+    {
+        "c": "192",
+        "lib": "Plus ou moins-values sur cessions d’immobilisations"
+    },
+    {
+        "c": "193",
+        "lib": "Autres neutralisations et régularisations d'opérations1"
+    },
+    {
+        "c": "194",
+        "lib": "Provisions pour risques sur emprunts - Stock à la date de première application1"
+    },
+    {
+        "c": "198",
+        "lib": "Neutralisations des amortissements des subventions d'équipement versées"
+    },
+    {
+        "c": "2",
+        "lib": "COMPTES D'IMMOBILISATIONS 1"
+    },
+    {
+        "c": "20",
+        "lib": "IMMOBILISATIONS INCORPORELLES"
+    },
+    {
+        "c": "202",
+        "lib": "Frais liés à la réalisation des documents d’urbanisme et à la numérisation du cadastre"
+    },
+    {
+        "c": "203",
+        "lib": "Frais d’études, de recherche et de développement et frais d’insertion"
+    },
+    {
+        "c": "2031",
+        "lib": "Frais d’études"
+    },
+    {
+        "c": "2032",
+        "lib": "Frais de recherche et de développement"
+    },
+    {
+        "c": "2033",
+        "lib": "Frais d’insertion"
+    },
+    {
+        "c": "204",
+        "lib": "Subventions d’équipement versées2"
+    },
+    {
+        "c": "2041",
+        "lib": "Subventions d’équipement aux organismes publics"
+    },
+    {
+        "c": "20411",
+        "lib": "État"
+    },
+    {
+        "c": "204111",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204112",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204113",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204114",
+        "lib": "Voirie"
+    },
+    {
+        "c": "204115",
+        "lib": "Monuments historiques"
+    },
+    {
+        "c": "20412",
+        "lib": "Régions"
+    },
+    {
+        "c": "204121",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204122",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204123",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20413",
+        "lib": "Départements"
+    },
+    {
+        "c": "204131",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204132",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204133",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20414",
+        "lib": "Communes"
+    },
+    {
+        "c": "204141",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "2041411",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041412",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041413",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204148",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "2041481",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041482",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041483",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20415",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "204151",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "2041511",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041512",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041513",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204158",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "2041581",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041582",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041583",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20416",
+        "lib": "Établissements et services rattachés"
+    },
+    {
+        "c": "204161",
+        "lib": "Caisse des écoles"
+    },
+    {
+        "c": "2041611",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041612",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041613",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204162",
+        "lib": "CCAS"
+    },
+    {
+        "c": "2041621",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041622",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041623",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204163",
+        "lib": "A caractère administratif"
+    },
+    {
+        "c": "2041631",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041632",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041633",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "204164",
+        "lib": "A caractère industriel et commercial"
+    },
+    {
+        "c": "2041641",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2041642",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2041643",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20417",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "204171",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204172",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204173",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20418",
+        "lib": "Autres organismes publics"
+    },
+    {
+        "c": "204181",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204182",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204183",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2042",
+        "lib": "Subventions d’équipement aux personnes de droit privé"
+    },
+    {
+        "c": "20421",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "20422",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "20423",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2044",
+        "lib": "Subventions d’équipement en nature"
+    },
+    {
+        "c": "20441",
+        "lib": "Organismes publics"
+    },
+    {
+        "c": "204411",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204412",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204413",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "20442",
+        "lib": "Personnes de droit privé"
+    },
+    {
+        "c": "204421",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "204422",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "204423",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2046",
+        "lib": "Attributions de compensation d'investissement"
+    },
+    {
+        "c": "205",
+        "lib": "Concessions et droits similaires, brevets, licences, marques, procédés, logiciels, droits et valeurs similaires"
+    },
+    {
+        "c": "2051",
+        "lib": "Concessions et droits similaires"
+    },
+    {
+        "c": "2053",
+        "lib": "Droit de superficie"
+    },
+    {
+        "c": "208",
+        "lib": "Autres immobilisations incorporelles"
+    },
+    {
+        "c": "2087",
+        "lib": "Immobilisations incorporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "2088",
+        "lib": "Autres immobilisations incorporelles"
+    },
+    {
+        "c": "21",
+        "lib": "IMMOBILISATIONS CORPORELLES"
+    },
+    {
+        "c": "211",
+        "lib": "Terrains"
+    },
+    {
+        "c": "2111",
+        "lib": "Terrains nus"
+    },
+    {
+        "c": "2112",
+        "lib": "Terrains de voirie"
+    },
+    {
+        "c": "2113",
+        "lib": "Terrains aménagés autres que voirie"
+    },
+    {
+        "c": "2114",
+        "lib": "Terrains de gisement"
+    },
+    {
+        "c": "2115",
+        "lib": "Terrains bâtis"
+    },
+    {
+        "c": "2116",
+        "lib": "Cimetières"
+    },
+    {
+        "c": "2117",
+        "lib": "Bois et forêts"
+    },
+    {
+        "c": "2118",
+        "lib": "Autres terrains"
+    },
+    {
+        "c": "212",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "2121",
+        "lib": "Plantations d'arbres et d'arbustes"
+    },
+    {
+        "c": "2128",
+        "lib": "Autres agencements et aménagements de terrains"
+    },
+    {
+        "c": "213",
+        "lib": "Constructions"
+    },
+    {
+        "c": "2131",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "21311",
+        "lib": "Hôtel de ville"
+    },
+    {
+        "c": "21312",
+        "lib": "Bâtiments scolaires"
+    },
+    {
+        "c": "21316",
+        "lib": "Équipements du cimetière"
+    },
+    {
+        "c": "21318",
+        "lib": "Autres bâtiments publics"
+    },
+    {
+        "c": "2132",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "2135",
+        "lib": "Installations générales, agencements, aménagements des constructions"
+    },
+    {
+        "c": "2138",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "214",
+        "lib": "Constructions sur sol d'autrui"
+    },
+    {
+        "c": "2141",
+        "lib": "Constructions sur sol d'autrui - Bâtiments publics"
+    },
+    {
+        "c": "2142",
+        "lib": "Constructions sur sol d'autrui - Immeubles de rapport"
+    },
+    {
+        "c": "2143",
+        "lib": "Constructions sur sol d’autrui - Droit de superficie"
+    },
+    {
+        "c": "2145",
+        "lib": "Construction sur sol d'autrui - Installations générales, agencements, aménagements"
+    },
+    {
+        "c": "2148",
+        "lib": "Constructions sur sol d'autrui - Autres constructions"
+    },
+    {
+        "c": "215",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "2151",
+        "lib": "Réseaux de voirie"
+    },
+    {
+        "c": "2152",
+        "lib": "Installations de voirie"
+    },
+    {
+        "c": "2153",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "21531",
+        "lib": "Réseaux d'adduction d'eau"
+    },
+    {
+        "c": "21532",
+        "lib": "Réseaux d'assainissement"
+    },
+    {
+        "c": "21533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "21534",
+        "lib": "Réseaux d'électrification"
+    },
+    {
+        "c": "21538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "2156",
+        "lib": "Matériel et outillage d'incendie et de défense civile"
+    },
+    {
+        "c": "21561",
+        "lib": "Matériel roulant"
+    },
+    {
+        "c": "21568",
+        "lib": "Autre matériel et outillage d’incendie et de défense civile"
+    },
+    {
+        "c": "2157",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "21571",
+        "lib": "Matériel roulant"
+    },
+    {
+        "c": "21578",
+        "lib": "Autre matériel et outillage de voirie"
+    },
+    {
+        "c": "2158",
+        "lib": "Autres installations, matériel et outillage techniques"
+    },
+    {
+        "c": "216",
+        "lib": "Collections et oeuvres d'art"
+    },
+    {
+        "c": "2161",
+        "lib": "OEuvres et objets d'art"
+    },
+    {
+        "c": "2162",
+        "lib": "Fonds anciens des bibliothèques et musées"
+    },
+    {
+        "c": "2168",
+        "lib": "Autres collections et oeuvres d’art"
+    },
+    {
+        "c": "217",
+        "lib": "Immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "2171",
+        "lib": "Terrains"
+    },
+    {
+        "c": "21711",
+        "lib": "Terrains nus"
+    },
+    {
+        "c": "21712",
+        "lib": "Terrains de voirie"
+    },
+    {
+        "c": "21713",
+        "lib": "Terrains aménagés autres que voirie"
+    },
+    {
+        "c": "21714",
+        "lib": "Terrains de gisement"
+    },
+    {
+        "c": "21715",
+        "lib": "Terrains bâtis"
+    },
+    {
+        "c": "21718",
+        "lib": "Autres terrains"
+    },
+    {
+        "c": "2172",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "21721",
+        "lib": "Plantations d’arbres et d’arbustes"
+    },
+    {
+        "c": "21728",
+        "lib": "Autres agencements et aménagements de terrains"
+    },
+    {
+        "c": "2173",
+        "lib": "Constructions"
+    },
+    {
+        "c": "21731",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "21732",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "21735",
+        "lib": "Installations générales, agencements, aménagements des constructions"
+    },
+    {
+        "c": "21738",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "2174",
+        "lib": "Constructions sur sol d’autrui"
+    },
+    {
+        "c": "21741",
+        "lib": "Constructions sur sol d’autrui - Bâtiments publics"
+    },
+    {
+        "c": "21742",
+        "lib": "Constructions sur sol d’autrui - Immeubles de rapport"
+    },
+    {
+        "c": "21745",
+        "lib": "Constructions sur sol d’autrui - Installations générales, agencements, aménagements"
+    },
+    {
+        "c": "21748",
+        "lib": "Constructions sur sol d’autrui - Autres constructions"
+    },
+    {
+        "c": "2175",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "21751",
+        "lib": "Réseaux de voirie"
+    },
+    {
+        "c": "21752",
+        "lib": "Installations de voirie"
+    },
+    {
+        "c": "21753",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "217533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "217534",
+        "lib": "Réseaux d’électrification"
+    },
+    {
+        "c": "217538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "21757",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "21758",
+        "lib": "Autres installations, matériel et outillage techniques"
+    },
+    {
+        "c": "2176",
+        "lib": "Collections et oeuvres d'art"
+    },
+    {
+        "c": "2178",
+        "lib": "Autres immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "21782",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "21783",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "21784",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "21785",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "21788",
+        "lib": "Autres immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "218",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "2181",
+        "lib": "Installations générales, agencements et aménagements divers"
+    },
+    {
+        "c": "2182",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "2183",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "2184",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "2185",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "2188",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "22",
+        "lib": "IMMOBILISATIONS REÇUES EN AFFECTATION"
+    },
+    {
+        "c": "221",
+        "lib": "Terrains"
+    },
+    {
+        "c": "2211",
+        "lib": "Terrains nus"
+    },
+    {
+        "c": "2213",
+        "lib": "Terrains aménagés autres que voirie"
+    },
+    {
+        "c": "2214",
+        "lib": "Terrains de gisement"
+    },
+    {
+        "c": "2215",
+        "lib": "Terrains bâtis"
+    },
+    {
+        "c": "2218",
+        "lib": "Autres terrains"
+    },
+    {
+        "c": "222",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "2221",
+        "lib": "Plantations d’arbres et d’arbustes"
+    },
+    {
+        "c": "2228",
+        "lib": "Autres agencements et aménagements de terrains"
+    },
+    {
+        "c": "223",
+        "lib": "Constructions"
+    },
+    {
+        "c": "2231",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "2232",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "2235",
+        "lib": "Installations générales, agencements, aménagements des constructions"
+    },
+    {
+        "c": "2238",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "224",
+        "lib": "Constructions sur sol d’autrui"
+    },
+    {
+        "c": "2241",
+        "lib": "Constructions sur sol d’autrui - Bâtiments publics"
+    },
+    {
+        "c": "2242",
+        "lib": "Constructions sur sol d’autrui - Immeubles de rapport"
+    },
+    {
+        "c": "2245",
+        "lib": "Constructions sur sol d’autrui - Installations générales, agencements, aménagements"
+    },
+    {
+        "c": "2248",
+        "lib": "Constructions sur sol d’autrui - Autres constructions"
+    },
+    {
+        "c": "225",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "2253",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "22533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "22534",
+        "lib": "Réseaux d’électrification"
+    },
+    {
+        "c": "22538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "2256",
+        "lib": "Matériel et outillage d’incendie et de défense civile"
+    },
+    {
+        "c": "2257",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "2258",
+        "lib": "Autres installations, matériel et outillage techniques"
+    },
+    {
+        "c": "226",
+        "lib": "Collections et oeuvres d’art"
+    },
+    {
+        "c": "2261",
+        "lib": "OEuvres et objets d’art"
+    },
+    {
+        "c": "2262",
+        "lib": "Fonds anciens des bibliothèques et musées"
+    },
+    {
+        "c": "2268",
+        "lib": "Autres collections et oeuvres d’art"
+    },
+    {
+        "c": "228",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "2281",
+        "lib": "Installations générales, agencements et aménagements divers"
+    },
+    {
+        "c": "2282",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "2283",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "2284",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "2285",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "2288",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "229",
+        "lib": "Droits de l’affectant1"
+    },
+    {
+        "c": "2291",
+        "lib": "Commune"
+    },
+    {
+        "c": "2293",
+        "lib": "Établissements Publics de Coopération Intercommunale"
+    },
+    {
+        "c": "2298",
+        "lib": "Autres droits de l’affectant"
+    },
+    {
+        "c": "23",
+        "lib": "IMMOBILISATIONS EN COURS"
+    },
+    {
+        "c": "231",
+        "lib": "Immobilisations corporelles en cours"
+    },
+    {
+        "c": "2312",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "2313",
+        "lib": "Constructions"
+    },
+    {
+        "c": "2314",
+        "lib": "Constructions sur sol d'autrui"
+    },
+    {
+        "c": "2315",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "2316",
+        "lib": "Restauration des collections et oeuvres d'art"
+    },
+    {
+        "c": "2317",
+        "lib": "Immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "2318",
+        "lib": "Autres immobilisations corporelles en cours"
+    },
+    {
+        "c": "232",
+        "lib": "Immobilisations incorporelles en cours"
+    },
+    {
+        "c": "235",
+        "lib": "Part investissement P.P.P."
+    },
+    {
+        "c": "237",
+        "lib": "Avances versées sur commandes d'immobilisations incorporelles"
+    },
+    {
+        "c": "238",
+        "lib": "Avances versées sur commandes d'immobilisations corporelles"
+    },
+    {
+        "c": "24",
+        "lib": "IMMOBILISATIONS AFFECTÉES, CONCÉDÉES, AFFERMÉES OU MISES À DISPOSITION 1"
+    },
+    {
+        "c": "241",
+        "lib": "Immobilisations mises en concession ou en affermage"
+    },
+    {
+        "c": "242",
+        "lib": "Immobilisations mises à disposition dans le cadre du transfert de compétences"
+    },
+    {
+        "c": "2421",
+        "lib": "de la région (enseignement)"
+    },
+    {
+        "c": "2422",
+        "lib": "du département (enseignement)"
+    },
+    {
+        "c": "2423",
+        "lib": "d’établissements publics de coopération intercommunale"
+    },
+    {
+        "c": "2424",
+        "lib": "des services départementaux d’incendie et de secours"
+    },
+    {
+        "c": "243",
+        "lib": "Immobilisations mises en affectation à une régie dotée de la personnalité morale et de l’autonomie financière"
+    },
+    {
+        "c": "244",
+        "lib": "Immobilisations mises en affectation à un centre communal d’action sociale"
+    },
+    {
+        "c": "245",
+        "lib": "Immobilisations mises en affectation à une caisse des écoles"
+    },
+    {
+        "c": "246",
+        "lib": "Immobilisations mises en affectation à un établissement public de coopération intercommunale"
+    },
+    {
+        "c": "248",
+        "lib": "Autres immobilisations mises en affectation"
+    },
+    {
+        "c": "249",
+        "lib": "Droits du remettant"
+    },
+    {
+        "c": "2491",
+        "lib": "Mises en concession ou en affermage"
+    },
+    {
+        "c": "2492",
+        "lib": "Mises à disposition dans le cadre du transfert de compétences"
+    },
+    {
+        "c": "2493",
+        "lib": "Mises en affectation à une régie dotée de la personnalité morale et de l’autonomie financière"
+    },
+    {
+        "c": "2494",
+        "lib": "Mises en affectation à un centre communal d’action sociale"
+    },
+    {
+        "c": "2495",
+        "lib": "Mises en affectation à une caisse des écoles"
+    },
+    {
+        "c": "2496",
+        "lib": "Mises en affectation à un établissement public de coopération intercommunale"
+    },
+    {
+        "c": "2498",
+        "lib": "Autres mises en affectation"
+    },
+    {
+        "c": "26",
+        "lib": "PARTICIPATIONS ET CRÉANCES RATTACHÉES À DES PARTICIPATIONS"
+    },
+    {
+        "c": "261",
+        "lib": "Titres de participation"
+    },
+    {
+        "c": "266",
+        "lib": "Autres formes de participation"
+    },
+    {
+        "c": "269",
+        "lib": "Versements restant à effectuer sur titres de participation non libérés"
+    },
+    {
+        "c": "27",
+        "lib": "AUTRES IMMOBILISATIONS FINANCIÈRES"
+    },
+    {
+        "c": "271",
+        "lib": "Titres immobilisés (droits de propriété)"
+    },
+    {
+        "c": "272",
+        "lib": "Titres immobilisés (droits de créance)"
+    },
+    {
+        "c": "273",
+        "lib": "Comptes de placements (long terme)"
+    },
+    {
+        "c": "2731",
+        "lib": "Comptes de placements rémunérés"
+    },
+    {
+        "c": "2732",
+        "lib": "Fonds d’épargne forestière"
+    },
+    {
+        "c": "274",
+        "lib": "Prêts"
+    },
+    {
+        "c": "275",
+        "lib": "Dépôts et cautionnements versés"
+    },
+    {
+        "c": "276",
+        "lib": "Autres créances immobilisées"
+    },
+    {
+        "c": "2761",
+        "lib": "Créances pour avances en garantie d'emprunt"
+    },
+    {
+        "c": "2762",
+        "lib": "Créances sur transfert de droits à déduction de T.V.A."
+    },
+    {
+        "c": "2763",
+        "lib": "Créances sur des collectivités et établissements publics"
+    },
+    {
+        "c": "27631",
+        "lib": "État et établissements nationaux"
+    },
+    {
+        "c": "27632",
+        "lib": "Régions"
+    },
+    {
+        "c": "27633",
+        "lib": "Départements"
+    },
+    {
+        "c": "27634",
+        "lib": "Communes"
+    },
+    {
+        "c": "276341",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "276348",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "27635",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "276351",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "276358",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "27636",
+        "lib": "C.C.A.S. et caisse des écoles"
+    },
+    {
+        "c": "27638",
+        "lib": "Autres établissements publics"
+    },
+    {
+        "c": "2764",
+        "lib": "Créances sur des particuliers et autres personnes de droit privé"
+    },
+    {
+        "c": "2766",
+        "lib": "Créances pour locations-acquisitions"
+    },
+    {
+        "c": "2768",
+        "lib": "Intérêts courus1"
+    },
+    {
+        "c": "27682",
+        "lib": "Intérêts courus sur titres immobilisés (droits de créance)"
+    },
+    {
+        "c": "27684",
+        "lib": "Intérêts courus sur prêts"
+    },
+    {
+        "c": "27688",
+        "lib": "Intérêts courus sur créances diverses"
+    },
+    {
+        "c": "279",
+        "lib": "Versements restant à effectuer sur titres immobilisés non libérés"
+    },
+    {
+        "c": "28",
+        "lib": "AMORTISSEMENTS DES IMMOBILISATIONS"
+    },
+    {
+        "c": "280",
+        "lib": "Amortissements des immobilisations incorporelles"
+    },
+    {
+        "c": "2802",
+        "lib": "Frais liés à la réalisation des documents d’urbanisme et à la numérisation du cadastre"
+    },
+    {
+        "c": "2803",
+        "lib": "Frais d’études, de recherche et de développement et frais d’insertion"
+    },
+    {
+        "c": "28031",
+        "lib": "Frais d’études"
+    },
+    {
+        "c": "28032",
+        "lib": "Frais de recherche et de développement"
+    },
+    {
+        "c": "28033",
+        "lib": "Frais d’insertion"
+    },
+    {
+        "c": "2804",
+        "lib": "Subventions d’équipement versées"
+    },
+    {
+        "c": "28041",
+        "lib": "Subventions d’équipement aux organismes publics"
+    },
+    {
+        "c": "280411",
+        "lib": "État"
+    },
+    {
+        "c": "2804111",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804112",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804113",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804114",
+        "lib": "Voirie"
+    },
+    {
+        "c": "2804115",
+        "lib": "Monuments historiques"
+    },
+    {
+        "c": "280412",
+        "lib": "Régions"
+    },
+    {
+        "c": "2804121",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804122",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804123",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280413",
+        "lib": "Départements"
+    },
+    {
+        "c": "2804131",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804132",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804133",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280414",
+        "lib": "Communes"
+    },
+    {
+        "c": "2804141",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "28041411",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041412",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041413",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804148",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "28041481",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041482",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041483",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280415",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "2804151",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "28041511",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041512",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041513",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804158",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "28041581",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041582",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041583",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280416",
+        "lib": "Établissements et services rattachés"
+    },
+    {
+        "c": "2804161",
+        "lib": "Caisse des écoles"
+    },
+    {
+        "c": "28041611",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041612",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041613",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804162",
+        "lib": "CCAS"
+    },
+    {
+        "c": "28041621",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041622",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041623",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804163",
+        "lib": "A caractère administratif"
+    },
+    {
+        "c": "28041631",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041632",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041633",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "2804164",
+        "lib": "A caractère industriel et commercial"
+    },
+    {
+        "c": "28041641",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "28041642",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "28041643",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280417",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "2804171",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804172",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804173",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280418",
+        "lib": "Autres organismes publics"
+    },
+    {
+        "c": "2804181",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804182",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804183",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "28042",
+        "lib": "Subventions d’équipement aux personnes de droit privé"
+    },
+    {
+        "c": "280421",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "280422",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "280423",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "28044",
+        "lib": "Subventions d’équipement en nature"
+    },
+    {
+        "c": "280441",
+        "lib": "Organismes publics"
+    },
+    {
+        "c": "2804411",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804412",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804413",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "280442",
+        "lib": "Personnes de droit privé"
+    },
+    {
+        "c": "2804421",
+        "lib": "Biens mobiliers, matériel et études"
+    },
+    {
+        "c": "2804422",
+        "lib": "Bâtiments et installations"
+    },
+    {
+        "c": "2804423",
+        "lib": "Projets d’infrastructures d’intérêt national"
+    },
+    {
+        "c": "28046",
+        "lib": "Attributions de compensation d'investissement"
+    },
+    {
+        "c": "2805",
+        "lib": "Concessions et droits similaires, brevets, licences, logiciels, droits et valeurs similaires"
+    },
+    {
+        "c": "28051",
+        "lib": "Concessions et droits similaires"
+    },
+    {
+        "c": "2808",
+        "lib": "Autres immobilisations incorporelles"
+    },
+    {
+        "c": "28087",
+        "lib": "Immobilisations incorporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "28088",
+        "lib": "Autres immobilisations incorporelles"
+    },
+    {
+        "c": "281",
+        "lib": "Amortissements des immobilisations corporelles"
+    },
+    {
+        "c": "2811",
+        "lib": "Terrains de gisement"
+    },
+    {
+        "c": "2812",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "28121",
+        "lib": "Plantations d’arbres et d’arbustes"
+    },
+    {
+        "c": "28128",
+        "lib": "Autres agencements et aménagements de terrains"
+    },
+    {
+        "c": "2813",
+        "lib": "Constructions"
+    },
+    {
+        "c": "28131",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "281311",
+        "lib": "Hôtel de ville"
+    },
+    {
+        "c": "281312",
+        "lib": "Bâtiments scolaires"
+    },
+    {
+        "c": "281316",
+        "lib": "Équipements du cimetière"
+    },
+    {
+        "c": "281318",
+        "lib": "Autres bâtiments publics"
+    },
+    {
+        "c": "28132",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "28135",
+        "lib": "Installations générales, agencements, aménagements des constructions"
+    },
+    {
+        "c": "28138",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "2814",
+        "lib": "Constructions sur sol d'autrui"
+    },
+    {
+        "c": "28141",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "28142",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "28143",
+        "lib": "Droit de superficie"
+    },
+    {
+        "c": "28145",
+        "lib": "Installations générales, agencements et aménagements"
+    },
+    {
+        "c": "28148",
+        "lib": "Autres constructions sur sol d’autrui"
+    },
+    {
+        "c": "2815",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "28151",
+        "lib": "Réseaux de voirie"
+    },
+    {
+        "c": "28152",
+        "lib": "Installations de voirie"
+    },
+    {
+        "c": "28153",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "281531",
+        "lib": "Réseaux d'adduction d'eau"
+    },
+    {
+        "c": "281532",
+        "lib": "Réseaux d'assainissement"
+    },
+    {
+        "c": "281533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "281534",
+        "lib": "Réseaux d’électrification"
+    },
+    {
+        "c": "281538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "28156",
+        "lib": "Matériel et outillage d'incendie et de défense civile"
+    },
+    {
+        "c": "281561",
+        "lib": "Matériel roulant"
+    },
+    {
+        "c": "281568",
+        "lib": "Autre matériel et outillage d’incendie et de défense civile"
+    },
+    {
+        "c": "28157",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "281571",
+        "lib": "Matériel roulant"
+    },
+    {
+        "c": "281578",
+        "lib": "Autre matériel et outillage de voirie"
+    },
+    {
+        "c": "28158",
+        "lib": "Autres installations, matériel et outillage techniques"
+    },
+    {
+        "c": "2817",
+        "lib": "Immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "28171",
+        "lib": "Terrains"
+    },
+    {
+        "c": "28172",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "281721",
+        "lib": "Plantations d’arbres et d’arbustes"
+    },
+    {
+        "c": "281728",
+        "lib": "Autres agencements et aménagements"
+    },
+    {
+        "c": "28173",
+        "lib": "Constructions"
+    },
+    {
+        "c": "281731",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "281732",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "281735",
+        "lib": "Installations générales, agencements, aménagements des constructions"
+    },
+    {
+        "c": "281738",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "28174",
+        "lib": "Constructions sur sol d’autrui"
+    },
+    {
+        "c": "281741",
+        "lib": "Constructions sur le sol d’autrui - Bâtiments publics"
+    },
+    {
+        "c": "281742",
+        "lib": "Constructions sur le sol d’autrui - Immeubles de rapport"
+    },
+    {
+        "c": "281745",
+        "lib": "Constructions sur le sol d’autrui - Installations générales, agencements, aménagements"
+    },
+    {
+        "c": "281748",
+        "lib": "Constructions sur le sol d’autrui - Autres constructions"
+    },
+    {
+        "c": "28175",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "281751",
+        "lib": "Réseaux de voirie"
+    },
+    {
+        "c": "281752",
+        "lib": "Installations de voirie"
+    },
+    {
+        "c": "281753",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "2817533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "2817534",
+        "lib": "Réseaux d’électrification"
+    },
+    {
+        "c": "2817538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "281757",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "281758",
+        "lib": "Autres installations, matériel et outillage techniques"
+    },
+    {
+        "c": "28178",
+        "lib": "Autres immobilisations corporelles reçues au titre d’une lise à disposition"
+    },
+    {
+        "c": "281782",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "281783",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "281784",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "281785",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "281788",
+        "lib": "Autres immobilisations corporelles reçues au titre d’une mise à disposition"
+    },
+    {
+        "c": "2818",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "28181",
+        "lib": "Installations générales, agencements et aménagements divers"
+    },
+    {
+        "c": "28182",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "28183",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "28184",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "28185",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "28188",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "282",
+        "lib": "Amortissements des immobilisations reçues en affectation"
+    },
+    {
+        "c": "2821",
+        "lib": "Terrains de gisement"
+    },
+    {
+        "c": "2822",
+        "lib": "Agencements et aménagements de terrains"
+    },
+    {
+        "c": "28221",
+        "lib": "Plantations d’arbres et d’arbustes"
+    },
+    {
+        "c": "28228",
+        "lib": "Autres agencements et aménagements de terrains"
+    },
+    {
+        "c": "2823",
+        "lib": "Constructions"
+    },
+    {
+        "c": "28231",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "28232",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "28235",
+        "lib": "Installations générales, agencements et aménagements des constructions"
+    },
+    {
+        "c": "28238",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "2824",
+        "lib": "Constructions sur sol d’autrui"
+    },
+    {
+        "c": "28241",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "28242",
+        "lib": "Immeubles de rapport"
+    },
+    {
+        "c": "28245",
+        "lib": "Installations générales, agencements, aménagements"
+    },
+    {
+        "c": "28248",
+        "lib": "Autres constructions"
+    },
+    {
+        "c": "2825",
+        "lib": "Installations, matériel et outillage techniques"
+    },
+    {
+        "c": "28253",
+        "lib": "Réseaux divers"
+    },
+    {
+        "c": "282533",
+        "lib": "Réseaux câblés"
+    },
+    {
+        "c": "282534",
+        "lib": "Réseaux d’électrification"
+    },
+    {
+        "c": "282538",
+        "lib": "Autres réseaux"
+    },
+    {
+        "c": "28256",
+        "lib": "Matériel et outillage d’incendie et de défense civile"
+    },
+    {
+        "c": "28257",
+        "lib": "Matériel et outillage de voirie"
+    },
+    {
+        "c": "28258",
+        "lib": "Autres installations techniques, matériel et outillage industriel"
+    },
+    {
+        "c": "2828",
+        "lib": "Autres immobilisations corporelles"
+    },
+    {
+        "c": "28281",
+        "lib": "Installations générales, agencements et aménagements divers"
+    },
+    {
+        "c": "28282",
+        "lib": "Matériel de transport"
+    },
+    {
+        "c": "28283",
+        "lib": "Matériel de bureau et matériel informatique"
+    },
+    {
+        "c": "28284",
+        "lib": "Mobilier"
+    },
+    {
+        "c": "28285",
+        "lib": "Cheptel"
+    },
+    {
+        "c": "28288",
+        "lib": "Autres immobilisations corporelles reçues en affectation"
+    },
+    {
+        "c": "29",
+        "lib": "PROVISIONS POUR DÉPRÉCIATION DES IMMOBILISATIONS"
+    },
+    {
+        "c": "290",
+        "lib": "Provisions pour dépréciation des immobilisations incorporelles"
+    },
+    {
+        "c": "2905",
+        "lib": "Marques, procédés, droits et valeurs similaires"
+    },
+    {
+        "c": "29051",
+        "lib": "Marques, procédés, droits et valeurs similaires (non budgétaires)"
+    },
+    {
+        "c": "29052",
+        "lib": "Marques, procédés, droits et valeurs similaires (budgétaires)"
+    },
+    {
+        "c": "2908",
+        "lib": "Autres immobilisations incorporelles"
+    },
+    {
+        "c": "29081",
+        "lib": "Autres immobilisations incorporelles (non budgétaires)"
+    },
+    {
+        "c": "29082",
+        "lib": "Autres immobilisations incorporelles (budgétaires)"
+    },
+    {
+        "c": "291",
+        "lib": "Provisions pour dépréciation des immobilisations corporelles"
+    },
+    {
+        "c": "2911",
+        "lib": "Terrains (autres que terrains de gisement)"
+    },
+    {
+        "c": "29111",
+        "lib": "Terrains - autres que terrains de gisement (non budgétaires)"
+    },
+    {
+        "c": "29112",
+        "lib": "Terrains - autres que terrains de gisement (budgétaires)"
+    },
+    {
+        "c": "2913",
+        "lib": "Constructions"
+    },
+    {
+        "c": "29131",
+        "lib": "Constructions (non budgétaires)"
+    },
+    {
+        "c": "29132",
+        "lib": "Constructions (budgétaires)"
+    },
+    {
+        "c": "2914",
+        "lib": "Constructions sur sol d'autrui"
+    },
+    {
+        "c": "29141",
+        "lib": "Constructions sur sol d'autrui (non budgétaires)"
+    },
+    {
+        "c": "29142",
+        "lib": "Constructions sur sol d'autrui (budgétaires)"
+    },
+    {
+        "c": "293",
+        "lib": "Provisions pour dépréciation des immobilisations en cours"
+    },
+    {
+        "c": "2931",
+        "lib": "Immobilisations corporelles en cours"
+    },
+    {
+        "c": "29311",
+        "lib": "Immobilisations corporelles en cours (non budgétaires)"
+    },
+    {
+        "c": "29312",
+        "lib": "Immobilisations corporelles en cours (budgétaires)"
+    },
+    {
+        "c": "2932",
+        "lib": "Immobilisations incorporelles en cours"
+    },
+    {
+        "c": "29321",
+        "lib": "Immobilisations incorporelles en cours (non budgétaires)"
+    },
+    {
+        "c": "29322",
+        "lib": "Immobilisations incorporelles en cours (budgétaires)"
+    },
+    {
+        "c": "296",
+        "lib": "Provisions pour dépréciation des participations et créances rattachées à des participations"
+    },
+    {
+        "c": "2961",
+        "lib": "Titres de participation"
+    },
+    {
+        "c": "29611",
+        "lib": "Titres de participation (non budgétaires)"
+    },
+    {
+        "c": "29612",
+        "lib": "Titres de participation (budgétaires)"
+    },
+    {
+        "c": "2966",
+        "lib": "Autres formes de participation"
+    },
+    {
+        "c": "29661",
+        "lib": "Autres formes de participation (non budgétaires)"
+    },
+    {
+        "c": "29662",
+        "lib": "Autres formes de participation (budgétaires)"
+    },
+    {
+        "c": "297",
+        "lib": "Provisions pour dépréciation des autres immobilisations financières"
+    },
+    {
+        "c": "2971",
+        "lib": "Titres immobilisés - Droits de propriété"
+    },
+    {
+        "c": "29711",
+        "lib": "Titres immobilisés - Droits de propriété (non budgétaires)"
+    },
+    {
+        "c": "29712",
+        "lib": "Titres immobilisés - Droits de propriété (budgétaires)"
+    },
+    {
+        "c": "2972",
+        "lib": "Titres immobilisés - Droits de créance"
+    },
+    {
+        "c": "29721",
+        "lib": "Titres immobilisés - Droits de créance (non budgétaires)"
+    },
+    {
+        "c": "29722",
+        "lib": "Titres immobilisés - Droits de créance (budgétaires)"
+    },
+    {
+        "c": "2974",
+        "lib": "Prêts"
+    },
+    {
+        "c": "29741",
+        "lib": "Prêts (non budgétaires)"
+    },
+    {
+        "c": "29742",
+        "lib": "Prêts (budgétaires)"
+    },
+    {
+        "c": "2975",
+        "lib": "Dépôts et cautionnements versés"
+    },
+    {
+        "c": "29751",
+        "lib": "Dépôts et cautionnements versés (non budgétaires)"
+    },
+    {
+        "c": "29752",
+        "lib": "Dépôts et cautionnements versés (budgétaires)"
+    },
+    {
+        "c": "2976",
+        "lib": "Autres créances immobilisées"
+    },
+    {
+        "c": "29761",
+        "lib": "Créances pour avances en garantie d’emprunt"
+    },
+    {
+        "c": "297611",
+        "lib": "Créances pour avances en garantie d’emprunt (non budgétaires)"
+    },
+    {
+        "c": "297612",
+        "lib": "Créances pour avances en garantie d’emprunt (budgétaires)"
+    },
+    {
+        "c": "29768",
+        "lib": "Autres créances immobilisées"
+    },
+    {
+        "c": "297681",
+        "lib": "Autres créances immobilisées (non budgétaires)"
+    },
+    {
+        "c": "297682",
+        "lib": "Autres créances immobilisées (budgétaires)"
+    },
+    {
+        "c": "3",
+        "lib": "COMPTES DE STOCKS ET EN-COURS 1"
+    },
+    {
+        "c": "31",
+        "lib": "MATIÈRES PREMIÈRES (ET FOURNITURES)"
+    },
+    {
+        "c": "311",
+        "lib": "Matières premières et fournitures autres que terrains"
+    },
+    {
+        "c": "315",
+        "lib": "Terrains à aménager"
+    },
+    {
+        "c": "32",
+        "lib": "AUTRES APPROVISIONNEMENTS 2"
+    },
+    {
+        "c": "321",
+        "lib": "Matières consommables"
+    },
+    {
+        "c": "322",
+        "lib": "Fournitures consommables autres qu’alimentation"
+    },
+    {
+        "c": "3221",
+        "lib": "Combustibles et carburants"
+    },
+    {
+        "c": "3222",
+        "lib": "Produits d'entretien"
+    },
+    {
+        "c": "3223",
+        "lib": "Fournitures des ateliers municipaux"
+    },
+    {
+        "c": "3224",
+        "lib": "Fournitures administratives"
+    },
+    {
+        "c": "3225",
+        "lib": "Livres, disques, cassettes (bibliothèques, médiathèques)"
+    },
+    {
+        "c": "3226",
+        "lib": "Vêtements de travail"
+    },
+    {
+        "c": "3227",
+        "lib": "Fournitures scolaires"
+    },
+    {
+        "c": "3228",
+        "lib": "Autres fournitures consommables"
+    },
+    {
+        "c": "323",
+        "lib": "Alimentation"
+    },
+    {
+        "c": "33",
+        "lib": "EN-COURS DE PRODUCTION DE BIENS"
+    },
+    {
+        "c": "331",
+        "lib": "Produits en cours"
+    },
+    {
+        "c": "335",
+        "lib": "Travaux en cours"
+    },
+    {
+        "c": "3351",
+        "lib": "Terrains"
+    },
+    {
+        "c": "3354",
+        "lib": "Études et prestations de services"
+    },
+    {
+        "c": "3355",
+        "lib": "Travaux"
+    },
+    {
+        "c": "3358",
+        "lib": "Frais annexes"
+    },
+    {
+        "c": "33581",
+        "lib": "Frais accessoires"
+    },
+    {
+        "c": "33586",
+        "lib": "Frais financiers"
+    },
+    {
+        "c": "34",
+        "lib": "EN-COURS DE PRODUCTION DE SERVICES"
+    },
+    {
+        "c": "35",
+        "lib": "STOCKS DE PRODUITS"
+    },
+    {
+        "c": "351",
+        "lib": "Produits intermédiaires"
+    },
+    {
+        "c": "355",
+        "lib": "Produits finis"
+    },
+    {
+        "c": "3551",
+        "lib": "Produits finis (autres que terrains aménagés)"
+    },
+    {
+        "c": "3555",
+        "lib": "Terrains aménagés"
+    },
+    {
+        "c": "358",
+        "lib": "Produits résiduels"
+    },
+    {
+        "c": "37",
+        "lib": "STOCKS DE MARCHANDISES ET DE TERRAINS NUS 1"
+    },
+    {
+        "c": "39",
+        "lib": "PROVISIONS POUR DÉPRÉCIATION DES STOCKS ET EN-COURS"
+    },
+    {
+        "c": "391",
+        "lib": "Provisions pour dépréciation des matières premières (et fournitures)"
+    },
+    {
+        "c": "3911",
+        "lib": "Provisions pour dépréciation des matières premières (et fournitures) (non budgétaires)"
+    },
+    {
+        "c": "3912",
+        "lib": "Provisions pour dépréciation des matières premières (et fournitures) (budgétaires)"
+    },
+    {
+        "c": "392",
+        "lib": "Provisions pour dépréciation des autres approvisionnements (non budgétaires)"
+    },
+    {
+        "c": "393",
+        "lib": "Provisions pour dépréciation des en-cours de production de biens"
+    },
+    {
+        "c": "3931",
+        "lib": "Provisions pour dépréciation des en-cours de production de biens (non budgétaires)"
+    },
+    {
+        "c": "3932",
+        "lib": "Provisions pour dépréciation des en-cours de production de biens (budgétaires)"
+    },
+    {
+        "c": "394",
+        "lib": "Provisions pour dépréciation des en-cours de production de services"
+    },
+    {
+        "c": "3941",
+        "lib": "Provisions pour dépréciation des en-cours de production de services (non budgétaires)"
+    },
+    {
+        "c": "3942",
+        "lib": "Provisions pour dépréciation des en-cours de production de services (budgétaires)"
+    },
+    {
+        "c": "395",
+        "lib": "Provisions pour dépréciation des stocks de produits"
+    },
+    {
+        "c": "3951",
+        "lib": "Provisions pour dépréciation des produits finis (autres que terrains aménagés)"
+    },
+    {
+        "c": "39511",
+        "lib": "Provisions pour dépréciation des produits finis autres que terrains aménagés (non budgétaires)"
+    },
+    {
+        "c": "39512",
+        "lib": "Provisions pour dépréciation des produits finis autres que terrains aménagés (budgétaires)"
+    },
+    {
+        "c": "3955",
+        "lib": "Provisions pour dépréciation des terrains aménagés"
+    },
+    {
+        "c": "39551",
+        "lib": "Provisions pour dépréciation des terrains aménagés (non budgétaires)"
+    },
+    {
+        "c": "39552",
+        "lib": "Provisions pour dépréciation des terrains aménagés (budgétaires)"
+    },
+    {
+        "c": "397",
+        "lib": "Provisions pour dépréciation des stocks de marchandises (non budgétaires)"
+    },
+    {
+        "c": "4",
+        "lib": "COMPTES DE TIERS 1"
+    },
+    {
+        "c": "40",
+        "lib": "FOURNISSEURS ET COMPTES RATTACHÉS"
+    },
+    {
+        "c": "401",
+        "lib": "Fournisseurs"
+    },
+    {
+        "c": "4011",
+        "lib": "Fournisseurs"
+    },
+    {
+        "c": "4017",
+        "lib": "Fournisseurs - Retenues de garantie, oppositions et pénalités de retard d’exécution des marchés"
+    },
+    {
+        "c": "40171",
+        "lib": "Fournisseurs - Retenues de garantie"
+    },
+    {
+        "c": "40172",
+        "lib": "Fournisseurs - Cessions, oppositions"
+    },
+    {
+        "c": "40173",
+        "lib": "Fournisseurs - Pénalités de retard d’exécution des marchés"
+    },
+    {
+        "c": "403",
+        "lib": "Fournisseurs - Lettre-change relevé (L.C.R.)"
+    },
+    {
+        "c": "404",
+        "lib": "Fournisseurs d'immobilisations"
+    },
+    {
+        "c": "4041",
+        "lib": "Fournisseurs d'immobilisations"
+    },
+    {
+        "c": "4047",
+        "lib": "Fournisseurs d’immobilisations - Retenues de garantie, oppositions et pénalités deretard d’exécution des marchés"
+    },
+    {
+        "c": "40471",
+        "lib": "Fournisseurs d’immobilisations - Retenues de garantie"
+    },
+    {
+        "c": "40472",
+        "lib": "Fournisseurs d’immobilisations - Cessions, oppositions"
+    },
+    {
+        "c": "40473",
+        "lib": "Fournisseurs d’immobilisations - Pénalités de retard d’exécution des marchés"
+    },
+    {
+        "c": "405",
+        "lib": "Fournisseurs d'immobilisations - Lettre-change relevé (L.C.R.)"
+    },
+    {
+        "c": "407",
+        "lib": "Différences de conversion - Fournisseurs"
+    },
+    {
+        "c": "4071",
+        "lib": "Différences de conversion - Fournisseurs"
+    },
+    {
+        "c": "4074",
+        "lib": "Différences de conversion - Fournisseurs d’immobilisations"
+    },
+    {
+        "c": "408",
+        "lib": "Fournisseurs - Factures non parvenues"
+    },
+    {
+        "c": "409",
+        "lib": "Fournisseurs débiteurs"
+    },
+    {
+        "c": "4091",
+        "lib": "Avances versées sur commande"
+    },
+    {
+        "c": "4093",
+        "lib": "Mandat - Avance de fonds ou remboursement de débours"
+    },
+    {
+        "c": "4097",
+        "lib": "Fournisseurs - Autres avoirs"
+    },
+    {
+        "c": "40971",
+        "lib": "Fournisseurs - Autres avoirs - Amiable"
+    },
+    {
+        "c": "40976",
+        "lib": "Fournisseurs - Autres avoirs - Contentieux"
+    },
+    {
+        "c": "4098",
+        "lib": "Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus"
+    },
+    {
+        "c": "41",
+        "lib": "REDEVABLES ET COMPTES RATTACHÉS"
+    },
+    {
+        "c": "411",
+        "lib": "Redevables"
+    },
+    {
+        "c": "4111",
+        "lib": "Redevables - Amiable"
+    },
+    {
+        "c": "4116",
+        "lib": "Redevables - Contentieux"
+    },
+    {
+        "c": "412",
+        "lib": "Acquéreurs de terrains aménagés stockés"
+    },
+    {
+        "c": "4121",
+        "lib": "Acquéreurs de terrains aménagés stockés - Amiable"
+    },
+    {
+        "c": "4126",
+        "lib": "Acquéreurs de terrains aménagés stockés - Contentieux"
+    },
+    {
+        "c": "414",
+        "lib": "Locataires-acquéreurs et locataires"
+    },
+    {
+        "c": "4141",
+        "lib": "Locataires - acquéreurs et locataires - Amiable"
+    },
+    {
+        "c": "4146",
+        "lib": "Locataires - acquéreurs et locataires - Contentieux"
+    },
+    {
+        "c": "415",
+        "lib": "Traites de coupe de bois (régime forestier)"
+    },
+    {
+        "c": "4151",
+        "lib": "Traites de coupe de bois (régime forestier) - Amiable"
+    },
+    {
+        "c": "4156",
+        "lib": "Traites de coupe de bois (régime forestier) - Contentieux"
+    },
+    {
+        "c": "416",
+        "lib": "Clients - Créances douteuses ou irrécouvrables"
+    },
+    {
+        "c": "4161",
+        "lib": "Créances douteuses"
+    },
+    {
+        "c": "4162",
+        "lib": "Créances irrécouvrables admises par le juge des comptes"
+    },
+    {
+        "c": "417",
+        "lib": "Différences de conversion - Redevables"
+    },
+    {
+        "c": "418",
+        "lib": "Redevables et acquéreurs de terrains aménagés stockés - Produits non encore facturés"
+    },
+    {
+        "c": "4181",
+        "lib": "Redevables - Produits non encore facturés"
+    },
+    {
+        "c": "4182",
+        "lib": "Acquéreurs de terrains aménagés stockés - Produits non encore facturés"
+    },
+    {
+        "c": "419",
+        "lib": "Avances et acomptes reçus"
+    },
+    {
+        "c": "4191",
+        "lib": "Acquéreurs de terrains aménagés"
+    },
+    {
+        "c": "4198",
+        "lib": "Autres"
+    },
+    {
+        "c": "42",
+        "lib": "PERSONNEL ET COMPTES RATTACHÉS"
+    },
+    {
+        "c": "421",
+        "lib": "Personnel - Rémunérations dues"
+    },
+    {
+        "c": "425",
+        "lib": "Personnel - Avances et acomptes1"
+    },
+    {
+        "c": "427",
+        "lib": "Personnel - Oppositions"
+    },
+    {
+        "c": "428",
+        "lib": "Personnel - Charges à payer et produits à recevoir"
+    },
+    {
+        "c": "4282",
+        "lib": "Dettes provisionnées pour congés à payer"
+    },
+    {
+        "c": "4286",
+        "lib": "Autres charges à payer"
+    },
+    {
+        "c": "4287",
+        "lib": "Produits à recevoir"
+    },
+    {
+        "c": "429",
+        "lib": "Déficits et débets des comptables et régisseurs"
+    },
+    {
+        "c": "43",
+        "lib": "SÉCURITÉ SOCIALE ET AUTRES ORGANISMES SOCIAUX"
+    },
+    {
+        "c": "431",
+        "lib": "Sécurité sociale"
+    },
+    {
+        "c": "437",
+        "lib": "Autres organismes sociaux"
+    },
+    {
+        "c": "438",
+        "lib": "Organismes sociaux - Charges à payer et produits à recevoir"
+    },
+    {
+        "c": "4386",
+        "lib": "Autres charges à payer"
+    },
+    {
+        "c": "4387",
+        "lib": "Produits à recevoir"
+    },
+    {
+        "c": "44",
+        "lib": "ETAT ET AUTRES COLLECTIVITÉS PUBLIQUES"
+    },
+    {
+        "c": "441",
+        "lib": "État et autres collectivités publiques - Subventions à recevoir"
+    },
+    {
+        "c": "4411",
+        "lib": "État et autres collectivités publiques - Subventions à recevoir – Amiable"
+    },
+    {
+        "c": "4412",
+        "lib": "Fonds de soutien"
+    },
+    {
+        "c": "44121",
+        "lib": "Sortie des emprunts à risques avec IRA capitalisées"
+    },
+    {
+        "c": "44122",
+        "lib": "Sortie des emprunts à risques sans IRA capitalisées"
+    },
+    {
+        "c": "4416",
+        "lib": "État et autres collectivités publiques - Subventions à recevoir - Contentieux"
+    },
+    {
+        "c": "442",
+        "lib": "État - Impôts et taxes recouvrables sur des tiers"
+    },
+    {
+        "c": "4421",
+        "lib": "Prélèvement à la source – Impôt sur le revenu"
+    },
+    {
+        "c": "4428",
+        "lib": "Autres"
+    },
+    {
+        "c": "443",
+        "lib": "Opérations particulières avec l'État et les collectivités publiques"
+    },
+    {
+        "c": "4431",
+        "lib": "État"
+    },
+    {
+        "c": "44311",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44312",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44316",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4432",
+        "lib": "Régions"
+    },
+    {
+        "c": "44321",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44322",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44326",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4433",
+        "lib": "Départements"
+    },
+    {
+        "c": "44331",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44332",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44336",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4434",
+        "lib": "Communes"
+    },
+    {
+        "c": "44341",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44342",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44346",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4435",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "44351",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44352",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44356",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4436",
+        "lib": "Caisse des écoles"
+    },
+    {
+        "c": "44361",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44362",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44366",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4437",
+        "lib": "C.C.A.S."
+    },
+    {
+        "c": "44371",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44372",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44376",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "4438",
+        "lib": "Autres services et organismes publics"
+    },
+    {
+        "c": "44381",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "44382",
+        "lib": "Recettes - Amiable"
+    },
+    {
+        "c": "44386",
+        "lib": "Recettes - Contentieux"
+    },
+    {
+        "c": "445",
+        "lib": "État - Taxes sur le chiffre d'affaires"
+    },
+    {
+        "c": "4452",
+        "lib": "TVA due intracommunautaire"
+    },
+    {
+        "c": "4455",
+        "lib": "Taxes sur le chiffre d'affaires à décaisser"
+    },
+    {
+        "c": "44551",
+        "lib": "T.V.A. à décaisser"
+    },
+    {
+        "c": "44558",
+        "lib": "Taxes assimilées à la T.V.A."
+    },
+    {
+        "c": "4456",
+        "lib": "Taxes sur le chiffre d'affaires déductibles"
+    },
+    {
+        "c": "44562",
+        "lib": "T.V.A. sur immobilisations"
+    },
+    {
+        "c": "44566",
+        "lib": "T.V.A. sur autres biens et services"
+    },
+    {
+        "c": "44567",
+        "lib": "Crédit de T.V.A. à reporter"
+    },
+    {
+        "c": "44568",
+        "lib": "Taxes assimilées à la T.V.A."
+    },
+    {
+        "c": "4457",
+        "lib": "Taxes sur le chiffre d'affaires collectées"
+    },
+    {
+        "c": "44571",
+        "lib": "T.V.A. collectée"
+    },
+    {
+        "c": "44578",
+        "lib": "Taxes assimilées à la T.V.A."
+    },
+    {
+        "c": "4458",
+        "lib": "Taxes sur le chiffre d'affaires à régulariser ou en attente"
+    },
+    {
+        "c": "44581",
+        "lib": "Acomptes - Régime simplifié d’imposition"
+    },
+    {
+        "c": "44583",
+        "lib": "Remboursement de taxes sur le chiffre d’affaires demandé"
+    },
+    {
+        "c": "44585",
+        "lib": "TVA à régulariser - Retenue de garantie"
+    },
+    {
+        "c": "44588",
+        "lib": "Autres taxes sur le chiffre d’affaires à régulariser ou en attente"
+    },
+    {
+        "c": "445884",
+        "lib": "TVA déduite sur avances versées - Régime des encaissements"
+    },
+    {
+        "c": "445885",
+        "lib": "TVA décaissée sur avances reçues - Régime des encaissements"
+    },
+    {
+        "c": "445886",
+        "lib": "TVA à déduire lors du paiement - Régime des encaissements"
+    },
+    {
+        "c": "445888",
+        "lib": "Autres taxes sur le chiffre d’affaires à régulariser ou en attente"
+    },
+    {
+        "c": "447",
+        "lib": "Autres impôts, taxes et versements assimilés"
+    },
+    {
+        "c": "448",
+        "lib": "État et autres organismes publics - Charges à payer et produits à recevoir"
+    },
+    {
+        "c": "4486",
+        "lib": "Autres charges à payer"
+    },
+    {
+        "c": "4487",
+        "lib": "Produits à recevoir"
+    },
+    {
+        "c": "449",
+        "lib": "Quotas d'émission de GES à acquérir"
+    },
+    {
+        "c": "45",
+        "lib": "COMPTABILITÉ DISTINCTE RATTACHÉE"
+    },
+    {
+        "c": "451",
+        "lib": "Compte de rattachement avec...(à subdiviser par budget annexe)"
+    },
+    {
+        "c": "452",
+        "lib": "C.C.A.S. rattaché"
+    },
+    {
+        "c": "453",
+        "lib": "Caisse des écoles rattachée"
+    },
+    {
+        "c": "454",
+        "lib": "Travaux effectués d’office pour le compte de tiers1"
+    },
+    {
+        "c": "4541",
+        "lib": "Dépenses"
+    },
+    {
+        "c": "4542",
+        "lib": "Recettes"
+    },
+    {
+        "c": "455",
+        "lib": "Recettes sur rôles pour le compte de tiers"
+    },
+    {
+        "c": "4551",
+        "lib": "Redevables sur rôles pour le compte de tiers"
+    },
+    {
+        "c": "4557",
+        "lib": "Produits sur rôle pour le compte de tiers"
+    },
+    {
+        "c": "4558",
+        "lib": "TVA sur rôle pour le compte de tiers"
+    },
+    {
+        "c": "45581",
+        "lib": "TVA sur rôle pour le compte de tiers - Prise en compte"
+    },
+    {
+        "c": "45582",
+        "lib": "TVA sur rôle pour le compte de tiers - Encaissements"
+    },
+    {
+        "c": "4559",
+        "lib": "Versements sur rôle pour le compte de tiers"
+    },
+    {
+        "c": "45591",
+        "lib": "TVA sur rôle pour le compte de tiers - Produits"
+    },
+    {
+        "c": "45592",
+        "lib": "TVA sur rôle pour le compte de tiers - TVA"
+    },
+    {
+        "c": "456",
+        "lib": "Opérations d'investissement sur établissements d'enseignement (à subdiviser par mandat)1"
+    },
+    {
+        "c": "4561",
+        "lib": "Remis à la région"
+    },
+    {
+        "c": "45611",
+        "lib": "Dépenses (à subdiviser par mandat)"
+    },
+    {
+        "c": "45612",
+        "lib": "Recettes (à subdiviser par mandat)"
+    },
+    {
+        "c": "4562",
+        "lib": "Remis au département"
+    },
+    {
+        "c": "45621",
+        "lib": "Dépenses (à subdiviser par mandat)"
+    },
+    {
+        "c": "45622",
+        "lib": "Recettes (à subdiviser par mandat)"
+    },
+    {
+        "c": "458",
+        "lib": "Opérations sous mandat (à subdiviser par mandat) 1"
+    },
+    {
+        "c": "4581",
+        "lib": "Dépenses (à subdiviser par mandat)"
+    },
+    {
+        "c": "4582",
+        "lib": "Recettes (à subdiviser par mandat)"
+    },
+    {
+        "c": "46",
+        "lib": "DÉBITEURS ET CRÉDITEURS DIVERS"
+    },
+    {
+        "c": "461",
+        "lib": "Dons et legs en instance"
+    },
+    {
+        "c": "462",
+        "lib": "Créances sur cessions d'immobilisations"
+    },
+    {
+        "c": "4621",
+        "lib": "Créances sur cessions d'immobilisations - Amiable"
+    },
+    {
+        "c": "4626",
+        "lib": "Créances sur cessions d'immobilisations - Contentieux"
+    },
+    {
+        "c": "463",
+        "lib": "Emprunts souscrits dans le public gérés par la collectivité"
+    },
+    {
+        "c": "4631",
+        "lib": "Souscriptions reçues"
+    },
+    {
+        "c": "4632",
+        "lib": "Intérêts à payer"
+    },
+    {
+        "c": "4633",
+        "lib": "Titres amortis (ou capital) à rembourser"
+    },
+    {
+        "c": "464",
+        "lib": "Encaissements pour le compte de tiers"
+    },
+    {
+        "c": "4641",
+        "lib": "Coupes affouagères distribuées en nature"
+    },
+    {
+        "c": "4642",
+        "lib": "Coupes affouagères à répartir"
+    },
+    {
+        "c": "4643",
+        "lib": "Vacations encaissées à reverser"
+    },
+    {
+        "c": "4645",
+        "lib": "Fonds des bénéficiaires d’une MASP"
+    },
+    {
+        "c": "4648",
+        "lib": "Autres encaissements pour le compte de tiers"
+    },
+    {
+        "c": "465",
+        "lib": "Avances en garantie d'emprunt"
+    },
+    {
+        "c": "466",
+        "lib": "Excédents de versement"
+    },
+    {
+        "c": "467",
+        "lib": "Autres comptes débiteurs ou créditeurs"
+    },
+    {
+        "c": "4671",
+        "lib": "Autres comptes créditeurs"
+    },
+    {
+        "c": "46711",
+        "lib": "Autres comptes créditeurs"
+    },
+    {
+        "c": "46717",
+        "lib": "Autres comptes créditeurs – cessions, oppositions"
+    },
+    {
+        "c": "4672",
+        "lib": "Autres comptes débiteurs"
+    },
+    {
+        "c": "46721",
+        "lib": "Débiteurs divers - Amiable"
+    },
+    {
+        "c": "46726",
+        "lib": "Débiteurs divers - Contentieux"
+    },
+    {
+        "c": "4673",
+        "lib": "Opérations avec des gérants d’immeubles et des régisseurs intéressés"
+    },
+    {
+        "c": "4675",
+        "lib": "Mandataire - Opérations déléguées - Recettes"
+    },
+    {
+        "c": "4677",
+        "lib": "Différences de conversion - Débiteurs ou créditeurs divers"
+    },
+    {
+        "c": "46771",
+        "lib": "Différences de conversion - Créditeurs divers"
+    },
+    {
+        "c": "46772",
+        "lib": "Différences de conversion - Débiteurs divers"
+    },
+    {
+        "c": "468",
+        "lib": "Divers - Charges à payer et produits à recevoir"
+    },
+    {
+        "c": "4686",
+        "lib": "Charges à payer"
+    },
+    {
+        "c": "4687",
+        "lib": "Produits à recevoir"
+    },
+    {
+        "c": "47",
+        "lib": "COMPTES TRANSITOIRES OU D'ATTENTE"
+    },
+    {
+        "c": "471",
+        "lib": "Recettes à classer ou à régulariser"
+    },
+    {
+        "c": "4711",
+        "lib": "Versements des régisseurs"
+    },
+    {
+        "c": "4712",
+        "lib": "Virements réimputés"
+    },
+    {
+        "c": "4713",
+        "lib": "Recettes perçues avant émission des titres"
+    },
+    {
+        "c": "47131",
+        "lib": "Versements sur contributions directes"
+    },
+    {
+        "c": "47132",
+        "lib": "Versements sur dotation globale de fonctionnement"
+    },
+    {
+        "c": "47133",
+        "lib": "Fonds d'emprunt"
+    },
+    {
+        "c": "47134",
+        "lib": "Subventions"
+    },
+    {
+        "c": "47138",
+        "lib": "Autres"
+    },
+    {
+        "c": "4714",
+        "lib": "Recettes à réimputer"
+    },
+    {
+        "c": "47141",
+        "lib": "Recettes perçues en excédent à réimputer"
+    },
+    {
+        "c": "471411",
+        "lib": "Excédent à réimputer - Personnes physiques"
+    },
+    {
+        "c": "471412",
+        "lib": "Excédent à réimputer - Personnes morales"
+    },
+    {
+        "c": "47142",
+        "lib": "Frais de saisie perçus avant prise en charge"
+    },
+    {
+        "c": "47143",
+        "lib": "Flux d’encaissement à réimputer"
+    },
+    {
+        "c": "4715",
+        "lib": "Recettes à ventiler - Cartes multiservices"
+    },
+    {
+        "c": "4716",
+        "lib": "Versements des mandataires"
+    },
+    {
+        "c": "4717",
+        "lib": "Recettes relevé banque de France et DFT"
+    },
+    {
+        "c": "47171",
+        "lib": "Recettes relevé banque de France - Hors Héra"
+    },
+    {
+        "c": "47172",
+        "lib": "Recettes relevé banque de France – Héra"
+    },
+    {
+        "c": "47173",
+        "lib": "Recettes relevé DFT – hors Héra"
+    },
+    {
+        "c": "47174",
+        "lib": "Recettes relevé DFT - Héra"
+    },
+    {
+        "c": "4718",
+        "lib": "Autres recettes à régulariser"
+    },
+    {
+        "c": "472",
+        "lib": "Dépenses à classer ou à régulariser"
+    },
+    {
+        "c": "4721",
+        "lib": "Dépenses réglées sans mandatement préalable,"
+    },
+    {
+        "c": "47211",
+        "lib": "Remboursements d'annuités d'emprunts"
+    },
+    {
+        "c": "47218",
+        "lib": "Autres dépenses"
+    },
+    {
+        "c": "4722",
+        "lib": "Commissions bancaires en instance de mandatement"
+    },
+    {
+        "c": "4725",
+        "lib": "Secours d'urgence"
+    },
+    {
+        "c": "4727",
+        "lib": "Avances pour achat de valeurs mobilières"
+    },
+    {
+        "c": "4728",
+        "lib": "Autres dépenses à régulariser"
+    },
+    {
+        "c": "475",
+        "lib": "Recettes sur rôle"
+    },
+    {
+        "c": "4751",
+        "lib": "Redevables sur rôle"
+    },
+    {
+        "c": "4757",
+        "lib": "Produits sur rôle"
+    },
+    {
+        "c": "4758",
+        "lib": "TVA sur rôle"
+    },
+    {
+        "c": "4759",
+        "lib": "Versement du tiers en charge du rôle"
+    },
+    {
+        "c": "476",
+        "lib": "Différences de conversion - Actif"
+    },
+    {
+        "c": "4761",
+        "lib": "Diminution des créances"
+    },
+    {
+        "c": "47611",
+        "lib": "Diminution des prêts"
+    },
+    {
+        "c": "47612",
+        "lib": "Diminution d’autres créances"
+    },
+    {
+        "c": "4762",
+        "lib": "Augmentation des dettes"
+    },
+    {
+        "c": "47621",
+        "lib": "Augmentation d’emprunts et dettes assimilées"
+    },
+    {
+        "c": "47622",
+        "lib": "Augmentation d’autres dettes"
+    },
+    {
+        "c": "4768",
+        "lib": "Différences compensées par couverture de change"
+    },
+    {
+        "c": "477",
+        "lib": "Différences de conversion - Passif"
+    },
+    {
+        "c": "4771",
+        "lib": "Augmentation des créances"
+    },
+    {
+        "c": "47711",
+        "lib": "Augmentation des prêts"
+    },
+    {
+        "c": "47712",
+        "lib": "Augmentation d’autres créances"
+    },
+    {
+        "c": "4772",
+        "lib": "Diminution des dettes"
+    },
+    {
+        "c": "47721",
+        "lib": "Diminution d’emprunts et dettes assimilées"
+    },
+    {
+        "c": "47722",
+        "lib": "Diminution d’autres dettes"
+    },
+    {
+        "c": "4778",
+        "lib": "Différences compensées par couverture de change"
+    },
+    {
+        "c": "478",
+        "lib": "Autres comptes transitoires"
+    },
+    {
+        "c": "4781",
+        "lib": "Frais de poursuite rattachés"
+    },
+    {
+        "c": "4784",
+        "lib": "Arrondis sur déclaration de TVA"
+    },
+    {
+        "c": "4788",
+        "lib": "Autres comptes transitoires"
+    },
+    {
+        "c": "48",
+        "lib": "COMPTES DE RÉGULARISATION"
+    },
+    {
+        "c": "481",
+        "lib": "Charges à répartir sur plusieurs exercices1"
+    },
+    {
+        "c": "4812",
+        "lib": "Frais d'acquisition des immobilisations"
+    },
+    {
+        "c": "4815",
+        "lib": "Charges liées à la crise sanitaire Covid-19"
+    },
+    {
+        "c": "4816",
+        "lib": "Frais d'émission des emprunts"
+    },
+    {
+        "c": "4817",
+        "lib": "Pénalités de renégociation de la dette"
+    },
+    {
+        "c": "4818",
+        "lib": "Charges à étaler"
+    },
+    {
+        "c": "486",
+        "lib": "Charges constatées d'avance"
+    },
+    {
+        "c": "487",
+        "lib": "Produits constatés d'avance"
+    },
+    {
+        "c": "49",
+        "lib": "PROVISIONS POUR DÉPRÉCIATION DES COMPTES DE TIERS"
+    },
+    {
+        "c": "491",
+        "lib": "Provisions pour dépréciation des comptes de redevables"
+    },
+    {
+        "c": "4911",
+        "lib": "Provisions pour dépréciation des comptes de redevables (non budgétaires)"
+    },
+    {
+        "c": "4912",
+        "lib": "Provisions pour dépréciation des comptes de redevables (budgétaires)"
+    },
+    {
+        "c": "496",
+        "lib": "Provisions pour dépréciation des comptes de débiteurs divers"
+    },
+    {
+        "c": "4961",
+        "lib": "Provisions pour dépréciation des comptes de débiteurs divers (non budgétaires)"
+    },
+    {
+        "c": "4962",
+        "lib": "Provisions pour dépréciation des comptes de débiteurs divers (budgétaires)"
+    },
+    {
+        "c": "5",
+        "lib": "COMPTES FINANCIERS 1"
+    },
+    {
+        "c": "50",
+        "lib": "VALEURS MOBILIÈRES DE PLACEMENT"
+    },
+    {
+        "c": "506",
+        "lib": "Obligations"
+    },
+    {
+        "c": "507",
+        "lib": "Bons du Trésor"
+    },
+    {
+        "c": "508",
+        "lib": "Autres valeurs mobilières et créances assimilées"
+    },
+    {
+        "c": "51",
+        "lib": "TRÉSOR, ÉTABLISSEMENTS FINANCIERS ET ASSIMILÉS"
+    },
+    {
+        "c": "511",
+        "lib": "Valeurs à l'encaissement"
+    },
+    {
+        "c": "5113",
+        "lib": "Titres spéciaux de paiement et assimilés à l’encaissement"
+    },
+    {
+        "c": "5115",
+        "lib": "Cartes bancaires à l'encaissement"
+    },
+    {
+        "c": "5116",
+        "lib": "TIP à l’encaissement"
+    },
+    {
+        "c": "5117",
+        "lib": "Valeurs impayées"
+    },
+    {
+        "c": "51172",
+        "lib": "Chèques impayés"
+    },
+    {
+        "c": "51175",
+        "lib": "Cartes bancaires impayées"
+    },
+    {
+        "c": "51176",
+        "lib": "TIP impayés"
+    },
+    {
+        "c": "51178",
+        "lib": "Autres valeurs impayées"
+    },
+    {
+        "c": "5118",
+        "lib": "Autres valeurs à l’encaissement"
+    },
+    {
+        "c": "515",
+        "lib": "Compte au Trésor"
+    },
+    {
+        "c": "516",
+        "lib": "Comptes de placements (court terme)"
+    },
+    {
+        "c": "5161",
+        "lib": "Comptes de placements rémunérés"
+    },
+    {
+        "c": "5162",
+        "lib": "Comptes à terme"
+    },
+    {
+        "c": "518",
+        "lib": "Intérêts courus"
+    },
+    {
+        "c": "5186",
+        "lib": "Intérêts courus à payer"
+    },
+    {
+        "c": "5187",
+        "lib": "Intérêts courus à recevoir"
+    },
+    {
+        "c": "519",
+        "lib": "Concours financiers à court terme"
+    },
+    {
+        "c": "5191",
+        "lib": "Avances du Trésor"
+    },
+    {
+        "c": "5192",
+        "lib": "Avances de trésorerie"
+    },
+    {
+        "c": "5193",
+        "lib": "Lignes de crédit de trésorerie"
+    },
+    {
+        "c": "51931",
+        "lib": "Lignes de crédit de trésorerie"
+    },
+    {
+        "c": "51932",
+        "lib": "Lignes de crédit de trésorerie liées à un emprunt"
+    },
+    {
+        "c": "5194",
+        "lib": "Billets de trésorerie"
+    },
+    {
+        "c": "5198",
+        "lib": "Autres crédits de trésorerie"
+    },
+    {
+        "c": "54",
+        "lib": "RÉGIES D'AVANCES ET ACCRÉDITIFS"
+    },
+    {
+        "c": "541",
+        "lib": "Disponibilités chez les régisseurs"
+    },
+    {
+        "c": "5411",
+        "lib": "Régisseurs d'avances (avances)"
+    },
+    {
+        "c": "5412",
+        "lib": "Régisseurs de recettes (fonds de caisse)"
+    },
+    {
+        "c": "542",
+        "lib": "Disponibilités chez d’autres tiers"
+    },
+    {
+        "c": "5421",
+        "lib": "Administrateurs de legs"
+    },
+    {
+        "c": "5428",
+        "lib": "Disponibilités chez d’autres tiers"
+    },
+    {
+        "c": "55",
+        "lib": "AVANCES DE TRÉSORERIE VERSÉES"
+    },
+    {
+        "c": "551",
+        "lib": "Avances à des établissements publics locaux"
+    },
+    {
+        "c": "5511",
+        "lib": "Avances aux hôpitaux"
+    },
+    {
+        "c": "5512",
+        "lib": "Avances aux EPCI en début d’activité"
+    },
+    {
+        "c": "552",
+        "lib": "Avances aux sociétés d’économie mixte"
+    },
+    {
+        "c": "553",
+        "lib": "Avances à des régies dotées de la seule autonomie financière"
+    },
+    {
+        "c": "558",
+        "lib": "Autres avances de trésorerie versées"
+    },
+    {
+        "c": "58",
+        "lib": "VIREMENTS INTERNES"
+    },
+    {
+        "c": "580",
+        "lib": "Opérations d’ordre budgétaires"
+    },
+    {
+        "c": "584",
+        "lib": "Encaissements par lecture optique"
+    },
+    {
+        "c": "586",
+        "lib": "Opérations financières entre le budget principal et ses budgets comptablement rattachés"
+    },
+    {
+        "c": "587",
+        "lib": "Comptes pivots"
+    },
+    {
+        "c": "5871",
+        "lib": "Compte pivot - Encaissement régie à ventiler"
+    },
+    {
+        "c": "5872",
+        "lib": "Compte pivot - Admission en non-valeur"
+    },
+    {
+        "c": "588",
+        "lib": "Autres virements internes"
+    },
+    {
+        "c": "589",
+        "lib": "Comptes techniques"
+    },
+    {
+        "c": "5891",
+        "lib": "Reprise des balances d'entrée"
+    },
+    {
+        "c": "5892",
+        "lib": "Migration"
+    },
+    {
+        "c": "5893",
+        "lib": "Migration des rôles"
+    },
+    {
+        "c": "5894",
+        "lib": "Ventilation comptes budgétaires"
+    },
+    {
+        "c": "59",
+        "lib": "PROVISIONS POUR DÉPRÉCIATION DES COMPTES FINANCIERS"
+    },
+    {
+        "c": "590",
+        "lib": "Provisions pour dépréciation des valeurs mobilières de placement"
+    },
+    {
+        "c": "5906",
+        "lib": "Obligations"
+    },
+    {
+        "c": "59061",
+        "lib": "Obligations (non budgétaires)"
+    },
+    {
+        "c": "59062",
+        "lib": "Obligations (budgétaires)"
+    },
+    {
+        "c": "5908",
+        "lib": "Autres valeurs mobilières et créances assimilées"
+    },
+    {
+        "c": "59081",
+        "lib": "Autres valeurs mobilières et créances assimilées (non budgétaires)"
+    },
+    {
+        "c": "59082",
+        "lib": "Autres valeurs mobilières et créances assimilées (budgétaires)"
+    },
+    {
+        "c": "595",
+        "lib": "Provisions pour dépréciation des avances de trésorerie versées"
+    },
+    {
+        "c": "5951",
+        "lib": "Provisions pour dépréciation des avances de trésorerie versées (non budgétaires)"
+    },
+    {
+        "c": "5952",
+        "lib": "Provisions pour dépréciation des avances de trésorerie versées (budgétaires)"
+    },
+    {
+        "c": "6",
+        "lib": "COMPTES DE CHARGES 1"
+    },
+    {
+        "c": "60",
+        "lib": "ACHATS ET VARIATION DES STOCKS"
+    },
+    {
+        "c": "601",
+        "lib": "Achats stockés - Matières premières (et fournitures)"
+    },
+    {
+        "c": "6011",
+        "lib": "Matières premières et fournitures autres que terrains"
+    },
+    {
+        "c": "6015",
+        "lib": "Terrains à aménager"
+    },
+    {
+        "c": "602",
+        "lib": "Achats stockés - Autres approvisionnements"
+    },
+    {
+        "c": "6021",
+        "lib": "Matières consommables"
+    },
+    {
+        "c": "6022",
+        "lib": "Fournitures consommables autres qu’alimentation"
+    },
+    {
+        "c": "60221",
+        "lib": "Combustibles et carburants"
+    },
+    {
+        "c": "60222",
+        "lib": "Produits d'entretien"
+    },
+    {
+        "c": "60223",
+        "lib": "Fournitures des ateliers municipaux"
+    },
+    {
+        "c": "60224",
+        "lib": "Fournitures administratives"
+    },
+    {
+        "c": "60225",
+        "lib": "Livres, disques, cassettes (bibliothèques, médiathèques)"
+    },
+    {
+        "c": "60226",
+        "lib": "Vêtements de travail"
+    },
+    {
+        "c": "60227",
+        "lib": "Fournitures scolaires"
+    },
+    {
+        "c": "60228",
+        "lib": "Autres fournitures consommables"
+    },
+    {
+        "c": "6023",
+        "lib": "Alimentation"
+    },
+    {
+        "c": "603",
+        "lib": "Variation des stocks (approvisionnements et marchandises)"
+    },
+    {
+        "c": "6031",
+        "lib": "Variation des stocks de matières premières (et fournitures)"
+    },
+    {
+        "c": "60311",
+        "lib": "Variation des stocks de matières premières et fournitures autres que de terrains"
+    },
+    {
+        "c": "60315",
+        "lib": "Variation des stocks des terrains à aménager"
+    },
+    {
+        "c": "6032",
+        "lib": "Variation des stocks des autres approvisionnements"
+    },
+    {
+        "c": "6037",
+        "lib": "Variation des stocks de marchandises et de terrains nus"
+    },
+    {
+        "c": "604",
+        "lib": "Achats d'études, prestations de services 2"
+    },
+    {
+        "c": "6041",
+        "lib": "Achats d'études (autres que terrains à aménager)"
+    },
+    {
+        "c": "6042",
+        "lib": "Achats de prestations de services (autres que terrains à aménager)"
+    },
+    {
+        "c": "6045",
+        "lib": "Achats d'études, prestations de services (terrains à aménager)"
+    },
+    {
+        "c": "605",
+        "lib": "Achats de matériel, équipements et travaux 2"
+    },
+    {
+        "c": "606",
+        "lib": "Achats non stockés de matières et fournitures"
+    },
+    {
+        "c": "6061",
+        "lib": "Fournitures non stockables"
+    },
+    {
+        "c": "60611",
+        "lib": "Eau et assainissement"
+    },
+    {
+        "c": "60612",
+        "lib": "Énergie - Électricité"
+    },
+    {
+        "c": "60613",
+        "lib": "Chauffage urbain"
+    },
+    {
+        "c": "60618",
+        "lib": "Autres fournitures non stockables"
+    },
+    {
+        "c": "6062",
+        "lib": "Fournitures non stockées"
+    },
+    {
+        "c": "60621",
+        "lib": "Combustibles"
+    },
+    {
+        "c": "60622",
+        "lib": "Carburants"
+    },
+    {
+        "c": "60623",
+        "lib": "Alimentation"
+    },
+    {
+        "c": "60624",
+        "lib": "Produits de traitement"
+    },
+    {
+        "c": "60628",
+        "lib": "Autres fournitures non stockées"
+    },
+    {
+        "c": "6063",
+        "lib": "Fournitures d'entretien et de petit équipement"
+    },
+    {
+        "c": "60631",
+        "lib": "Fournitures d’entretien"
+    },
+    {
+        "c": "60632",
+        "lib": "Fournitures de petit équipement"
+    },
+    {
+        "c": "60633",
+        "lib": "Fournitures de voirie"
+    },
+    {
+        "c": "60636",
+        "lib": "Vêtements de travail"
+    },
+    {
+        "c": "6064",
+        "lib": "Fournitures administratives"
+    },
+    {
+        "c": "6065",
+        "lib": "Livres, disques, cassettes...(bibliothèques et médiathèques)"
+    },
+    {
+        "c": "6067",
+        "lib": "Fournitures scolaires"
+    },
+    {
+        "c": "6068",
+        "lib": "Autres matières et fournitures"
+    },
+    {
+        "c": "607",
+        "lib": "Achats de marchandises"
+    },
+    {
+        "c": "6071",
+        "lib": "Compteurs"
+    },
+    {
+        "c": "6078",
+        "lib": "Autres marchandises"
+    },
+    {
+        "c": "608",
+        "lib": "Frais accessoires sur terrains en cours d'aménagement 2"
+    },
+    {
+        "c": "609",
+        "lib": "Rabais, remises et ristournes obtenus sur achats"
+    },
+    {
+        "c": "6091",
+        "lib": "de matières premières (et fournitures)"
+    },
+    {
+        "c": "6092",
+        "lib": "d'autres approvisionnements stockés"
+    },
+    {
+        "c": "6094",
+        "lib": "d'études et prestations de services"
+    },
+    {
+        "c": "6095",
+        "lib": "de matériel, équipements et travaux"
+    },
+    {
+        "c": "6096",
+        "lib": "d'approvisionnements non stockés"
+    },
+    {
+        "c": "6097",
+        "lib": "de marchandises"
+    },
+    {
+        "c": "61",
+        "lib": "62 - AUTRES CHARGES EXTERNES"
+    },
+    {
+        "c": "61",
+        "lib": "SERVICES EXTÉRIEURS"
+    },
+    {
+        "c": "611",
+        "lib": "Contrats de prestations de services"
+    },
+    {
+        "c": "612",
+        "lib": "Redevances de crédit-bail"
+    },
+    {
+        "c": "6122",
+        "lib": "Crédit-bail mobilier"
+    },
+    {
+        "c": "6125",
+        "lib": "Crédit-bail immobilier"
+    },
+    {
+        "c": "613",
+        "lib": "Locations"
+    },
+    {
+        "c": "6132",
+        "lib": "Locations immobilières"
+    },
+    {
+        "c": "6135",
+        "lib": "Locations mobilières"
+    },
+    {
+        "c": "614",
+        "lib": "Charges locatives et de copropriété"
+    },
+    {
+        "c": "615",
+        "lib": "Entretien et réparations"
+    },
+    {
+        "c": "6152",
+        "lib": "Entretien et réparations sur biens immobiliers"
+    },
+    {
+        "c": "61521",
+        "lib": "Terrains"
+    },
+    {
+        "c": "61522",
+        "lib": "Bâtiments"
+    },
+    {
+        "c": "615221",
+        "lib": "Bâtiments publics"
+    },
+    {
+        "c": "615228",
+        "lib": "Autres bâtiments"
+    },
+    {
+        "c": "61523",
+        "lib": "Voies et réseaux"
+    },
+    {
+        "c": "615231",
+        "lib": "Voiries"
+    },
+    {
+        "c": "615232",
+        "lib": "Réseaux"
+    },
+    {
+        "c": "61524",
+        "lib": "Bois et forêts"
+    },
+    {
+        "c": "6155",
+        "lib": "Entretien et réparations sur biens mobiliers"
+    },
+    {
+        "c": "61551",
+        "lib": "Matériel roulant"
+    },
+    {
+        "c": "61558",
+        "lib": "Autres biens mobiliers"
+    },
+    {
+        "c": "6156",
+        "lib": "Maintenance"
+    },
+    {
+        "c": "616",
+        "lib": "Primes d'assurance"
+    },
+    {
+        "c": "6161",
+        "lib": "Multirisques"
+    },
+    {
+        "c": "6162",
+        "lib": "Assurance obligatoire dommage – construction"
+    },
+    {
+        "c": "6168",
+        "lib": "Autres"
+    },
+    {
+        "c": "617",
+        "lib": "Études et recherches"
+    },
+    {
+        "c": "618",
+        "lib": "Divers"
+    },
+    {
+        "c": "6182",
+        "lib": "Documentation générale et technique"
+    },
+    {
+        "c": "6184",
+        "lib": "Versements à des organismes de formation"
+    },
+    {
+        "c": "6185",
+        "lib": "Frais de colloques et séminaires"
+    },
+    {
+        "c": "6188",
+        "lib": "Autres frais divers"
+    },
+    {
+        "c": "619",
+        "lib": "Rabais, remises et ristournes obtenus sur services extérieurs"
+    },
+    {
+        "c": "62",
+        "lib": "AUTRES SERVICES EXTÉRIEURS"
+    },
+    {
+        "c": "621",
+        "lib": "Personnel extérieur au service"
+    },
+    {
+        "c": "6215",
+        "lib": "Personnel affecté par la collectivité de rattachement 1"
+    },
+    {
+        "c": "6216",
+        "lib": "Personnel affecté par le GFP de rattachement"
+    },
+    {
+        "c": "6217",
+        "lib": "Personnel affecté par la commune membre du GFP"
+    },
+    {
+        "c": "6218",
+        "lib": "Autre personnel extérieur"
+    },
+    {
+        "c": "622",
+        "lib": "Rémunérations d'intermédiaires et honoraires"
+    },
+    {
+        "c": "6225",
+        "lib": "Indemnités au comptable et aux régisseurs"
+    },
+    {
+        "c": "6226",
+        "lib": "Honoraires"
+    },
+    {
+        "c": "6227",
+        "lib": "Frais d'actes et de contentieux"
+    },
+    {
+        "c": "6228",
+        "lib": "Divers"
+    },
+    {
+        "c": "623",
+        "lib": "Publicité, publications, relations publiques"
+    },
+    {
+        "c": "6231",
+        "lib": "Annonces et insertions"
+    },
+    {
+        "c": "6232",
+        "lib": "Fêtes et cérémonies"
+    },
+    {
+        "c": "6233",
+        "lib": "Foires et expositions"
+    },
+    {
+        "c": "6236",
+        "lib": "Catalogues et imprimés"
+    },
+    {
+        "c": "6237",
+        "lib": "Publications"
+    },
+    {
+        "c": "6238",
+        "lib": "Divers"
+    },
+    {
+        "c": "624",
+        "lib": "Transports de biens et transports collectifs"
+    },
+    {
+        "c": "6241",
+        "lib": "Transports de biens"
+    },
+    {
+        "c": "6244",
+        "lib": "Transports administratifs"
+    },
+    {
+        "c": "6247",
+        "lib": "Transports collectifs"
+    },
+    {
+        "c": "6248",
+        "lib": "Divers"
+    },
+    {
+        "c": "625",
+        "lib": "Déplacements, missions et réceptions"
+    },
+    {
+        "c": "6251",
+        "lib": "Voyages et déplacements"
+    },
+    {
+        "c": "6255",
+        "lib": "Frais de déménagement"
+    },
+    {
+        "c": "6256",
+        "lib": "Missions"
+    },
+    {
+        "c": "6257",
+        "lib": "Réceptions"
+    },
+    {
+        "c": "626",
+        "lib": "Frais postaux et frais de télécommunications"
+    },
+    {
+        "c": "6261",
+        "lib": "Frais d'affranchissement"
+    },
+    {
+        "c": "6262",
+        "lib": "Frais de télécommunications"
+    },
+    {
+        "c": "627",
+        "lib": "Services bancaires et assimilés"
+    },
+    {
+        "c": "628",
+        "lib": "Divers"
+    },
+    {
+        "c": "6281",
+        "lib": "Concours divers (cotisations...)"
+    },
+    {
+        "c": "6282",
+        "lib": "Frais de gardiennage (églises, forêts et bois communaux ...)"
+    },
+    {
+        "c": "6283",
+        "lib": "Frais de nettoyage des locaux"
+    },
+    {
+        "c": "6284",
+        "lib": "Redevances pour services rendus"
+    },
+    {
+        "c": "6287",
+        "lib": "Remboursements de frais"
+    },
+    {
+        "c": "62871",
+        "lib": "A la collectivité de rattachement1"
+    },
+    {
+        "c": "62872",
+        "lib": "Aux budgets annexes et aux régies municipales"
+    },
+    {
+        "c": "62873",
+        "lib": "Au C.C.A.S."
+    },
+    {
+        "c": "62874",
+        "lib": "A la caisse des écoles"
+    },
+    {
+        "c": "62875",
+        "lib": "Aux communes membres du GFP"
+    },
+    {
+        "c": "62876",
+        "lib": "Au GFP de rattachement"
+    },
+    {
+        "c": "62878",
+        "lib": "A d’autres organismes"
+    },
+    {
+        "c": "6288",
+        "lib": "Autres services extérieurs"
+    },
+    {
+        "c": "629",
+        "lib": "Rabais, remises et ristournes obtenus sur autres services extérieurs"
+    },
+    {
+        "c": "63",
+        "lib": "IMPÔTS, TAXES ET VERSEMENTS ASSIMILÉS"
+    },
+    {
+        "c": "631",
+        "lib": "Impôts, taxes et versements assimilés sur rémunérations (administration des impôts)"
+    },
+    {
+        "c": "633",
+        "lib": "Impôts, taxes et versements assimilés sur rémunérations (autres organismes)"
+    },
+    {
+        "c": "6331",
+        "lib": "Versement mobilité"
+    },
+    {
+        "c": "6332",
+        "lib": "Cotisations versées au F.N.A.L."
+    },
+    {
+        "c": "6333",
+        "lib": "Participation des employeurs à la formation professionnelle continue"
+    },
+    {
+        "c": "6336",
+        "lib": "Cotisations au centre national et aux centres de gestion de la fonction publique territoriale"
+    },
+    {
+        "c": "6338",
+        "lib": "Autres impôts, taxes et versements assimilés sur rémunérations"
+    },
+    {
+        "c": "635",
+        "lib": "Autres impôts, taxes et versements assimilés (administration des impôts)"
+    },
+    {
+        "c": "6351",
+        "lib": "Impôts directs"
+    },
+    {
+        "c": "63512",
+        "lib": "Taxes foncières"
+    },
+    {
+        "c": "63513",
+        "lib": "Autres impôts locaux"
+    },
+    {
+        "c": "6353",
+        "lib": "Impôts indirects"
+    },
+    {
+        "c": "6354",
+        "lib": "Droits d'enregistrement et de timbre"
+    },
+    {
+        "c": "6355",
+        "lib": "Taxes et impôts sur les véhicules"
+    },
+    {
+        "c": "6358",
+        "lib": "Autres droits"
+    },
+    {
+        "c": "637",
+        "lib": "Autres impôts, taxes et versements assimilés (autres organismes)"
+    },
+    {
+        "c": "64",
+        "lib": "CHARGES DE PERSONNEL"
+    },
+    {
+        "c": "641",
+        "lib": "Rémunérations du personnel"
+    },
+    {
+        "c": "6411",
+        "lib": "Personnel titulaire1"
+    },
+    {
+        "c": "64111",
+        "lib": "Rémunération principale"
+    },
+    {
+        "c": "64112",
+        "lib": "NBI, supplément familial de traitement et indemnité de résidence"
+    },
+    {
+        "c": "64114",
+        "lib": "Personnel titulaire – Indemnité inflation"
+    },
+    {
+        "c": "64116",
+        "lib": "Indemnités de préavis et de licenciement"
+    },
+    {
+        "c": "64118",
+        "lib": "Autres indemnités."
+    },
+    {
+        "c": "6413",
+        "lib": "Personnel non titulaire1"
+    },
+    {
+        "c": "64131",
+        "lib": "Rémunérations"
+    },
+    {
+        "c": "64134",
+        "lib": "Personnel non titulaire - Indemnité inflation"
+    },
+    {
+        "c": "64136",
+        "lib": "Indemnités de préavis et de licenciement"
+    },
+    {
+        "c": "64138",
+        "lib": "Autres indemnités"
+    },
+    {
+        "c": "6415",
+        "lib": "Indemnité inflation3"
+    },
+    {
+        "c": "6416",
+        "lib": "Emplois d’insertion"
+    },
+    {
+        "c": "64161",
+        "lib": "Emplois jeunes"
+    },
+    {
+        "c": "64162",
+        "lib": "Emplois d'avenir"
+    },
+    {
+        "c": "64164",
+        "lib": "Emplois d’insertion – indemnité inflation"
+    },
+    {
+        "c": "64168",
+        "lib": "Autres emplois d’insertion"
+    },
+    {
+        "c": "6417",
+        "lib": "Rémunérations des apprentis"
+    },
+    {
+        "c": "64171",
+        "lib": "Apprentis – rémunérations"
+    },
+    {
+        "c": "64172",
+        "lib": "pprentis – indemnité inflation"
+    },
+    {
+        "c": "6419",
+        "lib": "Remboursements sur rémunérations du personnel"
+    },
+    {
+        "c": "645",
+        "lib": "Charges de sécurité sociale et de prévoyance"
+    },
+    {
+        "c": "6451",
+        "lib": "Cotisations à l'U.R.S.S.A.F."
+    },
+    {
+        "c": "6453",
+        "lib": "Cotisations aux caisses de retraites"
+    },
+    {
+        "c": "6454",
+        "lib": "Cotisations aux A.S.S.E.D.I.C"
+    },
+    {
+        "c": "6455",
+        "lib": "Cotisations pour assurance du personnel"
+    },
+    {
+        "c": "6456",
+        "lib": "Versement au F.N.C du supplément familial"
+    },
+    {
+        "c": "6457",
+        "lib": "Cotisations sociales liées à l’apprentissage"
+    },
+    {
+        "c": "6458",
+        "lib": "Cotisations aux autres organismes sociaux"
+    },
+    {
+        "c": "6459",
+        "lib": "Remboursements sur charges de sécurité sociale et de prévoyance"
+    },
+    {
+        "c": "647",
+        "lib": "Autres charges sociales"
+    },
+    {
+        "c": "6471",
+        "lib": "Prestations versées pour le compte du F.N.A.L."
+    },
+    {
+        "c": "6472",
+        "lib": "Prestations familiales directes"
+    },
+    {
+        "c": "6473",
+        "lib": "Allocations de chômage"
+    },
+    {
+        "c": "64731",
+        "lib": "Versées directement"
+    },
+    {
+        "c": "64732",
+        "lib": "Versées aux A.S.S.E.D.I.C."
+    },
+    {
+        "c": "6474",
+        "lib": "Versements aux autres oeuvres sociales"
+    },
+    {
+        "c": "6475",
+        "lib": "Médecine du travail, pharmacie"
+    },
+    {
+        "c": "6478",
+        "lib": "Autres charges sociales diverses"
+    },
+    {
+        "c": "6479",
+        "lib": "Remboursements sur autres charges sociales"
+    },
+    {
+        "c": "648",
+        "lib": "Autres charges de personnel"
+    },
+    {
+        "c": "6483",
+        "lib": "Cessation progressive d'activité"
+    },
+    {
+        "c": "64831",
+        "lib": "Indemnités aux agents"
+    },
+    {
+        "c": "6488",
+        "lib": "Autres charges"
+    },
+    {
+        "c": "65",
+        "lib": "AUTRES CHARGES DE GESTION COURANTE"
+    },
+    {
+        "c": "651",
+        "lib": "Redevances pour concessions, brevets, licences, procédés, logiciels, droits et valeurs similaires"
+    },
+    {
+        "c": "6512",
+        "lib": "Droits d’utilisation – Informatique en nuage"
+    },
+    {
+        "c": "6518",
+        "lib": "Autres"
+    },
+    {
+        "c": "652",
+        "lib": "Déficit ou excédent des budgets annexes à caractère administratif"
+    },
+    {
+        "c": "6521",
+        "lib": "Déficit des budgets annexes à caractère administratif"
+    },
+    {
+        "c": "6522",
+        "lib": "Reversement de l’excédent des budgets annexes à caractère administratif au budget principal"
+    },
+    {
+        "c": "653",
+        "lib": "Indemnités, frais de mission et de formation des maires, adjoints et conseillers"
+    },
+    {
+        "c": "6531",
+        "lib": "Indemnités"
+    },
+    {
+        "c": "6532",
+        "lib": "Frais de mission"
+    },
+    {
+        "c": "6533",
+        "lib": "Cotisations de retraite"
+    },
+    {
+        "c": "6534",
+        "lib": "Cotisations de sécurité sociale - part patronale"
+    },
+    {
+        "c": "6535",
+        "lib": "Formation"
+    },
+    {
+        "c": "6536",
+        "lib": "Frais de représentation du maire"
+    },
+    {
+        "c": "6537",
+        "lib": "Compensations pour perte de revenus"
+    },
+    {
+        "c": "65371",
+        "lib": "Compensations pour formation"
+    },
+    {
+        "c": "65372",
+        "lib": "Cotisations au fonds de financement de l’allocation de fin de mandat"
+    },
+    {
+        "c": "654",
+        "lib": "Pertes sur créances irrécouvrables"
+    },
+    {
+        "c": "6541",
+        "lib": "Créances admises en non valeur"
+    },
+    {
+        "c": "6542",
+        "lib": "Créances éteintes"
+    },
+    {
+        "c": "655",
+        "lib": "Contingents et participations obligatoires"
+    },
+    {
+        "c": "6551",
+        "lib": "Police d'État"
+    },
+    {
+        "c": "6552",
+        "lib": "Aide sociale du département"
+    },
+    {
+        "c": "6553",
+        "lib": "Service d'incendie"
+    },
+    {
+        "c": "6554",
+        "lib": "Contributions aux organismes de regroupement"
+    },
+    {
+        "c": "65541",
+        "lib": "Contributions au fonds de compensation des charges territoriales (établissement public de territoire)"
+    },
+    {
+        "c": "65548",
+        "lib": "Autres contributions"
+    },
+    {
+        "c": "6555",
+        "lib": "Contributions au C.N.F.P.T. (personnel privé d'emploi)"
+    },
+    {
+        "c": "6556",
+        "lib": "Indemnités de logement aux instituteurs"
+    },
+    {
+        "c": "6557",
+        "lib": "Contributions au titre de la politique de l’habitat"
+    },
+    {
+        "c": "6558",
+        "lib": "Autres contributions obligatoires"
+    },
+    {
+        "c": "656",
+        "lib": "Frais de fonctionnement des groupes d’élus1"
+    },
+    {
+        "c": "6561",
+        "lib": "Frais de personnel"
+    },
+    {
+        "c": "6562",
+        "lib": "Matériel, équipement et fournitures"
+    },
+    {
+        "c": "657",
+        "lib": "Subventions de fonctionnement versées"
+    },
+    {
+        "c": "6573",
+        "lib": "Subventions de fonctionnement aux organismes publics"
+    },
+    {
+        "c": "65731",
+        "lib": "État"
+    },
+    {
+        "c": "65732",
+        "lib": "Régions"
+    },
+    {
+        "c": "65733",
+        "lib": "Départements"
+    },
+    {
+        "c": "65734",
+        "lib": "Communes"
+    },
+    {
+        "c": "657341",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "657348",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "65735",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "657351",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "657358",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "65736",
+        "lib": "Établissements et services rattachés"
+    },
+    {
+        "c": "657361",
+        "lib": "Caisse des écoles"
+    },
+    {
+        "c": "657362",
+        "lib": "CCAS"
+    },
+    {
+        "c": "657363",
+        "lib": "A caractère administratif"
+    },
+    {
+        "c": "657364",
+        "lib": "A caractère industriel et commercial"
+    },
+    {
+        "c": "65737",
+        "lib": "Autres établissements publics locaux"
+    },
+    {
+        "c": "65738",
+        "lib": "Autres organismes publics"
+    },
+    {
+        "c": "6574",
+        "lib": "Subventions de fonctionnement aux associations et autres personnes de droit privé"
+    },
+    {
+        "c": "658",
+        "lib": "Charges diverses de la gestion courante"
+    },
+    {
+        "c": "6588",
+        "lib": "Autres charges diverses de gestion courante"
+    },
+    {
+        "c": "65882",
+        "lib": "Secours"
+    },
+    {
+        "c": "658821",
+        "lib": "Secours d’urgence"
+    },
+    {
+        "c": "658822",
+        "lib": "Aides"
+    },
+    {
+        "c": "658828",
+        "lib": "Autres secours"
+    },
+    {
+        "c": "65888",
+        "lib": "Autres"
+    },
+    {
+        "c": "66",
+        "lib": "CHARGES FINANCIÈRES"
+    },
+    {
+        "c": "661",
+        "lib": "Charges d'intérêts"
+    },
+    {
+        "c": "6611",
+        "lib": "Intérêts des emprunts et dettes"
+    },
+    {
+        "c": "66111",
+        "lib": "Intérêts réglés à l’échéance"
+    },
+    {
+        "c": "66112",
+        "lib": "Intérêts - Rattachement des ICNE"
+    },
+    {
+        "c": "66113",
+        "lib": "Remboursements d’intérêts d’emprunts transférés"
+    },
+    {
+        "c": "661131",
+        "lib": "aux communes membres du GFP"
+    },
+    {
+        "c": "661132",
+        "lib": "au GFP de rattachement"
+    },
+    {
+        "c": "661133",
+        "lib": "à la collectivité ou à l’établissement de rattachement"
+    },
+    {
+        "c": "661138",
+        "lib": "à d’autres tiers"
+    },
+    {
+        "c": "6615",
+        "lib": "Intérêts des comptes courants et de dépôts créditeurs"
+    },
+    {
+        "c": "6616",
+        "lib": "Intérêts bancaires et sur opérations de financement (escompte,...)"
+    },
+    {
+        "c": "6618",
+        "lib": "Intérêts des autres dettes"
+    },
+    {
+        "c": "665",
+        "lib": "Escomptes accordés"
+    },
+    {
+        "c": "666",
+        "lib": "Pertes de change"
+    },
+    {
+        "c": "667",
+        "lib": "Charges nettes sur cessions de valeurs mobilières de placement"
+    },
+    {
+        "c": "668",
+        "lib": "Autres charges financières"
+    },
+    {
+        "c": "6681",
+        "lib": "Indemnités pour remboursement anticipé d’emprunt à risques"
+    },
+    {
+        "c": "6682",
+        "lib": "Indemnités de réaménagement d’emprunt (pour ordre)"
+    },
+    {
+        "c": "6688",
+        "lib": "Autres"
+    },
+    {
+        "c": "67",
+        "lib": "CHARGES EXCEPTIONNELLES"
+    },
+    {
+        "c": "671",
+        "lib": "Charges exceptionnelles sur opérations de gestion"
+    },
+    {
+        "c": "6711",
+        "lib": "Intérêts moratoires et pénalités sur marchés"
+    },
+    {
+        "c": "6712",
+        "lib": "Amendes fiscales et pénales"
+    },
+    {
+        "c": "6713",
+        "lib": "Secours et dots"
+    },
+    {
+        "c": "6714",
+        "lib": "Bourses et prix"
+    },
+    {
+        "c": "6718",
+        "lib": "Autres charges exceptionnelles sur opérations de gestion"
+    },
+    {
+        "c": "673",
+        "lib": "Titres annulés (sur exercices antérieurs)"
+    },
+    {
+        "c": "674",
+        "lib": "Subventions de fonctionnement exceptionnelles"
+    },
+    {
+        "c": "6743",
+        "lib": "Subventions de fonctionnement (versées par les groupements)"
+    },
+    {
+        "c": "6744",
+        "lib": "Subventions aux S.P.I.C. (autres que les services de transport, d’eau et d’assainissement)"
+    },
+    {
+        "c": "67441",
+        "lib": "aux budgets annexes et aux régies dotées de la seule autonomie financière"
+    },
+    {
+        "c": "67442",
+        "lib": "aux régies dotées de la personnalité morale"
+    },
+    {
+        "c": "67443",
+        "lib": "aux fermiers et aux concessionnaires"
+    },
+    {
+        "c": "67444",
+        "lib": "aux syndicats exploitant un SPIC"
+    },
+    {
+        "c": "6745",
+        "lib": "Subventions aux personnes de droit privé"
+    },
+    {
+        "c": "6746",
+        "lib": "Bonifications d’intérêts"
+    },
+    {
+        "c": "6748",
+        "lib": "Autres subventions exceptionnelles"
+    },
+    {
+        "c": "675",
+        "lib": "Valeurs comptables des immobilisations cédées"
+    },
+    {
+        "c": "676",
+        "lib": "Différences sur réalisations (positives) transférées en investissement"
+    },
+    {
+        "c": "6761",
+        "lib": "Différences sur réalisations (positives) transférées en investissement"
+    },
+    {
+        "c": "678",
+        "lib": "Autres charges exceptionnelles"
+    },
+    {
+        "c": "68",
+        "lib": "DOTATIONS AUX AMORTISSEMENTS ET PROVISIONS"
+    },
+    {
+        "c": "681",
+        "lib": "Dotations aux amortissements et aux provisions - Charges de fonctionnement courant"
+    },
+    {
+        "c": "6811",
+        "lib": "Dotations aux amortissements des immobilisations incorporelles et corporelles"
+    },
+    {
+        "c": "6812",
+        "lib": "Dotations aux amortissements des charges de fonctionnement à répartir"
+    },
+    {
+        "c": "6815",
+        "lib": "Dotations aux provisions pour risques et charges de fonctionnement courant"
+    },
+    {
+        "c": "6816",
+        "lib": "Dotations aux provisions pour dépréciation des immobilisations incorporelles et corporelles"
+    },
+    {
+        "c": "6817",
+        "lib": "Dotations aux provisions pour dépréciation des actifs circulants"
+    },
+    {
+        "c": "686",
+        "lib": "Dotations aux amortissements et aux provisions - Charges financières"
+    },
+    {
+        "c": "6861",
+        "lib": "Dotations aux amortissements des primes de remboursement des obligations"
+    },
+    {
+        "c": "6862",
+        "lib": "Dotations aux amortissements des charges financières à répartir"
+    },
+    {
+        "c": "6865",
+        "lib": "Dotations aux provisions pour risques et charges financiers"
+    },
+    {
+        "c": "6866",
+        "lib": "Dotations aux provisions pour dépréciation des éléments financiers"
+    },
+    {
+        "c": "687",
+        "lib": "Dotations aux amortissements et aux provisions - Charges exceptionnelles"
+    },
+    {
+        "c": "6871",
+        "lib": "Dotations aux amortissements exceptionnels des immobilisations"
+    },
+    {
+        "c": "6875",
+        "lib": "Dotations aux provisions pour risques et charges exceptionnels"
+    },
+    {
+        "c": "6876",
+        "lib": "Dotations aux provisions pour dépréciations exceptionnelles"
+    },
+    {
+        "c": "7",
+        "lib": "COMPTES DE PRODUITS 1"
+    },
+    {
+        "c": "70",
+        "lib": "PRODUITS DES SERVICES, DU DOMAINE ET VENTES DIVERSES"
+    },
+    {
+        "c": "701",
+        "lib": "Ventes de produits finis"
+    },
+    {
+        "c": "7011",
+        "lib": "Ventes d’eau"
+    },
+    {
+        "c": "7012",
+        "lib": "Taxes et redevances d’eau"
+    },
+    {
+        "c": "70124",
+        "lib": "Redevance pour pollution d’origine domestique"
+    },
+    {
+        "c": "701241",
+        "lib": "Redevance pour pollution d’origine domestique"
+    },
+    {
+        "c": "701249",
+        "lib": "Reversement de la redevance pour pollution d’origine domestique2"
+    },
+    {
+        "c": "70128",
+        "lib": "Autres taxes et redevances d’eau"
+    },
+    {
+        "c": "7013",
+        "lib": "Vente de produits résiduels"
+    },
+    {
+        "c": "7015",
+        "lib": "Ventes de terrains aménagés"
+    },
+    {
+        "c": "7018",
+        "lib": "Autres ventes de produits finis"
+    },
+    {
+        "c": "702",
+        "lib": "Ventes de récoltes et de produits forestiers"
+    },
+    {
+        "c": "7021",
+        "lib": "Ventes de récoltes"
+    },
+    {
+        "c": "7022",
+        "lib": "Coupes de bois3"
+    },
+    {
+        "c": "7023",
+        "lib": "Menus produits forestiers"
+    },
+    {
+        "c": "7024",
+        "lib": "Remboursement forfaitaire T.V.A."
+    },
+    {
+        "c": "7025",
+        "lib": "Taxes d'affouage"
+    },
+    {
+        "c": "7028",
+        "lib": "Autres produits agricoles et forestiers"
+    },
+    {
+        "c": "703",
+        "lib": "Redevances et recettes d'utilisation du domaine"
+    },
+    {
+        "c": "7031",
+        "lib": "Concessions et redevances funéraires"
+    },
+    {
+        "c": "70311",
+        "lib": "Concession dans les cimetières (produit net)"
+    },
+    {
+        "c": "70312",
+        "lib": "Redevances funéraires"
+    },
+    {
+        "c": "7032",
+        "lib": "Droits de permis de stationnement et de location sur la voie publique, les rivières, ports et quais fluviaux et autres lieux publics"
+    },
+    {
+        "c": "70321",
+        "lib": "Droits de stationnement et de location sur la voie publique"
+    },
+    {
+        "c": "70322",
+        "lib": "Droits de stationnement et de location sur le domaine public portuaire et fluvial"
+    },
+    {
+        "c": "70323",
+        "lib": "Redevance d’occupation du domaine public communal"
+    },
+    {
+        "c": "70328",
+        "lib": "Autres droits de stationnement et de location"
+    },
+    {
+        "c": "7033",
+        "lib": "Redevances pour appareils distributeurs d'essence"
+    },
+    {
+        "c": "7034",
+        "lib": "Péage, droits de pesage, mesurage, jaugeage"
+    },
+    {
+        "c": "7035",
+        "lib": "Locations de droits de chasse et de pêche"
+    },
+    {
+        "c": "7036",
+        "lib": "Taxes de pâturage et de tourbage"
+    },
+    {
+        "c": "7037",
+        "lib": "Contribution pour dégradation des voies et chemins"
+    },
+    {
+        "c": "7038",
+        "lib": "Autres redevances et recettes d’utilisation du domaine"
+    },
+    {
+        "c": "70382",
+        "lib": "Redevances de ski de fond"
+    },
+    {
+        "c": "70383",
+        "lib": "Redevance de stationnement"
+    },
+    {
+        "c": "70384",
+        "lib": "Forfait de post-stationnement"
+    },
+    {
+        "c": "70388",
+        "lib": "Autres redevances et recettes diverses"
+    },
+    {
+        "c": "70389",
+        "lib": "Reversements sur redevances"
+    },
+    {
+        "c": "703892",
+        "lib": "Reversements sur redevance de ski de fond"
+    },
+    {
+        "c": "703894",
+        "lib": "Reversements sur forfait post-stationnement"
+    },
+    {
+        "c": "704",
+        "lib": "Travaux"
+    },
+    {
+        "c": "705",
+        "lib": "Études"
+    },
+    {
+        "c": "706",
+        "lib": "Prestations de services"
+    },
+    {
+        "c": "7061",
+        "lib": "Redevances d'enlèvement des ordures et des déchets"
+    },
+    {
+        "c": "70611",
+        "lib": "Redevance d’enlèvement des ordures ménagères"
+    },
+    {
+        "c": "70612",
+        "lib": "Redevance spéciale d’enlèvement des ordures"
+    },
+    {
+        "c": "70613",
+        "lib": "Abonnement ou redevance pour enlèvement des déchets industriels et commerciaux"
+    },
+    {
+        "c": "70619",
+        "lib": "Reversements sur redevances d’enlèvement des ordures et des déchets"
+    },
+    {
+        "c": "7062",
+        "lib": "Redevances et droits des services à caractère culturel"
+    },
+    {
+        "c": "7063",
+        "lib": "Redevances et droits des services à caractère sportif et de loisirs"
+    },
+    {
+        "c": "70631",
+        "lib": "A caractère sportif"
+    },
+    {
+        "c": "70632",
+        "lib": "A caractère de loisirs"
+    },
+    {
+        "c": "7064",
+        "lib": "Taxes de désinfection (services d’hygiène)"
+    },
+    {
+        "c": "7065",
+        "lib": "Droits de ports et de navigation (autres que stationnement et location)"
+    },
+    {
+        "c": "7066",
+        "lib": "Redevances et droits des services à caractère social"
+    },
+    {
+        "c": "7067",
+        "lib": "Redevances et droits des services périscolaires et d’enseignement"
+    },
+    {
+        "c": "7068",
+        "lib": "Autres redevances et droits"
+    },
+    {
+        "c": "70681",
+        "lib": "Redevances d’assainissement et pour modernisation des réseaux de collecte"
+    },
+    {
+        "c": "706811",
+        "lib": "Redevance d’assainissement collectif"
+    },
+    {
+        "c": "706812",
+        "lib": "Redevance pour modernisation des réseaux de collecte"
+    },
+    {
+        "c": "7068121",
+        "lib": "Redevance pour modernisation des réseaux de collecte"
+    },
+    {
+        "c": "7068129",
+        "lib": "Reversement de la redevance pour modernisation des réseaux de collecte"
+    },
+    {
+        "c": "706813",
+        "lib": "Participations pour l'assainissement collectif"
+    },
+    {
+        "c": "706814",
+        "lib": "Redevance d’assainissement non collectif"
+    },
+    {
+        "c": "70682",
+        "lib": "Location de compteurs"
+    },
+    {
+        "c": "70683",
+        "lib": "Produits des commissions pour recouvrement de la redevance d’assainissement"
+    },
+    {
+        "c": "70684",
+        "lib": "Redevances d’archéologie préventive"
+    },
+    {
+        "c": "70688",
+        "lib": "Autres prestations de services"
+    },
+    {
+        "c": "707",
+        "lib": "Ventes de marchandises"
+    },
+    {
+        "c": "7071",
+        "lib": "Compteurs"
+    },
+    {
+        "c": "7078",
+        "lib": "Autres marchandises"
+    },
+    {
+        "c": "708",
+        "lib": "Autres produits"
+    },
+    {
+        "c": "7081",
+        "lib": "Produits des services exploités dans l'intérêt du personnel"
+    },
+    {
+        "c": "7082",
+        "lib": "Commissions"
+    },
+    {
+        "c": "7083",
+        "lib": "Locations diverses (autres qu'immeubles)"
+    },
+    {
+        "c": "7084",
+        "lib": "Mise à disposition de personnel facturée"
+    },
+    {
+        "c": "70841",
+        "lib": "aux budgets annexes, régies municipales, C.C.A.S. et caisse des écoles"
+    },
+    {
+        "c": "70845",
+        "lib": "aux communes membres du GFP"
+    },
+    {
+        "c": "70846",
+        "lib": "au GFP de rattachement"
+    },
+    {
+        "c": "70848",
+        "lib": "aux autres organismes"
+    },
+    {
+        "c": "7087",
+        "lib": "Remboursements de frais"
+    },
+    {
+        "c": "70871",
+        "lib": "par la collectivité de rattachement1"
+    },
+    {
+        "c": "70872",
+        "lib": "par les budgets annexes et les régies municipales"
+    },
+    {
+        "c": "70873",
+        "lib": "par les C.C.A.S."
+    },
+    {
+        "c": "70874",
+        "lib": "par les caisses des écoles"
+    },
+    {
+        "c": "70875",
+        "lib": "par les communes membres du GFP"
+    },
+    {
+        "c": "70876",
+        "lib": "par le GFP de rattachement"
+    },
+    {
+        "c": "70878",
+        "lib": "par d’autres redevables"
+    },
+    {
+        "c": "7088",
+        "lib": "Autres produits d'activités annexes (abonnements et vente d'ouvrages…)"
+    },
+    {
+        "c": "709",
+        "lib": "Rabais, remises et ristournes accordés"
+    },
+    {
+        "c": "71",
+        "lib": "PRODUCTION STOCKÉE (OU DESTOCKAGE)"
+    },
+    {
+        "c": "713",
+        "lib": "Variation des stocks (en-cours de production, produits)"
+    },
+    {
+        "c": "7133",
+        "lib": "Variation des en-cours de production de biens"
+    },
+    {
+        "c": "7134",
+        "lib": "Variation des en-cours de production de services"
+    },
+    {
+        "c": "7135",
+        "lib": "Variation des stocks de produits"
+    },
+    {
+        "c": "71351",
+        "lib": "Variation des stocks de produits autres que terrains"
+    },
+    {
+        "c": "71355",
+        "lib": "Variation des stocks de terrains aménagés"
+    },
+    {
+        "c": "72",
+        "lib": "PRODUCTION IMMOBILISÉE"
+    },
+    {
+        "c": "721",
+        "lib": "Immobilisations incorporelles"
+    },
+    {
+        "c": "722",
+        "lib": "Immobilisations corporelles"
+    },
+    {
+        "c": "73",
+        "lib": "IMPÔTS ET TAXES"
+    },
+    {
+        "c": "731",
+        "lib": "Impôts locaux"
+    },
+    {
+        "c": "7311",
+        "lib": "Contributions directes"
+    },
+    {
+        "c": "73111",
+        "lib": "Impôts directs locaux"
+    },
+    {
+        "c": "73112",
+        "lib": "Cotisations sur la valeur ajoutée des Entreprises"
+    },
+    {
+        "c": "73113",
+        "lib": "Taxe sur les surfaces commerciales"
+    },
+    {
+        "c": "73114",
+        "lib": "Impositions forfaitaires sur les entreprises de réseau"
+    },
+    {
+        "c": "7318",
+        "lib": "Autres impôts locaux ou assimilés"
+    },
+    {
+        "c": "732",
+        "lib": "Fiscalité reversée"
+    },
+    {
+        "c": "7321",
+        "lib": "Fiscalité reversée entre collectivités locales"
+    },
+    {
+        "c": "73211",
+        "lib": "Attribution de compensation"
+    },
+    {
+        "c": "73212",
+        "lib": "Dotation de solidarité communautaire"
+    },
+    {
+        "c": "73213",
+        "lib": "Reversement du prélèvement du bloc communal sur le produit brut des jeux"
+    },
+    {
+        "c": "73215",
+        "lib": "Dotation de soutien à l'investissement territorial"
+    },
+    {
+        "c": "73216",
+        "lib": "Reversements conventionnels de fiscalité"
+    },
+    {
+        "c": "73218",
+        "lib": "Autres fiscalités reversées entre collectivités locales"
+    },
+    {
+        "c": "7322",
+        "lib": "Fiscalité reversée par l'intermédiaire d'un fonds"
+    },
+    {
+        "c": "73221",
+        "lib": "FNGIR"
+    },
+    {
+        "c": "73222",
+        "lib": "Fonds de solidarité des communes de la région Ile-de-France"
+    },
+    {
+        "c": "73223",
+        "lib": "Fonds de péréquation des ressources communales et intercommunales"
+    },
+    {
+        "c": "73224",
+        "lib": "Fonds départemental des DMTO pour les communes de moins de 5 000 habitants"
+    },
+    {
+        "c": "7323",
+        "lib": "Reversement du prélèvement sur les jeux et les paris hippiques"
+    },
+    {
+        "c": "7328",
+        "lib": "Autres fiscalités reversées"
+    },
+    {
+        "c": "733",
+        "lib": "Taxes pour utilisation des services publics et du domaine"
+    },
+    {
+        "c": "7331",
+        "lib": "Taxe d'enlèvement des ordures ménagères et assimilés"
+    },
+    {
+        "c": "7332",
+        "lib": "Taxe de balayage"
+    },
+    {
+        "c": "7333",
+        "lib": "Taxes funéraires"
+    },
+    {
+        "c": "7334",
+        "lib": "Taxe sur les passagers"
+    },
+    {
+        "c": "7336",
+        "lib": "Droits de place"
+    },
+    {
+        "c": "7338",
+        "lib": "Autres taxes"
+    },
+    {
+        "c": "734",
+        "lib": "Taxes et participations liées à l'urbanisation et à l'environnement"
+    },
+    {
+        "c": "7341",
+        "lib": "Taxe nationale sur les véhicules de transport de marchandises"
+    },
+    {
+        "c": "7342",
+        "lib": "Versement mobilité"
+    },
+    {
+        "c": "7343",
+        "lib": "Taxe sur les pylônes électriques"
+    },
+    {
+        "c": "7344",
+        "lib": "Taxe sur les déchets stockés"
+    },
+    {
+        "c": "7346",
+        "lib": "Taxe pour la gestion des milieux aquatiques et la prévention des inondations"
+    },
+    {
+        "c": "735",
+        "lib": "Impôts et taxes spécifiques liés à la production énergétique et industrielle"
+    },
+    {
+        "c": "7351",
+        "lib": "Taxe sur la consommation finale d'électricité"
+    },
+    {
+        "c": "7353",
+        "lib": "Redevance des mines"
+    },
+    {
+        "c": "7354",
+        "lib": "Surtaxe sur les eaux minérales"
+    },
+    {
+        "c": "736",
+        "lib": "Impôts et taxes spécifiques liés aux activités de services"
+    },
+    {
+        "c": "7362",
+        "lib": "Taxes de séjour"
+    },
+    {
+        "c": "7363",
+        "lib": "Impôt sur les cercles et maisons de jeux"
+    },
+    {
+        "c": "7364",
+        "lib": "Prélèvement sur les produits des jeux"
+    },
+    {
+        "c": "7366",
+        "lib": "Taxe sur les remontées mécaniques"
+    },
+    {
+        "c": "7368",
+        "lib": "Taxe locale sur la publicité extérieure"
+    },
+    {
+        "c": "737",
+        "lib": "Impôts et taxes d'Outre-Mer"
+    },
+    {
+        "c": "7371",
+        "lib": "Taxe sur les rhums"
+    },
+    {
+        "c": "7372",
+        "lib": "Taxes sur les carburants"
+    },
+    {
+        "c": "7373",
+        "lib": "Octroi de mer"
+    },
+    {
+        "c": "7378",
+        "lib": "Autres impôts et taxes d’Outre-Mer"
+    },
+    {
+        "c": "738",
+        "lib": "Autres taxes"
+    },
+    {
+        "c": "7381",
+        "lib": "Taxe additionnelle aux droits de mutation ou à la taxe de publicité foncière"
+    },
+    {
+        "c": "7382",
+        "lib": "Fraction de TVA"
+    },
+    {
+        "c": "7388",
+        "lib": "Autres taxes diverses"
+    },
+    {
+        "c": "739",
+        "lib": "Reversements et restitutions sur impôts et taxes"
+    },
+    {
+        "c": "7391",
+        "lib": "Reversements et restitutions sur impôts locaux"
+    },
+    {
+        "c": "73911",
+        "lib": "Reversements et restitutions sur contributions directes"
+    },
+    {
+        "c": "739113",
+        "lib": "Reversements conventionnels de fiscalité"
+    },
+    {
+        "c": "739115",
+        "lib": "Prélèvement au titre de l’article 55 de la loi SRU"
+    },
+    {
+        "c": "739117",
+        "lib": "Restitutions au titre des dégrèvements à la charge des collectivités locales"
+    },
+    {
+        "c": "7391171",
+        "lib": "Dégrèvement de taxe foncière sur les propriétés non bâties en faveur des jeunes agriculteurs"
+    },
+    {
+        "c": "7391172",
+        "lib": "Dégrèvement de taxe d’habitation sur les logements vacants"
+    },
+    {
+        "c": "7391173",
+        "lib": "Dégrèvement au titre du plafonnement de la TP et de la CET sur la valeur ajoutée"
+    },
+    {
+        "c": "7391178",
+        "lib": "Autres restitutions au titre de dégrèvements sur contributions directes"
+    },
+    {
+        "c": "739118",
+        "lib": "Autres reversements de fiscalité"
+    },
+    {
+        "c": "73916",
+        "lib": "Prélèvements au titre de la contribution pour le redressement des finances publiques"
+    },
+    {
+        "c": "73918",
+        "lib": "Autres reversements sur autres impôts locaux ou assimilés"
+    },
+    {
+        "c": "7392",
+        "lib": "Prélèvements pour reversements de fiscalité"
+    },
+    {
+        "c": "73921",
+        "lib": "Prélèvements pour reversements de fiscalité entre collectivités locales"
+    },
+    {
+        "c": "739211",
+        "lib": "Attributions de compensation"
+    },
+    {
+        "c": "739212",
+        "lib": "Dotation de solidarité communautaire"
+    },
+    {
+        "c": "739213",
+        "lib": "Reversement du prélèvement du bloc communal sur le produit brut des jeux"
+    },
+    {
+        "c": "739216",
+        "lib": "Reversements conventionnels de fiscalité"
+    },
+    {
+        "c": "739218",
+        "lib": "Autres prélèvements pour reversements de fiscalité entre collectivités locales"
+    },
+    {
+        "c": "73922",
+        "lib": "Prélèvements pour reversements de fiscalité par l'intermédiaire d'un fonds"
+    },
+    {
+        "c": "739221",
+        "lib": "FNGIR"
+    },
+    {
+        "c": "739222",
+        "lib": "Fonds de solidarité des communes de la région Ile-de-France"
+    },
+    {
+        "c": "739223",
+        "lib": "Fonds de péréquation des ressources communales etintercommunales"
+    },
+    {
+        "c": "73928",
+        "lib": "Autres prélèvements pour reversements de fiscalité"
+    },
+    {
+        "c": "7394",
+        "lib": "Reversements de taxes et participations liées à l’urbanisation et à l’environnement"
+    },
+    {
+        "c": "73942",
+        "lib": "Reversement sur taxe de versement mobilité"
+    },
+    {
+        "c": "7396",
+        "lib": "Reversement sur impôts sur les cercles et maisons de jeux (CCAS)"
+    },
+    {
+        "c": "7398",
+        "lib": "Reversements, restitutions et prélèvements divers"
+    },
+    {
+        "c": "74",
+        "lib": "DOTATIONS ET PARTICIPATIONS"
+    },
+    {
+        "c": "741",
+        "lib": "D.G.F."
+    },
+    {
+        "c": "7411",
+        "lib": "Dotation forfaitaire"
+    },
+    {
+        "c": "7412",
+        "lib": "Dotation d'aménagement"
+    },
+    {
+        "c": "74121",
+        "lib": "Dotation de solidarité rurale"
+    },
+    {
+        "c": "74123",
+        "lib": "Dotation de solidarité urbaine"
+    },
+    {
+        "c": "74124",
+        "lib": "Dotation d’intercommunalité"
+    },
+    {
+        "c": "74125",
+        "lib": "Dotation d’aménagement des communes d’Outre-mer (DACOM)"
+    },
+    {
+        "c": "74126",
+        "lib": "Dotation de compensation des groupements de communes"
+    },
+    {
+        "c": "74127",
+        "lib": "Dotation nationale de péréquation"
+    },
+    {
+        "c": "7413",
+        "lib": "D.G.F. des permanents syndicaux"
+    },
+    {
+        "c": "7414",
+        "lib": "D.G.F. – Régularisation de l'exercice écoulé"
+    },
+    {
+        "c": "7419",
+        "lib": "Reversement sur D.G.F."
+    },
+    {
+        "c": "742",
+        "lib": "Dotations aux élus locaux"
+    },
+    {
+        "c": "743",
+        "lib": "Dotation d'équilibre (Métropole du Grand Paris)"
+    },
+    {
+        "c": "7431",
+        "lib": "Attributions de la dotation d'équilibre"
+    },
+    {
+        "c": "7439",
+        "lib": "Reversement de la dotation d'équilibre"
+    },
+    {
+        "c": "744",
+        "lib": "FCTVA"
+    },
+    {
+        "c": "745",
+        "lib": "Dotation spéciale au titre des instituteurs"
+    },
+    {
+        "c": "746",
+        "lib": "Dotation générale de décentralisation"
+    },
+    {
+        "c": "7461",
+        "lib": "D.G.D."
+    },
+    {
+        "c": "7462",
+        "lib": "D.G.D. - Régularisation de l'exercice écoulé"
+    },
+    {
+        "c": "747",
+        "lib": "Participations"
+    },
+    {
+        "c": "7471",
+        "lib": "État"
+    },
+    {
+        "c": "74711",
+        "lib": "Emplois-jeunes"
+    },
+    {
+        "c": "74712",
+        "lib": "Emplois d'avenir"
+    },
+    {
+        "c": "74718",
+        "lib": "Autres"
+    },
+    {
+        "c": "7472",
+        "lib": "Régions"
+    },
+    {
+        "c": "7473",
+        "lib": "Départements"
+    },
+    {
+        "c": "7474",
+        "lib": "Communes"
+    },
+    {
+        "c": "74741",
+        "lib": "Communes membres du GFP"
+    },
+    {
+        "c": "74748",
+        "lib": "Autres communes"
+    },
+    {
+        "c": "7475",
+        "lib": "Groupements de collectivités et collectivités à statut particulier"
+    },
+    {
+        "c": "74751",
+        "lib": "GFP de rattachement"
+    },
+    {
+        "c": "74752",
+        "lib": "Recettes liées au fonds de compensation des charges territoriales"
+    },
+    {
+        "c": "74758",
+        "lib": "Autres groupements"
+    },
+    {
+        "c": "7476",
+        "lib": "C.C.A.S. et caisses des écoles"
+    },
+    {
+        "c": "7477",
+        "lib": "Budget communautaire et fonds structurels"
+    },
+    {
+        "c": "7478",
+        "lib": "Autres organismes"
+    },
+    {
+        "c": "748",
+        "lib": "Autres attributions et participations"
+    },
+    {
+        "c": "7481",
+        "lib": "Attributions sur le versement représentatif d’impôt sur les cercles et maisons de jeux"
+    },
+    {
+        "c": "7482",
+        "lib": "Compensation pour perte de taxe additionnelle aux droits de mutation ou à la taxe de publicité foncière"
+    },
+    {
+        "c": "7483",
+        "lib": "Attributions de péréquation et de compensation"
+    },
+    {
+        "c": "74831",
+        "lib": "Dotations et compensations relatives à la taxe professionnelle et à la CET"
+    },
+    {
+        "c": "748311",
+        "lib": "Compensation des pertes de bases d’imposition à la CET"
+    },
+    {
+        "c": "748313",
+        "lib": "Dotation de compensation de la réforme de la taxe professionnelle"
+    },
+    {
+        "c": "748314",
+        "lib": "Dotation unique des compensations spécifiques à la taxe professionnelle"
+    },
+    {
+        "c": "748315",
+        "lib": "Compensation des pertes d’IFER"
+    },
+    {
+        "c": "74832",
+        "lib": "Attribution du fonds départemental de péréquation de la taxe professionnelle"
+    },
+    {
+        "c": "74833",
+        "lib": "État - Compensation au titre de la Contribution Economique Territoriale(CVAE et CFE)"
+    },
+    {
+        "c": "74834",
+        "lib": "État - Compensation au titre des exonérations des taxes foncières"
+    },
+    {
+        "c": "74835",
+        "lib": "État - Compensation au titre des exonérations de taxe d’habitation"
+    },
+    {
+        "c": "74836",
+        "lib": "Dotations de compensation relatives à la taxe professionnelle - Syndicales"
+    },
+    {
+        "c": "74837",
+        "lib": "Dotations de développement"
+    },
+    {
+        "c": "748371",
+        "lib": "Dotation d’équipement des territoires ruraux"
+    },
+    {
+        "c": "748372",
+        "lib": "Dotation politique de la ville"
+    },
+    {
+        "c": "748373",
+        "lib": "Dotation de soutien à l’investissement local"
+    },
+    {
+        "c": "74838",
+        "lib": "Autres attributions de péréquation et de compensation"
+    },
+    {
+        "c": "748381",
+        "lib": "Compensation liée au relèvement du seuil des personnes assujetties au versement mobilité"
+    },
+    {
+        "c": "748388",
+        "lib": "Autres"
+    },
+    {
+        "c": "7484",
+        "lib": "Dotation de recensement"
+    },
+    {
+        "c": "7485",
+        "lib": "Dotation pour les titres sécurisés"
+    },
+    {
+        "c": "7487",
+        "lib": "Dotations des arrondissements ou des communes associées"
+    },
+    {
+        "c": "74871",
+        "lib": "Dotation d’animation locale"
+    },
+    {
+        "c": "748711",
+        "lib": "Dotation d’animation locale reçue"
+    },
+    {
+        "c": "748719",
+        "lib": "Dotation d’animation locale versée"
+    },
+    {
+        "c": "74872",
+        "lib": "Dotation de gestion locale"
+    },
+    {
+        "c": "748721",
+        "lib": "Dotation de gestion locale reçue"
+    },
+    {
+        "c": "748729",
+        "lib": "Dotation de gestion locale versée"
+    },
+    {
+        "c": "7488",
+        "lib": "Autres attributions et participations"
+    },
+    {
+        "c": "7489",
+        "lib": "Reversement et restitution sur autres attributions et participations"
+    },
+    {
+        "c": "75",
+        "lib": "AUTRES PRODUITS DE GESTION COURANTE"
+    },
+    {
+        "c": "751",
+        "lib": "Redevances pour concessions, brevets, licences, marques, procédés, logiciels, droits et valeurs similaires"
+    },
+    {
+        "c": "752",
+        "lib": "Revenus des immeubles"
+    },
+    {
+        "c": "754",
+        "lib": "Redevance pour défaut de branchement à l’égout"
+    },
+    {
+        "c": "755",
+        "lib": "Excédent ou déficit des budgets annexes à caractère administratif"
+    },
+    {
+        "c": "7551",
+        "lib": "Excédent des budgets annexes à caractère administratif"
+    },
+    {
+        "c": "7552",
+        "lib": "Prise en charge du déficit du budget annexe à caractère administratif par le budget principal"
+    },
+    {
+        "c": "756",
+        "lib": "Excédents reversés par les régies à caractère industriel et commercial"
+    },
+    {
+        "c": "7561",
+        "lib": "Régies dotées de la seule autonomie financière"
+    },
+    {
+        "c": "7562",
+        "lib": "Régies dotées de la personnalité morale"
+    },
+    {
+        "c": "757",
+        "lib": "Redevances versées par les fermiers et concessionnaires"
+    },
+    {
+        "c": "758",
+        "lib": "Produits divers de gestion courante"
+    },
+    {
+        "c": "7581",
+        "lib": "Redevances diverses"
+    },
+    {
+        "c": "75814",
+        "lib": "Redevances sur l'énergie hydraulique"
+    },
+    {
+        "c": "7588",
+        "lib": "Autres produits divers de gestion courante"
+    },
+    {
+        "c": "76",
+        "lib": "PRODUITS FINANCIERS"
+    },
+    {
+        "c": "761",
+        "lib": "Produits de participations"
+    },
+    {
+        "c": "762",
+        "lib": "Produits des autres immobilisations financières"
+    },
+    {
+        "c": "7621",
+        "lib": "Produits des autres immobilisations financières - encaissés à l’échéance"
+    },
+    {
+        "c": "7622",
+        "lib": "Produits des autres immobilisations financières - rattachement des ICNE"
+    },
+    {
+        "c": "7623",
+        "lib": "Remboursements d’intérêts d’emprunts transférés"
+    },
+    {
+        "c": "76231",
+        "lib": "par les communes membres du GFP"
+    },
+    {
+        "c": "76232",
+        "lib": "par le GFP de rattachement"
+    },
+    {
+        "c": "76233",
+        "lib": "par leurs BA et régies à seule autonomie financière"
+    },
+    {
+        "c": "76238",
+        "lib": "par d’autres tiers"
+    },
+    {
+        "c": "764",
+        "lib": "Revenus des valeurs mobilières de placement"
+    },
+    {
+        "c": "765",
+        "lib": "Escomptes obtenus"
+    },
+    {
+        "c": "766",
+        "lib": "Gains de change"
+    },
+    {
+        "c": "767",
+        "lib": "Produits nets sur cessions de valeurs mobilières de placement"
+    },
+    {
+        "c": "768",
+        "lib": "Autres produits financiers"
+    },
+    {
+        "c": "7681",
+        "lib": "Fonds de soutien - Sortie des emprunts à risque"
+    },
+    {
+        "c": "76811",
+        "lib": "Sortie des emprunts à risques avec IRA capitalisées"
+    },
+    {
+        "c": "76812",
+        "lib": "Sortie des emprunts à risques sans IRA capitalisées"
+    },
+    {
+        "c": "7688",
+        "lib": "Autres"
+    },
+    {
+        "c": "77",
+        "lib": "PRODUITS EXCEPTIONNELS"
+    },
+    {
+        "c": "771",
+        "lib": "Produits exceptionnels sur opérations de gestion"
+    },
+    {
+        "c": "7711",
+        "lib": "Dédits et pénalités perçus"
+    },
+    {
+        "c": "7713",
+        "lib": "Libéralités reçues"
+    },
+    {
+        "c": "7714",
+        "lib": "Recouvrement sur créances admises en non valeur"
+    },
+    {
+        "c": "7718",
+        "lib": "Autres produits exceptionnels sur opérations de gestion"
+    },
+    {
+        "c": "773",
+        "lib": "Mandats annulés (sur exercices antérieurs) ou atteints par la déchéance quadriennale"
+    },
+    {
+        "c": "774",
+        "lib": "Subventions exceptionnelles"
+    },
+    {
+        "c": "775",
+        "lib": "Produits des cessions d'immobilisations"
+    },
+    {
+        "c": "776",
+        "lib": "Différences sur réalisations (négatives) reprises au compte de résultat"
+    },
+    {
+        "c": "7761",
+        "lib": "Différences sur réalisations (négatives) reprises au compte de résultat"
+    },
+    {
+        "c": "7768",
+        "lib": "Neutralisation des amortissements des subventions d'équipement versées"
+    },
+    {
+        "c": "777",
+        "lib": "Quote-part des subventions d'investissement transférée au compte de résultat"
+    },
+    {
+        "c": "778",
+        "lib": "Autres produits exceptionnels"
+    },
+    {
+        "c": "7785",
+        "lib": "Excédent d’investissement transféré au compte de résultat"
+    },
+    {
+        "c": "7788",
+        "lib": "Produits exceptionnels divers"
+    },
+    {
+        "c": "78",
+        "lib": "REPRISES SUR AMORTISSEMENTS ET PROVISIONS"
+    },
+    {
+        "c": "781",
+        "lib": "Reprises sur amortissements et provisions - Produits de fonctionnement courant"
+    },
+    {
+        "c": "7811",
+        "lib": "Reprises sur amortissements des immobilisations incorporelles et corporelles"
+    },
+    {
+        "c": "7815",
+        "lib": "Reprises sur provisions pour risques et charges de fonctionnement courant"
+    },
+    {
+        "c": "7816",
+        "lib": "Reprises sur provisions pour dépréciation des immobilisations incorporelles et corporelles"
+    },
+    {
+        "c": "7817",
+        "lib": "Reprises sur provisions pour dépréciation des actifs circulants"
+    },
+    {
+        "c": "786",
+        "lib": "Reprises sur provisions - Produits financiers"
+    },
+    {
+        "c": "7865",
+        "lib": "Reprises sur provisions pour risques et charges financiers"
+    },
+    {
+        "c": "7866",
+        "lib": "Reprises sur provisions pour dépréciation des éléments financiers"
+    },
+    {
+        "c": "787",
+        "lib": "Reprises sur provisions - Produits exceptionnels"
+    },
+    {
+        "c": "7875",
+        "lib": "Reprises sur provisions pour risques et charges exceptionnels"
+    },
+    {
+        "c": "7876",
+        "lib": "Reprises sur provisions pour dépréciations exceptionnelles"
+    },
+    {
+        "c": "79",
+        "lib": "TRANSFERTS DE CHARGES"
+    },
+    {
+        "c": "791",
+        "lib": "Transferts de charges de gestion courante"
+    },
+    {
+        "c": "796",
+        "lib": "Transferts de charges financières"
+    },
+    {
+        "c": "797",
+        "lib": "Transferts de charges exceptionnelles"
+    },
+    {
+        "c": "8",
+        "lib": "COMPTES SPÉCIAUX 1"
+    },
+    {
+        "c": "80",
+        "lib": "ENGAGEMENTS HORS BILAN"
+    },
+    {
+        "c": "801",
+        "lib": "Engagements donnés par la collectivité ou l’établissement"
+    },
+    {
+        "c": "8015",
+        "lib": "Engagement sur garanties d'emprunt"
+    },
+    {
+        "c": "8016",
+        "lib": "Redevances de crédit-bail restant à courir"
+    },
+    {
+        "c": "80161",
+        "lib": "Crédit-bail mobilier"
+    },
+    {
+        "c": "80165",
+        "lib": "Crédit-bail immobilier"
+    },
+    {
+        "c": "8017",
+        "lib": "Subventions à verser par annuités (annuités restant à courir)"
+    },
+    {
+        "c": "8018",
+        "lib": "Autres engagements donnés"
+    },
+    {
+        "c": "802",
+        "lib": "Engagements reçus par la collectivité ou l’établissement"
+    },
+    {
+        "c": "8026",
+        "lib": "Redevances de crédit-bail restant à recevoir"
+    },
+    {
+        "c": "80265",
+        "lib": "Crédit-bail immobilier"
+    },
+    {
+        "c": "8027",
+        "lib": "Subventions à recevoir par annuités (annuités restant à recevoir)"
+    },
+    {
+        "c": "8028",
+        "lib": "Autres engagements reçus"
+    },
+    {
+        "c": "86",
+        "lib": "VALEURS INACTIVES"
+    },
+    {
+        "c": "861",
+        "lib": "Comptes de position : titres et valeurs en portefeuille"
+    },
+    {
+        "c": "862",
+        "lib": "Comptes de position : titres et valeurs chez les correspondants"
+    },
+    {
+        "c": "863",
+        "lib": "Comptes de prise en charge"
+    }
+]

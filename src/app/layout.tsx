@@ -22,7 +22,7 @@ export default function RootLayout({
         <nav>
           <ul>
             <li>
-              <strong>Budgets publics</strong>
+              <Link href="/"><strong>Budgets publics</strong></Link>
             </li>
           </ul>
           <ul className="nav-links-desktop">
