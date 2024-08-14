@@ -40,7 +40,7 @@ function ComptaList({
             </thead>
             <tbody>
               {comptesForClasse[sousClasse]?.map((compte) => (
-                <tr>
+                <tr key={`sousclasse${compte.compte}`}>
                   <td>
                     {compte.compteLib} ({compte.compte})
                   </td>
