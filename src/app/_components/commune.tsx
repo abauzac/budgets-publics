@@ -16,13 +16,15 @@ import {
 import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
 import TableauComptable from "./tableauComptable";
+import { generateYearsArray } from "../_utils/utils";
 
 export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
   const [listeCommunes, setListeCommunes] = useState<any[]>([]); // liste des communes du département sélectionné
   const [commune, setCommune] = useState<any>(null); // objet commune
   const [prefix, setPrefix] = useState<string>("");
-  const [comptaYear, setComptaYear] = useState<number>(2023);
+  const currentYear = (new Date()).getFullYear()
+  const [comptaYear, setComptaYear] = useState<number>(currentYear-1);
   const [typeVue, setTypeVue] = useState<
     | "global"
     | "budget"
@@ -476,11 +478,7 @@ export default function Communes() {
                     }}
                     required
                   >
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
+                    {generateYearsArray().map(year => <option key={`yr${year}`} value={year}>{year}</option>)}
                   </select>
                   <br />
                   
