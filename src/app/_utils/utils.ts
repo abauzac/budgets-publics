@@ -213,6 +213,18 @@ export function getTypeCharts(
   }));
 }
 
+export function generateYearsArray() {
+  let startYear = 2015
+  const endYear = new Date().getFullYear()-1
+  const endDate = endYear || new Date().getFullYear();
+  let years = [];
+  for (var i = startYear; i <= endDate; i++) {
+    years.push(startYear);
+    startYear++;
+  }
+  return years.toReversed();
+}
+
 export function getNomenclature(responseItem: BalanceCommuneResponse): {c: string; lib: string}[] {
   switch (responseItem.nomen) {
     case "M14":
