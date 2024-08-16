@@ -10,6 +10,8 @@ import {
   urlComptaCommune,
 } from "./charts";
 import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
+import comptesM14 from "../../../public/json/m14.json";
+import comptesM57 from "../../../public/json/m57.json";
 
 export enum TypeDataSet {
   Commune = "comptes-individuels-des-communes-fichier-global-a-compter-de-2000",
@@ -180,6 +182,8 @@ export function transformDepCodeToCollectiviteDept(depCode: string, padleft = fa
   else if (dep.length === 3 && dep.startsWith("97")) {
     return "10" + dep[2];
   } else {
+    if(padleft)
+      return dep.padStart(3, "0")
     return dep;
   }
 }
@@ -207,6 +211,17 @@ export function getTypeCharts(
     ...typeChart,
     yAxis: `${prefix || ""}${typeChart.yAxis}${suffix || ""}`,
   }));
+}
+
+export function getNomenclature(responseItem: BalanceCommuneResponse): {c: string; lib: string}[] {
+  switch (responseItem.nomen) {
+    case "M14":
+      return comptesM14;
+    case "M57":
+      return comptesM57.map(m => { return { c: ""+parseInt(m.CODE), lib: m.LIBELLE }});
+    default:
+      return [];
+  }
 }
 
 export async function getComptesForCommune(url: string){
