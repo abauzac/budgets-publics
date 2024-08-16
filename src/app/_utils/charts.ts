@@ -7,7 +7,7 @@ export const urlChartRegion =
 export const urlChartCollectivite =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-/analyze/?refine.siren=[SIREN]&dataChart=[DATACHART]&static=false&datasetcard=false";
 export const urlComptaCommune =
-  "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-communes-en-[YEAR]/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=insee%3A%22[CODECOMM]%22&refine=nomen%3A%22M14%22";
+  "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-communes-en-[YEAR]/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=insee%3A%22[CODECOMM]%22";
 
   export enum GraphTypeBudgetFonctCommune {
   ProduitDeFonctionnementCAF = "pfcaf",

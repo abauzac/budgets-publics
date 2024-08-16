@@ -30,7 +30,7 @@ export interface BalanceCommuneResponse {
     ctype: string
     /** Sous-type d'établissement */
     cstyp: string
-    /** Nomenclature comptable */
+    /** Nomenclature comptable (M14, M57...) */
     nomen: string
     /** Les 9  premiers caractères du n° SIRET ; 
      * Le SIREN d'un budget principal X est identique au SIREN du/ou des Budget(s) annexe(s) du Budget principal X
