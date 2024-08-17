@@ -348,6 +348,54 @@
         "lib": "Subventions d’investissement rattachées aux actifs amortissables (à subdiviser  comme le compte 131)"
     },
     {
+        "c": "13911",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : État et établissements nationaux"
+    },
+    {
+        "c": "13912",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Régions"
+    },
+    {
+        "c": "13913",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Départements"
+    },
+    {
+        "c": "139141",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Communes membres du GFP"
+    },
+    {
+        "c": "139146",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Attributions de compensation d’investissement"
+    },
+    {
+        "c": "139148",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Autres communes"
+    },
+    {
+        "c": "139151",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : GFP de rattachement"
+    },
+    {
+        "c": "139156",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Attributions de compensation d’investissement"
+    },
+    {
+        "c": "139158",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Autres groupements"
+    },
+    {
+        "c": "13916",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Autres établissements publics locaux "
+    },
+    {
+        "c": "13917",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Fonds européens"
+    },
+    {
+        "c": "13918",
+        "lib": "Subventions d’investissement rattachées aux actifs amortissables : Autres"
+    },
+    {
         "c": "1393",
         "lib": "Fonds affectés à l’équipement"
     },

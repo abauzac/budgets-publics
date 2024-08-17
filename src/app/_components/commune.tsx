@@ -17,6 +17,8 @@ import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
 import TableauComptable from "./tableauComptable";
 import { generateYearsArray } from "../_utils/utils";
+import { ModalProvider } from "../_contexts/ComptabiliteModalContext";
+import Modal from "./comptabiliteModal";
 
 export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
@@ -481,13 +483,16 @@ export default function Communes() {
                     {generateYearsArray().map(year => <option key={`yr${year}`} value={year}>{year}</option>)}
                   </select>
                   <br />
-                  
+                  <ModalProvider>
+
                   <TableauComptable
                     collectivite={"commune"}
                     codeCible={commune.COM}
                     codeParent={departement}
                     year={comptaYear}
                   ></TableauComptable>
+                  <Modal />
+                  </ModalProvider>
                 </div>
               )}
             </div>
