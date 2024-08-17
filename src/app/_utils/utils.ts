@@ -20,6 +20,15 @@ export enum TypeDataSet {
   Collectivite = "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-",
 }
 
+export function toEuro(euro: number){
+  if(euro === 0)
+    return "-"
+  return new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  }).format(euro);
+}
+
 export function getUrlForCollectivite(
   collectivite: string,
   code: string,
