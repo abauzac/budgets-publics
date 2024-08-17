@@ -1,13 +1,13 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import { useModal } from "../_contexts/ComptabiliteModalContext";
 import { toEuro } from "../_utils/utils";
 
-export default function Modal(props) {
+export default function Modal(props: {}) {
   const { modalIsOpen, handleClose, compte } = useModal();
 
-  const handleClickOverlay = (event) => {
+  const handleClickOverlay = (event: MouseEvent<HTMLDialogElement>) => {
     if (event.target === event.currentTarget) {
-      handleClose(event);
+        handleClose && handleClose(event);
     }
   };
 
