@@ -1,16 +1,29 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  MouseEvent,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { BalanceCommuneInfos } from "../_utils/types";
 
-const ModalContext = createContext<{handleClose?: Function,handleOpen?: Function, modalIsOpen?: boolean, compte?: BalanceCommuneInfos}>({});
+export type ModalContextType = {
+  handleClose: (event: MouseEvent) => void;
+  handleOpen:  (event: MouseEvent, compte: BalanceCommuneInfos) => void;
+  modalIsOpen: boolean;
+  compte: BalanceCommuneInfos;
+};
+
+const ModalContext = createContext<ModalContextType >({} as any);
 const useModal = () => useContext(ModalContext);
 
-const ModalProvider = ({ children, ...props }) => {
+const ModalProvider = ({ children, ...props }: {children: React.ReactNode}) => {
   const htmlTag = document.querySelector("html");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [compte, setCompte] = useState<BalanceCommuneInfos>();
   const modalAnimationDuration = 400;
   // Handle open
-  const handleOpen = (event, compte: BalanceCommuneInfos) => {
+  const handleOpen = (event: MouseEvent, compte: BalanceCommuneInfos) => {
     event.preventDefault();
     if (htmlTag) {
       setModalIsOpen(true);
@@ -23,8 +36,8 @@ const ModalProvider = ({ children, ...props }) => {
   };
 
   // Handle close
-  const handleClose = (event) => {
-    event.preventDefault();
+  const handleClose = (event?: MouseEvent) => {
+    event && event.preventDefault();
     if (htmlTag) {
       htmlTag.classList.add("modal-is-closing");
       setTimeout(() => {
@@ -36,10 +49,10 @@ const ModalProvider = ({ children, ...props }) => {
 
   // Handle escape key
   useEffect(() => {
-    const handleEscape = (event) => {
+    const handleEscape = (event: KeyboardEvent) => {
       if (!modalIsOpen) return;
       if (event.key === "Escape") {
-        handleClose(event);
+        handleClose();
       }
     };
     window.addEventListener("keydown", handleEscape);
@@ -49,19 +62,19 @@ const ModalProvider = ({ children, ...props }) => {
   }, [modalIsOpen]);
 
   // Set scrollbar width on mount
-//   useEffect(() => {
-//     const scrollBarWidth = getScrollBarWidth();
-//     htmlTag.style.setProperty("--pico-scrollbar-width", `${scrollBarWidth}px`);
-//     return () => {
-//       htmlTag.style.removeProperty("--pico-scrollbar-width");
-//     };
-//   }, []);
+  //   useEffect(() => {
+  //     const scrollBarWidth = getScrollBarWidth();
+  //     htmlTag.style.setProperty("--pico-scrollbar-width", `${scrollBarWidth}px`);
+  //     return () => {
+  //       htmlTag.style.removeProperty("--pico-scrollbar-width");
+  //     };
+  //   }, []);
 
   return (
     <ModalContext.Provider
       value={{
         modalIsOpen,
-        compte,
+        compte: compte!,
         handleOpen,
         handleClose,
         ...props,
