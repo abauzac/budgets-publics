@@ -1,3 +1,116 @@
+import {
+  Chart,
+  CategoryScale,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Tooltip,
+  ChartDataset,
+  Legend,
+  TooltipItem
+} from "chart.js";
+import { Graph } from "../_components/graphMultiLines";
+
+    Chart.register(
+      CategoryScale,
+      LineController,
+      LineElement,
+      PointElement,
+      LinearScale,
+      // plugins :
+      Tooltip,
+      Legend
+    );
+
+export const urlDataEconomieTemplate = "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/[IDENTIFIER]/records"
+
+/* data communes */
+export const urlDataCommunesIdentifiers = [
+  "comptes-individuels-des-communes-fichier-global-2008",
+  "comptes-individuels-des-communes-fichier-global-20090",
+  "comptes-individuels-des-communes-fichier-global-2010",
+  "comptes-individuels-des-communes-fichier-global-2011-2015",
+  "comptes-individuels-des-communes-fichier-global-2016",
+  "comptes-individuels-des-communes-fichier-global-2017",
+  "comptes-individuels-des-communes-fichier-global-2018",
+  "comptes-individuels-des-communes-fichier-global-2019-2020",
+  "comptes-individuels-des-communes-fichier-global-2021",
+  "comptes-individuels-des-communes-fichier-global-2022",
+  "comptes-individuels-des-communes-fichier-global-2023-2024",
+] 
+
+
+export function getChartJs(data: any[], dataPropertyOrId: string, multipleYProperties?: Graph[]) {
+  
+  const chart = new Chart("chartjs" + dataPropertyOrId, {
+        type: "line",
+        data: {
+          labels: data.map((item) => item.an),
+          datasets: multipleYProperties == null 
+          ? [
+            {
+              label: dataPropertyOrId,
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.parsed.y}` || "",
+                },
+              },
+              data: data.map((item) => item[dataPropertyOrId] || 0),
+              borderColor: "rgba(69, 81, 255, 1)",
+              backgroundColor: "rgba(0, 38, 255, 0.2)",
+              
+            },
+          ] as ChartDataset<"line">[]
+          : multipleYProperties.map((yProp, index) => ({
+              label: yProp.description,
+              yAxisID: 'y',
+              tooltip: {
+                callbacks: {
+                  label: (context) => `${context.parsed.y}` || "",
+                },
+              },
+              data: data.map((item) => item[yProp.yAxis]),
+              borderColor: yProp.color,
+              backgroundColor: yProp.color,
+            } as ChartDataset<"line">)),
+        },
+        options: {
+          responsive: true,
+          interaction: {
+            mode: "y",
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Année",
+              },
+            },
+            y: {
+              title: {
+                display: false,
+              },
+              beginAtZero: true,
+            },
+          },
+          plugins: {
+            tooltip: {
+              enabled: true,
+            },
+            legend: {
+              display: multipleYProperties != null && multipleYProperties.length > 1,
+            }
+          },
+        },
+      });
+      return chart;
+}
+
+
+
+/* Chart urls have been dropped... */
+
 export const urlChartCommunes =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/analyze/?refine.dep=[DEPARTEMENT]&refine.icom=[CODECOMM]&dataChart=[DATACHART]&static=false&datasetcard=false";
 export const urlChartDepartement =
@@ -46,6 +159,7 @@ export enum GraphTypeVueGlobalCommune {
   BesoinFinancementResiduel = "bf1",
   ResultatEnsemble = "res2",
 }
+
 
 export function getChartsOneLine(type: string, color: string = "#000000") {
   return [

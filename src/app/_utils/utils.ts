@@ -8,6 +8,8 @@ import {
   urlChartDepartement,
   urlChartRegion,
   urlComptaCommune,
+  urlDataCommunesIdentifiers,
+  urlDataEconomieTemplate,
 } from "./charts";
 import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
 import comptesM14 from "../../../public/json/m14.json";
@@ -54,7 +56,6 @@ export function getUrlForCollectivite(
       charts,
       "an"
     );
-    console.log(dataChart);
     const urlFinale = urlChartCommunes
       .replace("[DEPARTEMENT]", codeDep)
       .replace("[CODECOMM]", idCommune)
@@ -76,7 +77,6 @@ export function getUrlForCollectivite(
       charts,
       "exer"
     );
-    console.log(dataChart);
     const urlFinale = urlChartDepartement
       .replace("[DEPARTEMENT]", codeDep)
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
@@ -93,7 +93,6 @@ export function getUrlForCollectivite(
       charts,
       "exer"
     );
-    console.log(dataChart);
     const urlFinale = urlChartRegion
       .replace("[REGION]", regCode)
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
@@ -109,7 +108,6 @@ export function getUrlForCollectivite(
       charts,
       "exer"
     );
-    console.log(dataChart);
     const urlFinale = urlChartCollectivite
       .replace("[SIREN]", siren)
       .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
@@ -271,4 +269,40 @@ export async function getComptesForCommune(url: string){
     offset = loopIdx*100;
   }
   return results;
+}
+
+export async function getCommunesData(codeCommune: string, codeDep : string){
+  // url encode : dep="006" and icom="088" 
+  if(codeCommune.length == 2) // pad left 0
+    codeCommune = codeCommune.padStart(3, "0");
+  if(codeDep.length == 2) // pad left 0
+    codeDep = codeDep.padStart(3, "0");
+
+  const results: any[] = [];
+  for (let i = 0; i < urlDataCommunesIdentifiers.length; i++) {
+    const identifier = urlDataCommunesIdentifiers[i];
+    const url = getCommuneUrlDataEconomie(identifier, codeCommune, codeDep);
+    const response = await fetch(url);
+    if(!response.ok)
+      continue;
+    const json = await response.json();
+    if(json.total_count && json.total_count > 0) {
+      results.push(...json.results);
+    }
+  }
+  // order by "an" property ascending
+  results.sort((a, b) => +a.an - +b.an);
+  return results;
+}
+
+export function getCommuneUrlDataEconomie(dataIdentifier: string, codeCommune: string, codeDep: string){
+  if(!dataIdentifier)
+    throw new Error("dataIdentifier is required");
+  const url = getUrlDataEconomieForIdentifier(dataIdentifier);
+  const whereEncoded = encodeURIComponent(`dep="${codeDep}" and icom="${codeCommune}"`);
+  return url + `?where=${whereEncoded}`;
+}
+
+export function getUrlDataEconomieForIdentifier(dataIdentifier: string){
+  return urlDataEconomieTemplate.replace("[IDENTIFIER]", dataIdentifier);
 }
