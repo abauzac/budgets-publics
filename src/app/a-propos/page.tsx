@@ -1,3 +1,5 @@
+import { urlDataCommunesIdentifiers, urlDataEconomieTemplate } from "../_utils/charts";
+
 export default function APropos() {
   return (
     <>
@@ -14,13 +16,24 @@ export default function APropos() {
       <ul>
         <li>
           Communes :{" "}
-          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-communes-fichier-global-a-compter-de-2000/table/">
-            Comptes individuels des communes
-          </a>{" "}
+          <ul>
+          {urlDataCommunesIdentifiers.map(id => {
+            const url = urlDataEconomieTemplate
+            .replace("[IDENTIFIER]", id)
+            .replace("/records", "/information")
+            .replace("api/explore/v2.1/catalog/datasets", "explore/dataset");
+
+            return (<li key={id}><a href={url}>{id.replaceAll("-", " ")}</a></li>)
+          })}
+          </ul>
           et{" "}
-          <a href="https://data.economie.gouv.fr/explore/dataset/balances-comptables-des-communes-en-2023/information/">
-            Balance comptable des communes
-          </a>
+          <ul>
+            <li>
+              <a href="https://data.economie.gouv.fr/explore/dataset/balances-comptables-des-communes-en-2023/information/">
+                Balance comptable des communes
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           Départements :{" "}

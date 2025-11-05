@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, Suspense, useEffect, useState } from "react";
+import { ChangeEvent, Suspense, useCallback, useEffect, useState } from "react";
 import departements from "../../../public/json/departements.json";
 import communes from "../../../public/json/communes.json";
 import GraphOneLine from "./graphOneLine";
@@ -16,15 +16,19 @@ import {
 import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
 import TableauComptable from "./tableauComptable";
-import { generateYearsArray } from "../_utils/utils";
+import { generateYearsArray, getCommunesData } from "../_utils/utils";
 import { ModalProvider } from "../_contexts/ComptabiliteModalContext";
 import Modal from "./comptabiliteModal";
+import GraphOneLineData from "./graphOneLineData";
+import GraphMultiLinesData from "./graphMultiLinesData";
 
 export default function Communes() {
   const [departement, setDepartement] = useState(""); // "01", "02", "03", ... "95
   const [listeCommunes, setListeCommunes] = useState<any[]>([]); // liste des communes du département sélectionné
   const [commune, setCommune] = useState<any>(null); // objet commune
+  const [dataCommunes, setDataCommunes] = useState<any[]>([]);
   const [prefix, setPrefix] = useState<string>("");
+  const [suffix, setSuffix] = useState<string>("");
   const currentYear = (new Date()).getFullYear()
   const [comptaYear, setComptaYear] = useState<number>(currentYear-1);
   const [typeVue, setTypeVue] = useState<
@@ -37,6 +41,7 @@ export default function Communes() {
   >("global");
   const router = useRouter();
   const params = useSearchParams();
+  
   // on component mount
   useEffect(() => {
     const paramCommune = params.get("commune");
@@ -62,6 +67,10 @@ export default function Communes() {
               })
               .filter((c) => c.DATE_FIN === "" && c.COM.startsWith(codeDep))
           );
+          (async () => {
+            const dataCommunes = await getCommunesData(communeFound.COM.replace(codeDep, ""), codeDep);
+            setDataCommunes(dataCommunes);
+          })();
         }
       }
     }
@@ -83,75 +92,9 @@ export default function Communes() {
     }
   }, [departement]);
 
+
   return (
     <>
-      <div className="wrapper">
-        <aside>
-          <nav>
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("global");
-                  }}
-                >
-                  Vue globale
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("budget");
-                  }}
-                >
-                  Budget fonctionnel
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("investissements");
-                  }}
-                >
-                  Investissements
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("dette");
-                  }}
-                >
-                  Dette
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("fiscalite");
-                  }}
-                >
-                  Fiscalité
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("comptabilite");
-                  }}
-                >
-                  Comptabilité
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
         <div>
           <h1 style={{ textAlign: "center" }}>Comptabilité des communes</h1>
 
@@ -197,10 +140,22 @@ export default function Communes() {
                     </option>
                   ))}
               </select>
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                value={typeVue}
+                onChange={e => setTypeVue(e.target.value as typeof typeVue)}
+                aria-label="Type de vue">
+                <option value="global">Vue globale</option>
+                <option value="budget">Budget fonctionnel</option>
+                <option value="investissements">Investissements</option>
+                <option value="dette">Dette</option>
+                <option value="fiscalite">Fiscalité</option>
+                <option value="comptabilite">Comptabilité</option>
+            </select>
             </div>
 
             {typeVue !== "comptabilite" && (
-              <fieldset className="d-flex flex-column align-items-center">
+              <fieldset className="d-flex flex-column align-items-center justify-content-center">
                 <label>
                   <input
                     type="radio"
@@ -243,24 +198,22 @@ export default function Communes() {
                   <h2>Vue globale pour la commune de {commune.NCCENR}</h2>
                   <br />
                   <h5>Résultat d'ensemble</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={GraphTypeVueGlobalCommune.ResultatEnsemble}
                     prefix={prefix}
-                    typeChart={GraphTypeVueGlobalCommune.ResultatEnsemble}
-                  ></GraphOneLine>
+                    suffix={suffix}
+                  ></GraphOneLineData>
                   <p>
                     Résultat d'ensemble = Résultat comptable + Besoin/Capacité
                     de financement section investissement
                   </p>
                   <hr />
                   <h5>Résultat comptable</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    prefix={prefix}
-                    typeChart={GraphTypeVueGlobalCommune.ResultatComptable}
-                  ></GraphOneLine>
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={prefix + GraphTypeVueGlobalCommune.ResultatComptable}
+                  ></GraphOneLineData>
                   <p>
                     Résultat comptable = Produits de fonctionnement - Charges de
                     fonctionnement
@@ -270,14 +223,12 @@ export default function Communes() {
                     Besoin ou capacité de financement de la section
                     investissement
                   </h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    prefix={prefix}
-                    typeChart={
-                      GraphTypeVueGlobalCommune.BesoinFinancementInvestissement
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={
+                      prefix + GraphTypeVueGlobalCommune.BesoinFinancementInvestissement
                     }
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <p>
                     Besoin/Capa de fi. des inv. = Resources d'investissements -
                     Emplois d'investissement + solde des opérations compte de
@@ -292,28 +243,25 @@ export default function Communes() {
                   </h2>
                   <br />
                   <h5>Total des produits et charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeFonctionnementProduitCharge}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Produits de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeFonctionnementProduitListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeFonctionnementChargeListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                 </div>
               )}
               {typeVue === "investissements" && (
@@ -324,36 +272,32 @@ export default function Communes() {
                   </h2>
                   <br />
                   <h5>Total des resources et dépenses d'investissement</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeInvestissementResourcesEmplois}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Resources d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeInvestissementsResourcesListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Dépenses d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphMultiLinesData
+                    data={dataCommunes}
                     prefix={prefix}
                     graphs={communeInvestissementsEmploisListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Soldes des operations pour compte de tiers</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"solde"}
                     prefix={prefix}
-                    typeChart={"solde"}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                 </div>
               )}
               {typeVue === "dette" && (
@@ -365,64 +309,57 @@ export default function Communes() {
                   <br />
 
                   <h3>Fonds de roulement</h3>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"fdr"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"fdr"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
 
                   <h3>Dette</h3>
                   <h5>Encours total de la dette au 31 décembre N</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
+                  <GraphOneLineData
+                    data={dataCommunes}
                     prefix={prefix}
-                    typeChart={"dette"}
-                  ></GraphOneLine>
+                    dataProperty={"dette"}
+                  ></GraphOneLineData>
                   <hr />
 
                   <h5>Annuité de la dette</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"annu"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"annu"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Avance du trésor</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"avance"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"avance"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h3>Autofinancement</h3>
                   <h5>Excédent brut d'exploitation</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"ebf"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"ebf"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Capacité d'autofinancement = CAF</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"caf"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"caf"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>CAF nette du remboursement en capital des emprunts</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"cafn"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"cafn"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                 </div>
               )}
@@ -431,36 +368,32 @@ export default function Communes() {
                   <h2>Fiscalité pour la commune de {commune.NCCENR}</h2>
                   <br />
                   <h5>Taxe d'habitation</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"pth"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"pth"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Taxe foncière sur les propriétés bâties</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"pfb"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"pfb"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Taxe foncière sur les propriétés non bâties</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"pfnb"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"pfnb"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Potentiel fiscal</h5>
-                  <GraphOneLine
-                    collectivite={"commune"}
-                    code={commune.COM}
-                    typeChart={"potfis"}
+                  <GraphOneLineData
+                    data={dataCommunes}
+                    dataProperty={"potfis"}
                     prefix={prefix}
-                  ></GraphOneLine>
+                  ></GraphOneLineData>
                   <hr />
                   {/* <h5>Cotisation foncière des entreprises</h5>
             <GraphOneLine code={commune.COM} typeChart={'pcfe'}></GraphOneLine>
@@ -498,7 +431,6 @@ export default function Communes() {
             </div>
           )}
         </div>
-      </div>
     </>
   );
 }
