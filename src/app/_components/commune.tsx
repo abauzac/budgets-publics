@@ -67,14 +67,22 @@ export default function Communes() {
               })
               .filter((c) => c.DATE_FIN === "" && c.COM.startsWith(codeDep))
           );
-          (async () => {
-            const dataCommunes = await getCommunesData(communeFound.COM.replace(codeDep, ""), codeDep);
-            setDataCommunes(dataCommunes);
-          })();
         }
       }
     }
   }, []);
+
+  useEffect(() => {
+    if (commune !== null && departement !== "") {
+      (async () => {
+        const data = await getCommunesData(
+          commune.COM.replace(departement, ""),
+          departement
+        );
+        setDataCommunes(data);
+      })();
+    }
+  }, [commune, departement]);
 
   useEffect(() => {
     if (departement !== "") {

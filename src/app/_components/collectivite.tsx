@@ -85,6 +85,16 @@ export default function Collectivite() {
       setListeCollectivites(liste);
     }
   }, [departement]);
+
+  
+    useEffect(() => {
+      if (collectivite !== null && departement !== "") {
+        (async () => {
+              const dataColl = await getCollectivitesData(collectivite.siren, departement);
+              setDataCollectivites(dataColl);
+        })();
+      }
+    }, [collectivite, departement]);
   return (
     <>
         <div>
