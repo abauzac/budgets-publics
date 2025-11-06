@@ -1,9 +1,8 @@
 "use client";
 
-import { ChangeEvent, Suspense, useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import departements from "../../../public/json/departements.json";
 import communes from "../../../public/json/communes.json";
-import GraphOneLine from "./graphOneLine";
 import {
   GraphTypeVueGlobalCommune,
   communeFonctionnementChargeListe,
@@ -13,7 +12,6 @@ import {
   communeInvestissementsEmploisListe,
   communeInvestissementsResourcesListe,
 } from "../_utils/charts";
-import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
 import TableauComptable from "./tableauComptable";
 import { generateYearsArray, getCommunesData } from "../_utils/utils";

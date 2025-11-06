@@ -4,6 +4,7 @@ import {
   getNomenclature,
   getUrlForComptaCommune,
   getUrlForComptaDepartement,
+  getUrlForComptaRegion,
   toEuro,
   transformDepCodeToCollectiviteDept,
 } from "../_utils/utils";
@@ -87,7 +88,7 @@ export default function TableauComptable({
 }: {
   codeCible: string;
   codeParent: string;
-  collectivite: "commune" | "departement";
+  collectivite: "commune" | "departement" | "region";
   year: number;
 }) {
   const codeDep: string =
@@ -129,9 +130,25 @@ export default function TableauComptable({
       setNomenclature(getNomenclature(comptesDepartements[0]));
       comptesDepartements.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
       setListeComptes(comptesDepartements);
+    } else if (collectivite == "region") {
+      if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
+
+      const urlFinale = getUrlForComptaRegion(codeCible, year);
+
+      let comptesRegions: BalanceCommuneInfos[] = await getComptesForCommune(
+        urlFinale
+      );
+      if (comptesRegions.length == 0) {
+        setChargement(false);
+        return;
+      }
+      setNomenclature(getNomenclature(comptesRegions[0]));
+      comptesRegions.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+      setListeComptes(comptesRegions);
     }
     setChargement(false);
   }
+
 
   useEffect(() => {
     if (listeComptes.length == 0) GetComptes();

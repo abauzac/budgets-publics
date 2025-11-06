@@ -8,22 +8,21 @@ import {
   Tooltip,
   ChartDataset,
   Legend,
-  TooltipItem
 } from "chart.js";
-import { Graph } from "../_components/graphMultiLines";
 
-    Chart.register(
-      CategoryScale,
-      LineController,
-      LineElement,
-      PointElement,
-      LinearScale,
-      // plugins :
-      Tooltip,
-      Legend
-    );
+Chart.register(
+  CategoryScale,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  // plugins :
+  Tooltip,
+  Legend
+);
 
-export const urlDataEconomieTemplate = "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/[IDENTIFIER]/records"
+export const urlDataEconomieTemplate =
+  "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/[IDENTIFIER]/records";
 
 /* data communes */
 export const urlDataCommunesIdentifiers = [
@@ -38,7 +37,7 @@ export const urlDataCommunesIdentifiers = [
   "comptes-individuels-des-communes-fichier-global-2021",
   "comptes-individuels-des-communes-fichier-global-2022",
   "comptes-individuels-des-communes-fichier-global-2023-2024",
-] 
+];
 
 export const urlDataGroupementFiscalitePropreIdentifiers = [
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2009",
@@ -53,7 +52,7 @@ export const urlDataGroupementFiscalitePropreIdentifiers = [
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2023-2024",
 ];
 
-export const urlDataDepartementsIdentifiers = [ 
+export const urlDataDepartementsIdentifiers = [
   "comptes-individuels-des-departements-fichier-global-2008",
   "comptes-individuels-des-departements-fichier-global-2009",
   "comptes-individuels-des-departements-fichier-global-2010",
@@ -66,75 +65,93 @@ export const urlDataDepartementsIdentifiers = [
   "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2023-2024",
 ];
 
-// blanace comptable departements : balances-comptables-des-departements
+export const urlDataRegionsIdentifiers = [
+  "comptes-individuels-des-regions-fichier-global-2008",
+  "comptes-individuels-des-regions-fichier-global-2009",
+  "comptes-individuels-des-regions-fichier-global-2010",
+  "comptes-individuels-des-regions-fichier-global-2013", // 2014
+  "comptes-individuels-des-regions-fichier-global-2015",
+  "comptes-individuels-des-regions-fichier-global-2016",
+  "comptes-individuels-des-regions-fichier-global-2017", // 2018
+  "comptes-individuels-des-regions-fichier-global-2019-2020",
+  "comptes-individuels-des-regions-fichier-global-2021-2024",
+];
 
-export function getChartJs(data: any[], dataPropertyOrId: string, multipleYProperties?: Graph[]) {
-  
+export function getChartJs(
+  data: any[],
+  dataPropertyOrId: string,
+  multipleYProperties?: Graph[]
+) {
   const chart = new Chart("chartjs" + dataPropertyOrId, {
-        type: "line",
-        data: {
-          labels: data.map((item) => item.an),
-          datasets: multipleYProperties == null 
-          ? [
-            {
-              label: dataPropertyOrId,
-              tooltip: {
-                callbacks: {
-                  label: (context) => `${context.parsed.y}` || "",
+    type: "line",
+    data: {
+      labels: data.map((item) => item.an),
+      datasets:
+        multipleYProperties == null
+          ? ([
+              {
+                label: dataPropertyOrId,
+                tooltip: {
+                  callbacks: {
+                    label: (context) => `${context.parsed.y}` || "",
+                  },
                 },
+                data: data.map((item) => item[dataPropertyOrId] || 0),
+                borderColor: "rgba(69, 81, 255, 1)",
+                backgroundColor: "rgba(0, 38, 255, 0.2)",
               },
-              data: data.map((item) => item[dataPropertyOrId] || 0),
-              borderColor: "rgba(69, 81, 255, 1)",
-              backgroundColor: "rgba(0, 38, 255, 0.2)",
-              
-            },
-          ] as ChartDataset<"line">[]
-          : multipleYProperties.map((yProp, index) => ({
-              label: yProp.description,
-              yAxisID: 'y',
-              tooltip: {
-                callbacks: {
-                  label: (context) => `${context.parsed.y}` || "",
-                },
-              },
-              data: data.map((item) => item[yProp.yAxis]),
-              borderColor: yProp.color,
-              backgroundColor: yProp.color,
-            } as ChartDataset<"line">)),
-        },
-        options: {
-          responsive: true,
-          interaction: {
-            mode: "y",
-          },
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "Année",
-              },
-            },
-            y: {
-              title: {
-                display: false,
-              },
-              beginAtZero: true,
-            },
-          },
-          plugins: {
-            tooltip: {
-              enabled: true,
-            },
-            legend: {
-              display: multipleYProperties != null && multipleYProperties.length > 1,
-            }
+            ] as ChartDataset<"line">[])
+          : multipleYProperties.map(
+              (yProp, index) =>
+                ({
+                  label: yProp.description,
+                  yAxisID: "y",
+                  tooltip: {
+                    callbacks: {
+                      label: (context) => `${context.dataset.label || ""} : ${context.parsed.y || ""}`,
+                    },
+                  },
+                  data: data.map((item) => item[yProp.yAxis]),
+                  borderColor: yProp.color,
+                  backgroundColor: yProp.color,
+                } as ChartDataset<"line">)
+            ),
+    },
+    
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Année",
           },
         },
-      });
-      return chart;
+        y: {
+          title: {
+            display: false,
+          },
+          beginAtZero: true,
+        },
+      },
+      plugins: {
+        tooltip: {
+          enabled: true,
+        },
+        legend: {
+          display:
+            multipleYProperties != null && multipleYProperties.length > 1,
+        },
+      },
+    },
+  });
+  return chart;
 }
-
-
 
 /* Chart urls have been dropped... */
 
@@ -150,25 +167,8 @@ export const urlComptaCommune =
   "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-communes-en-[YEAR]/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=insee%3A%22[CODECOMM]%22";
 export const urlComptaDepartement =
   "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-departements/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=exer%3A%22[YEAR]%22&refine=ctype%3A%22201%22";
-
-  export enum GraphTypeBudgetFonctCommune {
-  ProduitDeFonctionnementCAF = "pfcaf",
-  ImpotsLocaux = "impo1",
-  FiscaliteReversee = "fiscrev",
-  AutresImpotsTaxes = "impo2",
-  DotationGlobaleFonctionnement = "dgf",
-  Autres = "autdot",
-  DotationFCTVA = "dfctva",
-  ProduitsServicesDomaine = "dpserdom",
-  ChargeTotal = "charge",
-  ChargesDeFonctionnementCAF = "cfcaf",
-  ChargesPersonnel = "perso",
-  AchatsChargesExternes = "achat",
-  ChargesFinancieres = "fin",
-  Contingents = "cont",
-  SubventionsVersees = "subv",
-  ResultatComptable = "res1",
-}
+export const urlComptaRegion =
+  "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-regions-/records?limit=100&offset=[OFFSET]&refine=cregi%3A%22[REGION]%22&refine=exer%3A%22[YEAR]%22&refine=ctype%3A%22301%22";
 
 /** Graph Vue globale
  * 
@@ -188,53 +188,6 @@ export enum GraphTypeVueGlobalCommune {
   BesoinFinancementResiduel = "bf1",
   ResultatEnsemble = "res2",
 }
-
-
-export function getChartsOneLine(type: string, color: string = "#000000") {
-  return [
-    {
-      alignMonth: true,
-      type: "line",
-      func: "AVG",
-      yAxis: type,
-      scientificDisplay: true,
-      color: color,
-    },
-  ];
-}
-
-export function getDataChart(config: any, charts: any[], xAxis:string, stacked = false) {
-  return {
-    queries: [
-      {
-        config: config,
-        charts: charts,
-        xAxis: xAxis,
-        maxpoints: null,
-        sort: "",
-        stacked: stacked ? "normal" : "",
-      },
-    ],
-    timescale: "",
-    displayLegend: false,
-    alignMonth: true,
-    singleAxis: true,
-  };
-}
-
-export function getCharts(datas: { yAxis: string; color: string }[]) {
-  return datas.map((data) => {
-    return {
-      alignMonth: true,
-      type: "line",
-      func: "AVG",
-      yAxis: data.yAxis,
-      scientificDisplay: true,
-      color: data.color,
-    };
-  });
-}
-
 
 // budget fonctionnel
 
@@ -338,7 +291,7 @@ export const communeInvestissementsResourcesListe = [
     yAxis: "emp",
     color: "#ff292f",
     description: "Emprunts bancaires et dettes assimilées",
-  }, 
+  },
   {
     yAxis: "subr",
     color: "#447049",
@@ -379,7 +332,6 @@ export const communeInvestissementsEmploisListe = [
   },
 ];
 
-
 // departement
 
 // fonctionnement
@@ -418,7 +370,8 @@ export const depFonctionnementProduitListe = [
     yAxis: "tdp",
     // light blue
     color: "#00ccff",
-    description: "Dont : Taxe départementale de publicité foncière et droits d'enregistrement",
+    description:
+      "Dont : Taxe départementale de publicité foncière et droits d'enregistrement",
   },
   // {
   //   yAxis: "f1dtam",
@@ -440,8 +393,6 @@ export const depInvestissementResourcesEmplois = [
     description: "Emplois d'investissement",
   },
 ];
-
-
 
 export const depFonctionnementChargeListe = [
   {
@@ -491,7 +442,7 @@ export const depInvestissementsResourcesListe = [
     yAxis: "emp",
     color: "#ff292f",
     description: "Emprunts bancaires et dettes assimilées",
-  }, 
+  },
   {
     yAxis: "sir",
     color: "#447049",
@@ -503,7 +454,6 @@ export const depInvestissementsResourcesListe = [
     description: "FCTVA",
   },
 ];
-
 
 export const depInvestissementsEmploisListe = [
   {
@@ -523,14 +473,12 @@ export const depInvestissementsEmploisListe = [
   },
 ];
 
-
-// region 
-
+// region
 
 export const regFonctionnementProduitListe = [
   // {
   //   yAxis: "f2rpfr",
-  //   color: "#000000", 
+  //   color: "#000000",
   //   description: "Produit de fonctionnement CAF",
   // },
   {
@@ -557,13 +505,9 @@ export const regFonctionnementProduitListe = [
     color: "#0000ff",
     description: "TICPE",
   },
-
 ];
 
-
-
 export const regFonctionnementChargeListe = [
-
   {
     yAxis: "chp",
     color: "#ff292f",
@@ -593,7 +537,6 @@ export const regFonctionnementChargeListe = [
     color: "#ff6600",
     description: "Contributions obligatoires et versements",
   },
-
 ];
 
 // collectivités
@@ -610,7 +553,6 @@ export const collFonctionnementProduitCharge = [
     description: "Charges de fonctionnement",
   },
 ];
-
 
 export const collFonctionnementProduitListe = [
   // {
@@ -648,9 +590,7 @@ export const collFonctionnementProduitListe = [
   //   color: "#cccccc",
   //   description: "Produits des services et du domaine",
   // },
-
 ];
-
 
 export const collFonctionnementChargeListe = [
   // {
@@ -702,13 +642,12 @@ export const collInvestissementResourcesEmplois = [
   },
 ];
 
-
 export const collInvestissementsResourcesListe = [
   {
     yAxis: "rdettot",
     color: "#ff292f",
     description: "Emprunts bancaires et dettes assimilées",
-  }, 
+  },
   {
     yAxis: "subvitot",
     color: "#447049",
@@ -736,11 +675,8 @@ export const collInvestissementsEmploisListe = [
 
 // common
 
-export const commonChartObjects = {
-  alignMonth: true,
-  type: "line",
-  func: "AVG",
-  yAxis: "prod",
-  scientificDisplay: true,
-  color: "#447049",
+export type Graph = {
+  description: string;
+  yAxis: string;
+  color: string;
 };

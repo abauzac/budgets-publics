@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import departements from "../../../public/json/departements.json";
 import collectivites from "../../../public/json/collectivites.json";
-import GraphOneLine from "./graphOneLine";
 import {
   collFonctionnementChargeListe,
   collFonctionnementProduitCharge,
@@ -13,7 +12,6 @@ import {
   collInvestissementsEmploisListe,
   collInvestissementsResourcesListe,
 } from "../_utils/charts";
-import GraphMultiLines from "./graphMultiLines";
 import {
   extractDepCodeFromCollectiviteDept,
   getCollectivitesData,

@@ -1,18 +1,12 @@
-import { Graph } from "../_components/graphMultiLines";
 import {
-  getCharts,
-  getChartsOneLine,
-  getDataChart,
-  urlChartCollectivite,
-  urlChartCommunes,
-  urlChartDepartement,
-  urlChartRegion,
   urlComptaCommune,
   urlComptaDepartement,
+  urlComptaRegion,
   urlDataCommunesIdentifiers,
   urlDataDepartementsIdentifiers,
   urlDataEconomieTemplate,
   urlDataGroupementFiscalitePropreIdentifiers,
+  urlDataRegionsIdentifiers,
 } from "./charts";
 import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
 import comptesM14 from "../../../public/json/m14.json";
@@ -34,90 +28,6 @@ export function toEuro(euro: number){
   }).format(euro);
 }
 
-export function getUrlForCollectivite(
-  collectivite: string,
-  code: string,
-  typeChart: string | any[]
-) {
-  if (collectivite == "commune") {
-    const dep = code.startsWith("97")
-      ? code.substring(0, 3)
-      : code.substring(0, 2);
-    const idCommune = code.startsWith("97")
-      ? code.replace("97", "")
-      : code.replace(dep, "");
-    const codeDep = code.startsWith("97")
-      ? `10${dep.replace("97", "")}`
-      : `0${dep}`;
-    const charts =
-      typeof typeChart == "string"
-        ? getChartsOneLine(typeChart)
-        : getCharts(typeChart);
-
-    const dataChart = getDataChart(
-      getCommuneQueryConfig(TypeDataSet.Commune, codeDep, idCommune),
-      charts,
-      "an"
-    );
-    const urlFinale = urlChartCommunes
-      .replace("[DEPARTEMENT]", codeDep)
-      .replace("[CODECOMM]", idCommune)
-      .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
-    return urlFinale;
-  } else if (collectivite == "departement") {
-    let codeDep = code;
-    if (code.length === 2) {
-      codeDep = `0${code}`;
-    } else if (code.length === 3) {
-      codeDep = `10${code.substring(2)}`;
-    }
-    const charts =
-      typeof typeChart == "string"
-        ? getChartsOneLine(typeChart)
-        : getCharts(typeChart);
-    const dataChart = getDataChart(
-      getDepartementQueryConfig(TypeDataSet.Departement, codeDep),
-      charts,
-      "exer"
-    );
-    const urlFinale = urlChartDepartement
-      .replace("[DEPARTEMENT]", codeDep)
-      .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
-    return urlFinale;
-  } else if (collectivite == "region") {
-    const reg = code;
-    const regCode = reg.startsWith("0") ? `1${reg}` : `0${reg}`;
-    const charts =
-      typeof typeChart == "string"
-        ? getChartsOneLine(typeChart)
-        : getCharts(typeChart);
-    const dataChart = getDataChart(
-      getRegionQueryConfig(TypeDataSet.Region, regCode),
-      charts,
-      "exer"
-    );
-    const urlFinale = urlChartRegion
-      .replace("[REGION]", regCode)
-      .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
-    return urlFinale;
-  } else if (collectivite == "collectivite") {
-    const siren = code;
-    const charts =
-      typeof typeChart == "string"
-        ? getChartsOneLine(typeChart)
-        : getCharts(typeChart);
-    const dataChart = getDataChart(
-      { dataset: TypeDataSet.Collectivite, options: {} },
-      charts,
-      "exer"
-    );
-    const urlFinale = urlChartCollectivite
-      .replace("[SIREN]", siren)
-      .replace("[DATACHART]", btoa(JSON.stringify(dataChart)));
-    return urlFinale;
-  }
-}
-
 export function getUrlForComptaCommune(
   codeDep: string,
   codeCommune: string,
@@ -136,37 +46,12 @@ export function getUrlForComptaDepartement(
     .replace("[DEPARTEMENT]", codeDep)
 }
 
-export function getCommuneQueryConfig(
-  dataset: TypeDataSet,
-  codeDep: string,
-  communeName: string
-) {
-  return {
-    dataset: dataset,
-    options: {
-      "refine.dep": codeDep,
-      "refine.icom": communeName.toLowerCase(),
-    },
-  };
-}
-export function getDepartementQueryConfig(
-  dataset: TypeDataSet,
-  codeDep: string
-) {
-  return {
-    dataset: dataset,
-    options: {
-      "refine.dep": codeDep,
-    },
-  };
-}
-export function getRegionQueryConfig(dataset: TypeDataSet, codeReg: string) {
-  return {
-    dataset: dataset,
-    options: {
-      "refine.reg": codeReg,
-    },
-  };
+export function getUrlForComptaRegion(
+  codeReg: string,
+  year: number,
+){
+  return urlComptaRegion.replace("[YEAR]", ""+year)
+    .replace("[REGION]", codeReg)
 }
 
 export function extractDepCodeFromCollectiviteDept(collDept: string) {
@@ -206,31 +91,6 @@ export function transformDepCodeToCollectiviteDept(depCode: string, padleft = fa
   }
 }
 
-export function getTypeChart(
-  typeChart: string,
-  prefix: string | undefined,
-  suffix: string | undefined
-) {
-  if (prefix) {
-    typeChart = `${prefix}${typeChart}`;
-  }
-  if (suffix) {
-    typeChart = `${typeChart}${suffix}`;
-  }
-  return typeChart;
-}
-
-export function getTypeCharts(
-  typeCharts: Graph[],
-  prefix: string | undefined,
-  suffix: string | undefined
-) {
-  return typeCharts.map((typeChart) => ({
-    ...typeChart,
-    yAxis: `${prefix || ""}${typeChart.yAxis}${suffix || ""}`,
-  }));
-}
-
 export function generateYearsArray() {
   let startYear = 2015
   const endYear = new Date().getFullYear()-1
@@ -246,12 +106,14 @@ export function generateYearsArray() {
 export function getNomenclature(responseItem: BalanceCommuneResponse): {c: string; lib: string}[] {
   switch (responseItem.nomen) {
     case "M14":
-    case "M52":
+    case "M52": // departement
       return comptesM14;
     case "M57":
       return comptesM57.map(m => { return { c: ""+parseInt(m.CODE), lib: m.LIBELLE }});
     // case "M52":
     //   return comptesM52.map(m => { return { c: ""+parseInt(m.), lib: m.LIBELLE }}); // TODO ajouter nomenclature M52
+    // case "M4":
+    //   return comptesM52.map(m => { return { c: ""+parseInt(m.), lib: m.LIBELLE }}); // TODO ajouter nomenclature M4
     default:
       return [];
   }
@@ -345,6 +207,35 @@ export async function getDepartementData(codeDep : string){
     r.an = r.exer;
     return r;
   });
+}
+
+export async function getRegionData(codeRegion : string){
+  const results: any[] = [];
+  for (let i = 0; i < urlDataRegionsIdentifiers.length; i++) {
+    const url = getRegionUrlDataEconomie(urlDataRegionsIdentifiers[i], codeRegion);
+    const response = await fetch(url);
+    if(!response.ok)
+      continue;
+    const json = await response.json();
+    if(json.total_count && json.total_count > 0) {
+      results.push(...json.results);
+    }
+  }
+  results.sort((a, b) => +a.exer - +b.exer);
+  return results.map(r => {
+    r.an = r.exer;
+    return r;
+  });
+}
+
+export function getRegionUrlDataEconomie(dataIdentifier: string, codeRegion: string){
+  if(!dataIdentifier)
+    throw new Error("dataIdentifier is required");
+  if(codeRegion.length != 3)
+    codeRegion = codeRegion.padStart(3, "0");
+  const url = getUrlDataEconomieForIdentifier(dataIdentifier);
+  const whereEncoded = encodeURIComponent(`reg="${codeRegion}"`);
+  return url + `?where=${whereEncoded}`;
 }
 
 export function getDepartementUrlDataEconomie(dataIdentifier: string, codeDep: string){
