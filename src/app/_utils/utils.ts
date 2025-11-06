@@ -8,7 +8,9 @@ import {
   urlChartDepartement,
   urlChartRegion,
   urlComptaCommune,
+  urlComptaDepartement,
   urlDataCommunesIdentifiers,
+  urlDataDepartementsIdentifiers,
   urlDataEconomieTemplate,
   urlDataGroupementFiscalitePropreIdentifiers,
 } from "./charts";
@@ -126,6 +128,14 @@ export function getUrlForComptaCommune(
     .replace("[CODECOMM]", codeCommune)
 }
 
+export function getUrlForComptaDepartement(
+  codeDep: string,
+  year: number,
+){
+  return urlComptaDepartement.replace("[YEAR]", ""+year)
+    .replace("[DEPARTEMENT]", codeDep)
+}
+
 export function getCommuneQueryConfig(
   dataset: TypeDataSet,
   codeDep: string,
@@ -236,9 +246,12 @@ export function generateYearsArray() {
 export function getNomenclature(responseItem: BalanceCommuneResponse): {c: string; lib: string}[] {
   switch (responseItem.nomen) {
     case "M14":
+    case "M52":
       return comptesM14;
     case "M57":
       return comptesM57.map(m => { return { c: ""+parseInt(m.CODE), lib: m.LIBELLE }});
+    // case "M52":
+    //   return comptesM52.map(m => { return { c: ""+parseInt(m.), lib: m.LIBELLE }}); // TODO ajouter nomenclature M52
     default:
       return [];
   }
@@ -313,6 +326,35 @@ export async function getCollectivitesData(siren: string, codeDep : string){
     r.an = r.exer;
     return r;
   });
+}
+
+export async function getDepartementData(codeDep : string){
+  const results: any[] = [];
+  for (let i = 0; i < urlDataDepartementsIdentifiers.length; i++) {
+    const url = getDepartementUrlDataEconomie(urlDataDepartementsIdentifiers[i], codeDep);
+    const response = await fetch(url);
+    if(!response.ok)
+      continue;
+    const json = await response.json();
+    if(json.total_count && json.total_count > 0) {
+      results.push(...json.results);
+    }
+  }
+  results.sort((a, b) => +a.exer - +b.exer);
+  return results.map(r => {
+    r.an = r.exer;
+    return r;
+  });
+}
+
+export function getDepartementUrlDataEconomie(dataIdentifier: string, codeDep: string){
+  if(!dataIdentifier)
+    throw new Error("dataIdentifier is required");
+  if(codeDep.length != 3)
+    codeDep = codeDep.padStart(3, "0");
+  const url = getUrlDataEconomieForIdentifier(dataIdentifier);
+  const whereEncoded = encodeURIComponent(`dep="${codeDep}"`);
+  return url + `?where=${whereEncoded}`;
 }
 
 export function getCommuneUrlDataEconomie(dataIdentifier: string, codeCommune: string, codeDep: string){

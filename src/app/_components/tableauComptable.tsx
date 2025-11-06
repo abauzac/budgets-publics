@@ -3,6 +3,7 @@ import {
   getComptesForCommune,
   getNomenclature,
   getUrlForComptaCommune,
+  getUrlForComptaDepartement,
   toEuro,
   transformDepCodeToCollectiviteDept,
 } from "../_utils/utils";
@@ -56,17 +57,18 @@ function ComptaList({
               {comptesForClasse[sousClasse]?.map((compte) => (
                 <tr key={`sousclasse${compte.compte}`}>
                   <td>
-                      {nomenclature.find((cm) => cm.c === compte.compte)?.lib ??
-                        "Compte inconnu"}{" "}
-                      ({compte.compte})
+                    {nomenclature.find((cm) => cm.c === compte.compte)?.lib ??
+                      "Compte inconnu"}{" "}
+                    ({compte.compte})
                   </td>
-                  <td style={{ textAlign: "right" }}>
-                    {toEuro(compte.sd)}
+                  <td style={{ textAlign: "right" }}>{toEuro(compte.sd)}</td>
+                  <td style={{ textAlign: "right" }}>{toEuro(compte.sc)}</td>
+                  <td
+                    style={{ cursor: "pointer" }}
+                    onClick={(e) => handleOpen(e, compte)}
+                  >
+                    &#x1F6C8;
                   </td>
-                  <td style={{ textAlign: "right" }}>
-                    {toEuro(compte.sc)}
-                  </td>
-                  <td style={{cursor: "pointer"}} onClick={(e) => handleOpen(e, compte)}>&#x1F6C8;</td>
                 </tr>
               ))}
             </tbody>
@@ -79,38 +81,55 @@ function ComptaList({
 
 export default function TableauComptable({
   codeCible,
-  codeParent,
-  collectivite,
-  year,
+  codeParent = "",
+  collectivite = "commune",
+  year = 2024,
 }: {
   codeCible: string;
   codeParent: string;
-  collectivite: string;
+  collectivite: "commune" | "departement";
   year: number;
 }) {
   const codeDep: string =
     transformDepCodeToCollectiviteDept(codeParent, true) || "";
-  const urlFinale = getUrlForComptaCommune(
-    codeDep,
-    codeCible.substring(2),
-    year
-  );
   const [listeComptes, setListeComptes] = useState<BalanceCommuneInfos[]>([]);
   const [chargement, setChargement] = useState<boolean>(true);
   const [nomenclature, setNomenclature] = useState<any[]>([]);
 
   async function GetComptes() {
     setChargement(true);
-    let comptesCommune: BalanceCommuneInfos[] = await getComptesForCommune(
-      urlFinale
-    );
-    if (comptesCommune.length == 0) {
-      setChargement(false);
-      return;
+    if (collectivite == "commune") {
+      const urlFinale = getUrlForComptaCommune(
+        codeDep,
+        codeCible.substring(2),
+        year
+      );
+      let comptesCommune: BalanceCommuneInfos[] = await getComptesForCommune(
+        urlFinale
+      );
+      if (comptesCommune.length == 0) {
+        setChargement(false);
+        return;
+      }
+      setNomenclature(getNomenclature(comptesCommune[0]));
+      comptesCommune.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+      setListeComptes(comptesCommune);
+    } else if (collectivite == "departement") {
+      if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
+
+      const urlFinale = getUrlForComptaDepartement(codeCible, year);
+
+      let comptesDepartements: BalanceCommuneInfos[] = await getComptesForCommune(
+        urlFinale
+      );
+      if (comptesDepartements.length == 0) {
+        setChargement(false);
+        return;
+      }
+      setNomenclature(getNomenclature(comptesDepartements[0]));
+      comptesDepartements.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+      setListeComptes(comptesDepartements);
     }
-    setNomenclature(getNomenclature(comptesCommune[0]));
-    comptesCommune.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
-    setListeComptes(comptesCommune);
     setChargement(false);
   }
 

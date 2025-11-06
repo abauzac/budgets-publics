@@ -53,6 +53,21 @@ export const urlDataGroupementFiscalitePropreIdentifiers = [
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2023-2024",
 ];
 
+export const urlDataDepartementsIdentifiers = [ 
+  "comptes-individuels-des-departements-fichier-global-2008",
+  "comptes-individuels-des-departements-fichier-global-2009",
+  "comptes-individuels-des-departements-fichier-global-2010",
+  "comptes-individuels-des-departements-fichier-global-2011-2012",
+  "comptes-individuels-des-departements-fichier-global-2013", // a 2015
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2016",
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2017-2018",
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2019-2020",
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2021-2022",
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2023-2024",
+];
+
+// blanace comptable departements : balances-comptables-des-departements
+
 export function getChartJs(data: any[], dataPropertyOrId: string, multipleYProperties?: Graph[]) {
   
   const chart = new Chart("chartjs" + dataPropertyOrId, {
@@ -133,6 +148,8 @@ export const urlChartCollectivite =
   "https://data.economie.gouv.fr/explore/embed/dataset/comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-/analyze/?refine.siren=[SIREN]&dataChart=[DATACHART]&static=false&datasetcard=false";
 export const urlComptaCommune =
   "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-communes-en-[YEAR]/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=insee%3A%22[CODECOMM]%22";
+export const urlComptaDepartement =
+  "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/balances-comptables-des-departements/records?limit=100&offset=[OFFSET]&refine=ndept%3A%22[DEPARTEMENT]%22&refine=exer%3A%22[YEAR]%22&refine=ctype%3A%22201%22";
 
   export enum GraphTypeBudgetFonctCommune {
   ProduitDeFonctionnementCAF = "pfcaf",

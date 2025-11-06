@@ -159,7 +159,7 @@ export default function Collectivite() {
             </select>
             </div>
 
-            <fieldset className="d-flex flex-column align-items-center">
+            <fieldset className="d-flex flex-column align-items-center justify-content-center">
               <label>
                 <input
                   type="radio"

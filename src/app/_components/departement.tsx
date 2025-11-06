@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import departements from "../../../public/json/departements.json";
-import GraphOneLine from "./graphOneLine";
 import {
   depFonctionnementChargeListe,
   depFonctionnementProduitCharge,
@@ -11,16 +10,25 @@ import {
   depInvestissementsEmploisListe,
   depInvestissementsResourcesListe,
 } from "../_utils/charts";
-import GraphMultiLines from "./graphMultiLines";
 import { useRouter, useSearchParams } from "next/navigation";
+import { generateYearsArray, getDepartementData } from "../_utils/utils";
+import GraphOneLineData from "./graphOneLineData";
+import GraphMultiLinesData from "./graphMultiLinesData";
+import { ModalProvider } from "../_contexts/ComptabiliteModalContext";
+import TableauComptable from "./tableauComptable";
+import Modal from "./comptabiliteModal";
 
 export default function Departement() {
   const [departementCode, setDepartementCode] = useState(""); // "01", "02", "03", ... "95
   const [departement, setDepartement] = useState<any>(null);
   const [typeVue, setTypeVue] = useState<
-    "global" | "budget" | "investissements" | "dette" | "fiscalite"
+    "global" | "budget" | "investissements" | "dette" | "fiscalite" | "comptabilite"
   >("global");
   const [prefix, setPrefix] = useState<string>("");
+  const [dataDepartements, setDataDepartements] = useState<any[]>([]);
+  const currentYear = (new Date()).getFullYear()
+  const [comptaYear, setComptaYear] = useState<number>(currentYear-1);
+  
 
   const params = useSearchParams();
   const router = useRouter();
@@ -35,73 +43,20 @@ export default function Departement() {
   useEffect(() => {
     if (departementCode !== "") {
       setDepartement(departements.find((d) => d.DEP === departementCode));
+      (async () => {
+          const dataColl = await getDepartementData(departementCode);
+          setDataDepartements(dataColl);
+      })();
     }
   }, [departementCode]);
 
   return (
     <>
-      <div className="wrapper">
-        <aside>
-          <nav>
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("global");
-                  }}
-                >
-                  Vue globale
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("budget");
-                  }}
-                >
-                  Budget fonctionnel
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("investissements");
-                  }}
-                >
-                  Investissements
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("dette");
-                  }}
-                >
-                  Dette
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("fiscalite");
-                  }}
-                >
-                  Fiscalité
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
         <div>
           <h1 style={{ textAlign: "center" }}>Comptabilité des départements</h1>
 
           <div className="grid">
-            <div className="d-flex justify-content-center">
+            <div className="d-flex flex-column align-items-center">
               <select
                 style={{ width: "300px", "height": 'fit-content' }}
                 name="departements"
@@ -122,8 +77,20 @@ export default function Departement() {
                   </option>
                 ))}
               </select>
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                value={typeVue}
+                onChange={e => setTypeVue(e.target.value as typeof typeVue)}
+                aria-label="Type de vue">
+                <option value="global">Vue globale</option>
+                <option value="budget">Budget fonctionnel</option>
+                <option value="investissements">Investissements</option>
+                <option value="dette">Dette</option>
+                <option value="fiscalite">Fiscalité</option>
+                <option value="comptabilite">Comptabilité</option>
+            </select>
             </div>
-            <fieldset className="d-flex flex-column align-items-center">
+            <fieldset className="d-flex flex-column align-items-center justify-content-center">
               <label>
                 <input
                   type="radio"
@@ -165,24 +132,22 @@ export default function Departement() {
                   <h2>Vue globale pour le département {departement.NCCENR}</h2>
                   <br />
                   <h5>Résultat d'ensemble</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"res"}
-                  ></GraphOneLine>
+                    dataProperty={"res"}
+                  ></GraphOneLineData>
                   <p>
                     Résultat d'ensemble = Résultat comptable + Besoin/Capacité
                     de financement section investissement
                   </p>
                   <hr />
                   <h5>Résultat comptable</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"rec"}
-                  ></GraphOneLine>
+                    dataProperty={"rec"}
+                  ></GraphOneLineData>
                   <p>
                     Résultat comptable = Produits de fonctionnement - Charges de
                     fonctionnement
@@ -192,12 +157,11 @@ export default function Departement() {
                     Besoin ou capacité de financement de la section
                     investissement
                   </h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"bfi"}
-                  ></GraphOneLine>
+                    dataProperty={"bfi"}
+                  ></GraphOneLineData>
                   <p>
                     Besoin/Capa de fi. des inv. = Resources d'investissements -
                     Emplois d'investissement + solde des opérations compte de
@@ -212,28 +176,25 @@ export default function Departement() {
                   </h2>
                   <br />
                   <h5>Total des produits et charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depFonctionnementProduitCharge}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Produits de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depFonctionnementProduitListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depFonctionnementChargeListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                 </div>
               )}
               {typeVue === "investissements" && (
@@ -244,36 +205,32 @@ export default function Departement() {
                   </h2>
                   <br />
                   <h5>Total des resources et dépenses d'investissement</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depInvestissementResourcesEmplois}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Resources d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depInvestissementsResourcesListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Dépenses d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphMultiLinesData
+                    data={dataDepartements}
                     prefix={prefix}
                     graphs={depInvestissementsEmploisListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Soldes des operations pour compte de tiers</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"soc"}
-                  ></GraphOneLine>
+                    dataProperty={"soc"}
+                  ></GraphOneLineData>
                 </div>
               )}
               {typeVue === "dette" && (
@@ -285,57 +242,51 @@ export default function Departement() {
                   <br />
 
                   <h3>Fonds de roulement</h3>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"fdr"}
-                  ></GraphOneLine>
+                    dataProperty={"fdr"}
+                  ></GraphOneLineData>
                   <hr />
 
                   <h3>Dette</h3>
                   <h5>Encours total de la dette au 31 décembre N</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"f1detd"}
-                  ></GraphOneLine>
+                    dataProperty={"f1detd"}
+                  ></GraphOneLineData>
                   <hr />
 
                   <h5>Annuité de la dette</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"adb"}
-                  ></GraphOneLine>
+                    dataProperty={"adb"}
+                  ></GraphOneLineData>
                   <hr />
 
                   <h3>Autofinancement</h3>
                   <h5>Excédent brut d'exploitation</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"ebf"}
-                  ></GraphOneLine>
+                    dataProperty={"ebf"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Capacité d'autofinancement = CAF</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"caf"}
-                  ></GraphOneLine>
+                    dataProperty={"caf"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>CAF nette du remboursement en capital des emprunts</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"cnr"}
-                  ></GraphOneLine>
+                    dataProperty={"cnr"}
+                  ></GraphOneLineData>
                   <hr />
                 </div>
               )}
@@ -344,30 +295,55 @@ export default function Departement() {
                   <h2>Fiscalité du département {departement.NCCENR}</h2>
                   <br />
                   <h5>Cotisation Valeur Ajoutée des Entreprises</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"cvaed"}
-                  ></GraphOneLine>
+                    dataProperty={"cvaed"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Fraction de TVA</h5>
-                  <GraphOneLine
-                    collectivite={"departement"}
-                    code={departement.DEP}
+                  <GraphOneLineData
+                    data={dataDepartements}
                     prefix={prefix}
-                    typeChart={"tvad"}
-                  ></GraphOneLine>
+                    dataProperty={"tvad"}
+                  ></GraphOneLineData>
 
                   {/* <h5>Cotisation foncière des entreprises</h5>
             <GraphOneLine code={departement.DEP} typeChart={'pcfe'}></GraphOneLine>
             <hr /> */}
                 </div>
               )}
+              {typeVue === "comptabilite" && (
+                <div style={{ textAlign: "center" }}>
+                  <h2>Comptabilité</h2>
+                  <select
+                    style={{ width: "300px", justifySelf: "center" }}
+                    name="comptaYear"
+                    aria-label="Année"
+                    value={comptaYear}
+                    onChange={(event) => {
+                      setComptaYear(parseInt(event.target.value));
+                    }}
+                    required
+                  >
+                    {generateYearsArray().map(year => <option key={`yr${year}`} value={year}>{year}</option>)}
+                  </select>
+                  <br />
+                  <ModalProvider>
+
+                    <TableauComptable
+                      collectivite={"departement"}
+                      codeCible={departement.DEP}
+                      codeParent={""}
+                      year={comptaYear}
+                    ></TableauComptable>
+                    <Modal />
+                  </ModalProvider>
+                </div>
+              )}
             </div>
           )}
         </div>
-      </div>
     </>
   );
 }
