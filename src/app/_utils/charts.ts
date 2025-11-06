@@ -40,6 +40,18 @@ export const urlDataCommunesIdentifiers = [
   "comptes-individuels-des-communes-fichier-global-2023-2024",
 ] 
 
+export const urlDataGroupementFiscalitePropreIdentifiers = [
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2009",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2010",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2011-2015",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2016",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2017",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2018-2019",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2020",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2021",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2022",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2023-2024",
+];
 
 export function getChartJs(data: any[], dataPropertyOrId: string, multipleYProperties?: Graph[]) {
   

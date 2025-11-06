@@ -16,13 +16,17 @@ import {
 import GraphMultiLines from "./graphMultiLines";
 import {
   extractDepCodeFromCollectiviteDept,
+  getCollectivitesData,
   transformDepCodeToCollectiviteDept,
 } from "../_utils/utils";
+import GraphOneLineData from "./graphOneLineData";
+import GraphMultiLinesData from "./graphMultiLinesData";
 
 export default function Collectivite() {
   const [departement, setDepartement] = useState("");
   const [listeCollectivites, setListeCollectivites] = useState<any[]>([]); // liste des collectivites du département sélectionné
   const [collectivite, setCollectivite] = useState<any>(null); // objet collectivite
+  const [dataCollectivites, setDataCollectivites] = useState<any[]>([]); 
   const [typeVue, setTypeVue] = useState<
     "global" | "budget" | "investissements" | "dette" | "fiscalite"
   >("global");
@@ -58,6 +62,10 @@ export default function Collectivite() {
                 (coll, index) => (coll.ndept as string) === collFound.ndept
               )
           );
+          (async () => {
+              const dataColl = await getCollectivitesData(collFound.siren, dep.DEP);
+              setDataCollectivites(dataColl);
+            })();
         }
       }
     }
@@ -79,63 +87,6 @@ export default function Collectivite() {
   }, [departement]);
   return (
     <>
-      <div className="wrapper">
-        <aside>
-          <nav>
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("global");
-                  }}
-                >
-                  Vue globale
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("budget");
-                  }}
-                >
-                  Budget fonctionnel
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("investissements");
-                  }}
-                >
-                  Investissements
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("dette");
-                  }}
-                >
-                  Dette
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTypeVue("fiscalite");
-                  }}
-                >
-                  Fiscalité
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
         <div>
           <h1 style={{ textAlign: "center" }}>
             Comptabilité des collectivités inter-urbaines
@@ -185,6 +136,17 @@ export default function Collectivite() {
                     </option>
                   ))}
               </select>
+              <select
+                style={{ width: "300px", justifySelf: "center" }}
+                value={typeVue}
+                onChange={e => setTypeVue(e.target.value as typeof typeVue)}
+                aria-label="Type de vue">
+                <option value="global">Vue globale</option>
+                <option value="budget">Budget fonctionnel</option>
+                <option value="investissements">Investissements</option>
+                <option value="dette">Dette</option>
+                <option value="fiscalite">Fiscalité</option>
+            </select>
             </div>
 
             <fieldset className="d-flex flex-column align-items-center">
@@ -230,12 +192,11 @@ export default function Collectivite() {
                   </p>
                   <hr /> */}
                   <h5>Résultat comptable</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"rtot"}
-                  ></GraphOneLine>
+                    dataProperty={"rrtot"}
+                  ></GraphOneLineData>
                   <p>
                     Résultat comptable = Produits de fonctionnement - Charges de
                     fonctionnement
@@ -266,28 +227,25 @@ export default function Collectivite() {
                   </h2>
                   <br />
                   <h5>Total des produits et charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collFonctionnementProduitCharge}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Produits de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collFonctionnementProduitListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Charges de fonctionnement</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collFonctionnementChargeListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                 </div>
               )}
               {typeVue === "investissements" && (
@@ -298,28 +256,25 @@ export default function Collectivite() {
                   </h2>
                   <br />
                   <h5>Total des resources et dépenses d'investissement</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collInvestissementResourcesEmplois}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Resources d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collInvestissementsResourcesListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                   <hr />
                   <h5>Dépenses d'investissements</h5>
-                  <GraphMultiLines
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphMultiLinesData
+                    data={dataCollectivites}
                     suffix={suffix}
                     graphs={collInvestissementsEmploisListe}
-                  ></GraphMultiLines>
+                  ></GraphMultiLinesData>
                 </div>
               )}
               {typeVue === "dette" && (
@@ -332,46 +287,41 @@ export default function Collectivite() {
 
                   <h3>Dette</h3>
                   <h5>Encours total de la dette au 31 décembre N</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"entot"}
-                  ></GraphOneLine>
+                    dataProperty={"entot"}
+                  ></GraphOneLineData>
                   <hr />
 
                   <h5>Annuité de la dette</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"antot"}
-                  ></GraphOneLine>
+                    dataProperty={"antot"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Encours des dettes bancaires et assimilées</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"encdb"}
-                  ></GraphOneLine>
+                    dataProperty={"encdb"}
+                  ></GraphOneLineData>
                   <hr />
                   <h3>Autofinancement</h3>
                   <h5>Capacité d'autofinancement = CAF</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"caftot"}
-                  ></GraphOneLine>
+                    dataProperty={"caftot"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>CAF nette du remboursement en capital des emprunts</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"cafntot"}
-                  ></GraphOneLine>
+                    dataProperty={"cafntot"}
+                  ></GraphOneLineData>
                   <hr />
                 </div>
               )}
@@ -380,28 +330,25 @@ export default function Collectivite() {
                   <h2>Fiscalité pour la commune de {collectivite.lbudg}</h2>
                   <br />
                   <h5>Taxe d'habitation</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"pth"}
-                  ></GraphOneLine>
+                    dataProperty={"pth"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Taxe foncière sur les propriétés bâties</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"pfb"}
-                  ></GraphOneLine>
+                    dataProperty={"pfb"}
+                  ></GraphOneLineData>
                   <hr />
                   <h5>Taxe foncière sur les propriétés non bâties</h5>
-                  <GraphOneLine
-                    collectivite={"collectivite"}
-                    code={collectivite.siren}
+                  <GraphOneLineData
+                    data={dataCollectivites}
                     suffix={suffix}
-                    typeChart={"pfnb"}
-                  ></GraphOneLine>
+                    dataProperty={"pfnb"}
+                  ></GraphOneLineData>
                   {/* <hr />
                   <h5>Taxe professionnelle (fiscalité additionnelle)</h5>
                   <GraphOneLine
@@ -425,7 +372,7 @@ export default function Collectivite() {
             </div>
           )}
         </div>
-      </div>
+      
     </>
   );
 }

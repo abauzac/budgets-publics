@@ -10,6 +10,7 @@ import {
   urlComptaCommune,
   urlDataCommunesIdentifiers,
   urlDataEconomieTemplate,
+  urlDataGroupementFiscalitePropreIdentifiers,
 } from "./charts";
 import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
 import comptesM14 from "../../../public/json/m14.json";
@@ -295,11 +296,40 @@ export async function getCommunesData(codeCommune: string, codeDep : string){
   return results;
 }
 
+export async function getCollectivitesData(siren: string, codeDep : string){
+  const results: any[] = [];
+  for (let i = 0; i < urlDataGroupementFiscalitePropreIdentifiers.length; i++) {
+    const url = getCollectivitesUrlDataEconomie(urlDataGroupementFiscalitePropreIdentifiers[i], siren, codeDep);
+    const response = await fetch(url);
+    if(!response.ok)
+      continue;
+    const json = await response.json();
+    if(json.total_count && json.total_count > 0) {
+      results.push(...json.results);
+    }
+  }
+  results.sort((a, b) => +a.exer - +b.exer);
+  return results.map(r => {
+    r.an = r.exer;
+    return r;
+  });
+}
+
 export function getCommuneUrlDataEconomie(dataIdentifier: string, codeCommune: string, codeDep: string){
   if(!dataIdentifier)
     throw new Error("dataIdentifier is required");
   const url = getUrlDataEconomieForIdentifier(dataIdentifier);
   const whereEncoded = encodeURIComponent(`dep="${codeDep}" and icom="${codeCommune}"`);
+  return url + `?where=${whereEncoded}`;
+}
+
+export function getCollectivitesUrlDataEconomie(dataIdentifier: string, siren: string, codeDep: string){
+  if(!dataIdentifier)
+    throw new Error("dataIdentifier is required");
+  if(codeDep.length != 3)
+    codeDep = codeDep.padStart(3, "0");
+  const url = getUrlDataEconomieForIdentifier(dataIdentifier);
+  const whereEncoded = encodeURIComponent(`ndept="${codeDep}" and siren="${siren}"`);
   return url + `?where=${whereEncoded}`;
 }
 
