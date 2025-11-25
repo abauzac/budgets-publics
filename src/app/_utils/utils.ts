@@ -8,7 +8,7 @@ import {
   urlDataGroupementFiscalitePropreIdentifiers,
   urlDataRegionsIdentifiers,
 } from "./charts";
-import { type BalanceCommuneResponse, type BalanceResponse } from "./types";
+import { BalanceCommuneInfos, type BalanceCommuneResponse, type BalanceResponse } from "./types";
 import comptesM14 from "../../../public/json/m14.json";
 import comptesM57 from "../../../public/json/m57.json";
 
@@ -109,6 +109,7 @@ export function getNomenclature(responseItem: BalanceCommuneResponse): {c: strin
     case "M52": // departement
       return comptesM14;
     case "M57":
+    case "M57A":
       return comptesM57.map(m => { return { c: ""+parseInt(m.CODE), lib: m.LIBELLE }});
     // case "M52":
     //   return comptesM52.map(m => { return { c: ""+parseInt(m.), lib: m.LIBELLE }}); // TODO ajouter nomenclature M52
@@ -268,4 +269,29 @@ export function getCollectivitesUrlDataEconomie(dataIdentifier: string, siren: s
 
 export function getUrlDataEconomieForIdentifier(dataIdentifier: string){
   return urlDataEconomieTemplate.replace("[IDENTIFIER]", dataIdentifier);
+}
+
+export function getListeComptesForComptabilite(comptes: string[], listeComptes: BalanceCommuneInfos[]){
+  
+  // compteBrut contains "*" wildcard, e.g. "101*" : return all comptes starting with "101"
+  const result = comptes.reduce((acc: BalanceCommuneInfos[], compteBrut: string) => {
+    const comptes = listeComptes.filter(c => {
+      if(compteBrut.endsWith("*")){
+        const prefix = compteBrut.substring(0, compteBrut.length - 1);
+        return c.compte.startsWith(prefix) && c.compte.length > prefix.length;
+      } else {
+        return c.compte === compteBrut;
+      }
+    });
+
+    // deduplicate comptes having same "compte" value
+    const comptesMap: {[key: string]: BalanceCommuneInfos} = {};
+    comptes.forEach(c => {
+      comptesMap[c.compte] = c;
+    });
+
+    acc.push(...Object.values(comptesMap));
+    return acc;
+  }, [] as BalanceCommuneInfos[]);
+  return result;
 }

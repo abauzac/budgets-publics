@@ -151,3 +151,31 @@ Budgets annexes EPSM rattachés à une collectivité territoriale, EPCI ou EPL
 588	Services de soins infirmiers à domicile (avec soins médicaux) (BA)
 589	Petite enfance (BA)
 */
+
+export type ComptabiliteModele  = ComptabiliteChapitre[];
+
+export type ComptabiliteChapitre = {
+  label: string; // ACTIF IMMOBILISE...
+  sections : ComptabiliteSection[];
+  key: string;
+}
+
+export type ComptabiliteSection = {
+  label: string; // IMMOBILISATIONS INCORPORELLES...
+  categories?: ComptabiliteCategory[];
+  comptes?: ComptabiliteCompte;
+  key: string;
+}
+
+export type ComptabiliteCategory = {
+  label: string; // Subventions d'investissement versées...
+  comptes: ComptabiliteCompte;
+  key: string;
+}
+
+export type ComptabiliteCompte = {
+  comptesBrut: string[];
+  comptesAmortissements: string[];
+  comptesBrutsExclus?: string[];
+  comptesNegatifs?: string[];
+}

@@ -11,23 +11,37 @@ import {
   regFonctionnementProduitListe,
 } from "../_utils/charts";
 import { useRouter, useSearchParams } from "next/navigation";
-import { generateYearsArray, getRegionData } from "../_utils/utils";
+import {
+  generateYearsArray,
+  getComptesForCommune,
+  getNomenclature,
+  getRegionData,
+  getUrlForComptaRegion,
+} from "../_utils/utils";
 import { ModalProvider } from "../_contexts/ComptabiliteModalContext";
 import TableauComptable from "./tableauComptable";
 import Modal from "./comptabiliteModal";
 import GraphOneLineData from "./graphOneLineData";
 import GraphMultiLinesData from "./graphMultiLinesData";
+import { BalanceCommuneInfos } from "../_utils/types";
 
 export default function Region() {
   const [regionCode, setRegionCode] = useState(""); // "01", "02", "03", ... "95
   const [region, setRegion] = useState<any>(null); // "01", "02", "03", ... "95
   const [typeVue, setTypeVue] = useState<
-    "global" | "budget" | "investissements" | "dette" | "fiscalite" | "comptabilite"
+    | "global"
+    | "budget"
+    | "investissements"
+    | "dette"
+    | "fiscalite"
+    | "comptabilite"
   >("global");
   const [prefix, setPrefix] = useState<string>("");
   const [dataRegions, setDataRegions] = useState<any[]>([]);
   const currentYear = new Date().getFullYear();
   const [comptaYear, setComptaYear] = useState<number>(currentYear - 1);
+  const [listeComptes, setListeComptes] = useState<BalanceCommuneInfos[]>([]);
+  const [nomenclature, setNomenclature] = useState<any[]>([]);
   const params = useSearchParams();
   const router = useRouter();
 
@@ -42,11 +56,32 @@ export default function Region() {
     if (regionCode !== "") {
       setRegion(regions.find((d) => d.REG === regionCode));
       (async () => {
-          const dataColl = await getRegionData(regionCode);
-          setDataRegions(dataColl);
+        const dataColl = await getRegionData(regionCode);
+        setDataRegions(dataColl);
       })();
     }
   }, [regionCode]);
+
+  useEffect(() => {
+    if (typeVue === "comptabilite") {
+      (async function GetComptes() {
+        let codeCible = regionCode;
+        if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
+
+        const urlFinale = getUrlForComptaRegion(codeCible, comptaYear);
+
+        let comptesRegions: BalanceCommuneInfos[] = await getComptesForCommune(
+          urlFinale
+        );
+        if (comptesRegions.length == 0) {
+          return;
+        }
+        setNomenclature(getNomenclature(comptesRegions[0]));
+        comptesRegions.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+        setListeComptes(comptesRegions);
+      })();
+    }
+  }, [typeVue, regionCode, comptaYear]);
 
   return (
     <>
@@ -337,10 +372,8 @@ export default function Region() {
                 <br />
                 <ModalProvider>
                   <TableauComptable
-                    collectivite={"region"}
-                    codeCible={region.REG}
-                    codeParent={""}
-                    year={comptaYear}
+                        listeComptes={listeComptes}
+                        nomenclature={nomenclature}
                   ></TableauComptable>
                   <Modal />
                 </ModalProvider>

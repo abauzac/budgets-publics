@@ -38,3 +38,20 @@
     margin: 0;
     display: inline;
 }
+
+.comptaModeleSection{
+    margin: 0 auto 2em auto;
+    width: 980px;
+}
+
+.ligneComptableMontant{
+     width: 180px; 
+     text-align: right; 
+     align-content: center;
+
+}
+
+.totalComptable{
+    font-weight: bold;
+    background-color: rgb(230, 230, 230);
+}

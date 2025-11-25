@@ -81,84 +81,13 @@ function ComptaList({
 }
 
 export default function TableauComptable({
-  codeCible,
-  codeParent = "",
-  collectivite = "commune",
-  year = 2024,
+  listeComptes = [],
+  nomenclature = [],
 }: {
-  codeCible: string;
-  codeParent: string;
-  collectivite: "commune" | "departement" | "region";
-  year: number;
+  nomenclature: any[];
+  listeComptes: BalanceCommuneInfos[];
 }) {
-  const codeDep: string =
-    transformDepCodeToCollectiviteDept(codeParent, true) || "";
-  const [listeComptes, setListeComptes] = useState<BalanceCommuneInfos[]>([]);
-  const [chargement, setChargement] = useState<boolean>(true);
-  const [nomenclature, setNomenclature] = useState<any[]>([]);
-
-  async function GetComptes() {
-    setChargement(true);
-    if (collectivite == "commune") {
-      const urlFinale = getUrlForComptaCommune(
-        codeDep,
-        codeCible.substring(2),
-        year
-      );
-      let comptesCommune: BalanceCommuneInfos[] = await getComptesForCommune(
-        urlFinale
-      );
-      if (comptesCommune.length == 0) {
-        setChargement(false);
-        return;
-      }
-      setNomenclature(getNomenclature(comptesCommune[0]));
-      comptesCommune.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
-      setListeComptes(comptesCommune);
-    } else if (collectivite == "departement") {
-      if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
-
-      const urlFinale = getUrlForComptaDepartement(codeCible, year);
-
-      let comptesDepartements: BalanceCommuneInfos[] = await getComptesForCommune(
-        urlFinale
-      );
-      if (comptesDepartements.length == 0) {
-        setChargement(false);
-        return;
-      }
-      setNomenclature(getNomenclature(comptesDepartements[0]));
-      comptesDepartements.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
-      setListeComptes(comptesDepartements);
-    } else if (collectivite == "region") {
-      if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
-
-      const urlFinale = getUrlForComptaRegion(codeCible, year);
-
-      let comptesRegions: BalanceCommuneInfos[] = await getComptesForCommune(
-        urlFinale
-      );
-      if (comptesRegions.length == 0) {
-        setChargement(false);
-        return;
-      }
-      setNomenclature(getNomenclature(comptesRegions[0]));
-      comptesRegions.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
-      setListeComptes(comptesRegions);
-    }
-    setChargement(false);
-  }
-
-
-  useEffect(() => {
-    if (listeComptes.length == 0) GetComptes();
-  }, []);
-
-  useEffect(() => {
-    GetComptes();
-  }, [year, codeCible]);
-
-  if (chargement) return <div>Chargement</div>;
+  if (listeComptes == null || listeComptes.length == 0) return <div>Chargement</div>;
 
   if (listeComptes.length == 0)
     return <p>Aucune comptabilité trouvée pour l'année sélectionnée</p>;

@@ -11,12 +11,13 @@ import {
   depInvestissementsResourcesListe,
 } from "../_utils/charts";
 import { useRouter, useSearchParams } from "next/navigation";
-import { generateYearsArray, getDepartementData } from "../_utils/utils";
+import { generateYearsArray, getComptesForCommune, getDepartementData, getNomenclature, getUrlForComptaDepartement } from "../_utils/utils";
 import GraphOneLineData from "./graphOneLineData";
 import GraphMultiLinesData from "./graphMultiLinesData";
 import { ModalProvider } from "../_contexts/ComptabiliteModalContext";
 import TableauComptable from "./tableauComptable";
 import Modal from "./comptabiliteModal";
+import { BalanceCommuneInfos } from "../_utils/types";
 
 export default function Departement() {
   const [departementCode, setDepartementCode] = useState(""); // "01", "02", "03", ... "95
@@ -28,6 +29,8 @@ export default function Departement() {
   const [dataDepartements, setDataDepartements] = useState<any[]>([]);
   const currentYear = (new Date()).getFullYear()
   const [comptaYear, setComptaYear] = useState<number>(currentYear-1);
+  const [listeComptes, setListeComptes] = useState<BalanceCommuneInfos[]>([]);
+  const [nomenclature, setNomenclature] = useState<any[]>([]);
   
 
   const params = useSearchParams();
@@ -49,6 +52,42 @@ export default function Departement() {
       })();
     }
   }, [departementCode]);
+  
+    useEffect(() => {
+      if (typeVue === "comptabilite") {
+        (async function GetComptes() {
+          let codeCible = departementCode;
+              if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
+        
+              const urlFinale = getUrlForComptaDepartement(codeCible, comptaYear);
+        
+              let comptesDepartements: BalanceCommuneInfos[] = await getComptesForCommune(
+                urlFinale
+              );
+              if (comptesDepartements.length == 0) {
+                return;
+              }
+              setNomenclature(getNomenclature(comptesDepartements[0]));
+              comptesDepartements.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+              setListeComptes(comptesDepartements);
+           /* } else if (collectivite == "region") {
+              if (codeCible.length != 3) codeCible = codeCible.padStart(3, "0");
+        
+              const urlFinale = getUrlForComptaRegion(codeCible, year);
+        
+              let comptesRegions: BalanceCommuneInfos[] = await getComptesForCommune(
+                urlFinale
+              );
+              if (comptesRegions.length == 0) {
+                return;
+              }
+              setNomenclature(getNomenclature(comptesRegions[0]));
+              comptesRegions.sort((cca, ccb) => cca.compte.localeCompare(ccb.compte));
+              setListeComptes(comptesRegions);
+            }*/
+        })();
+      }
+    }, [typeVue, departementCode, comptaYear]);
 
   return (
     <>
@@ -332,10 +371,8 @@ export default function Departement() {
                   <ModalProvider>
 
                     <TableauComptable
-                      collectivite={"departement"}
-                      codeCible={departement.DEP}
-                      codeParent={""}
-                      year={comptaYear}
+                        listeComptes={listeComptes}
+                        nomenclature={nomenclature}
                     ></TableauComptable>
                     <Modal />
                   </ModalProvider>
