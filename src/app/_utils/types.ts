@@ -89,6 +89,8 @@ export interface BalanceCommuneResponse {
      * max(0,sum(BECRE,-BEDEB,OBNETCRE,-OBNETDEB,ONBCRE,-ONBDEB))
      */
     sc: number
+
+    propTarget: "sc" | "sd";
   }
 /*
 CTYPE

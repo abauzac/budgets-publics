@@ -479,12 +479,12 @@ export const BILAN_ACTIF: ComptabiliteModele = [
         key: "ecarts-de-conversion-actif-section",
         comptes: {
           // 476…
-            comptesBrut: ["476*"],
-            comptesAmortissements: [],
+          comptesBrut: ["476*"],
+          comptesAmortissements: [],
         },
       },
     ],
-  }
+  },
 ];
 
 // M57 pdf : page 15
@@ -501,14 +501,9 @@ export const BILAN_PASSIF: ComptabiliteModele = [
             label: "Dotations",
             comptes: {
               // 1021, 10251, (-10259)
-              comptesBrut: [
-                "1021",
-                "10251",
-              ],
+              comptesBrut: ["1021", "10251"],
               comptesAmortissements: [],
-              comptesNegatifs: [
-                "10259",
-              ],
+              comptesNegatifs: ["10259"],
             },
             key: "dotations",
           },
@@ -516,20 +511,14 @@ export const BILAN_PASSIF: ComptabiliteModele = [
             label: "Fonds globalisés",
             comptes: {
               // 1022...sauf 10229… , (-10229… )
-              comptesBrut: [
-                "1022*",
-              ],
-              comptesBrutsExclus: [
-                "10229*",
-              ],
+              comptesBrut: ["1022*"],
+              comptesBrutsExclus: ["10229*"],
               comptesAmortissements: [],
-              comptesNegatifs: [
-                "10229*",
-              ],
+              comptesNegatifs: ["10229*"],
             },
             key: "fonds-globalises",
-          }
-        ]
+          },
+        ],
       },
       {
         label: "SUBVENTIONS D'INVESTISSEMENT",
@@ -539,14 +528,8 @@ export const BILAN_PASSIF: ComptabiliteModele = [
             label: "Rattachées à un actif amortissable",
             comptes: {
               // 131… , 133…, (- 1391…), (-1393...)
-              comptesBrut: [
-                "131*",
-                "133*",
-              ],
-              comptesNegatifs: [
-                "1391*",
-                "1393*",
-              ],
+              comptesBrut: ["131*", "133*"],
+              comptesNegatifs: ["1391*", "1393*"],
               comptesAmortissements: [],
             },
             key: "rattachees-a-un-actif-amortissable",
@@ -555,21 +538,323 @@ export const BILAN_PASSIF: ComptabiliteModele = [
             label: "Rattachées à un actif non amortissable",
             comptes: {
               //132…, 134… , 138…
-              comptesBrut: [
-                "132*",
-                "134*", 
-                "138*",
-              ],
+              comptesBrut: ["132*", "134*", "138*"],
               comptesAmortissements: [],
             },
             key: "rattachees-a-un-actif-non-amortissable",
-          }
-        ]
+          },
+        ],
+      },
+      {
+        label: "NEUTRALISATIONS ET REGULARISATIONS",
+        key: "neutralisations-et-regularisations",
+        comptes: {
+          // 192 C , (-192D) , 193C , (-193D) , 194 , 197 , (-198D)
+          comptesBrut: ["192C", "193C", "194", "197"],
+          comptesAmortissements: [],
+          comptesNegatifs: ["192D", "193D", "198D"],
+        },
+      },
+      //RESERVES
+      {
+        label: "RESERVES",
+        key: "reserves",
+        comptes: {
+          // 1068
+          comptesBrut: ["1068"],
+          comptesAmortissements: [],
+        },
+      },
+      // REPORT A NOUVEAU
+      {
+        label: "REPORT A NOUVEAU",
+        key: "report-a-nouveau",
+        comptes: {
+          // 110, (-119)
+          comptesBrut: ["110"],
+          comptesNegatifs: ["119"],
+          comptesAmortissements: [],
+        },
+      },
+      // RESULTAT DE L'EXERCICE
+      {
+        label: "RESULTAT DE L'EXERCICE",
+        key: "resultat-de-lexercice",
+        comptes: {
+          // 12
+          comptesBrut: ["12*"],
+          comptesAmortissements: [],
+        },
+      },
+      // DROITS DU CONCEDANT ET DE L'AFFERMANT
+      {
+        label: "DROITS DU CONCEDANT ET DE L'AFFERMANT",
+        key: "droits-du-concedant-et-de-laffermant",
+        comptes: {
+          // 2491
+          comptesBrut: ["2491"],
+          comptesAmortissements: [],
+        },
+      },
+      //DROITS DE L'AFFECTANT ET DU REMETTANT
+      {
+        label: "DROITS DE L'AFFECTANT ET DU REMETTANT",
+        key: "droits-de-laffectant-et-du-remettant",
+        // 1027 , 181C , 229… , 2492 , 2493 , 2494 , 2495 , 2496 , 2498
+        comptes: {
+          comptesBrut: [
+            "1027",
+            "181C",
+            "229*",
+            "2492",
+            "2493",
+            "2494",
+            "2495",
+            "2496",
+            "2498",
+          ],
+          comptesAmortissements: [],
+        },
+      },
+    ],
+  },
+  {
+    label: "PASSIF",
+    key: "passif",
+    sections: [
+      {
+        label: "PROVISIONS POUR RISQUES ET CHARGES",
+        key: "provisions-pour-risques-et-charges",
+        categories: [
+          {
+            label: "Provisions pour risques",
+            //151… , 152…
+            comptes: {
+              comptesBrut: ["151*", "152*"],
+              comptesAmortissements: [],
+            },
+            key: "provisions-pour-risques",
+          },
+          {
+            label: "Provisions pour charges",
+            key: "provisions-pour-charges",
+            // 154... , 157... , 158...
+            comptes: {
+              comptesBrut: ["154*", "157*", "158*"],
+              comptesAmortissements: [],
+            },
+          },
+        ],
+      },
+      {
+        label: "DETTES FINANCIERES",
+        key: "dettes-financieres",
+        categories: [
+          {
+            label: "Emprunts obligataires",
+            key: "emprunts-obligataires",
+            // 163… , 16883
+            comptes: {
+              comptesBrut: ["163*", "16883"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Emprunts souscrits auprès des établissements de crédit",
+            key: "emprunts-souscrits-aupres-des-etablissements-de-credit",
+            // 164… sauf 16449 , (- 16449) , 16884 , 5193…
+            comptes: {
+              comptesBrut: ["164*", "16884", "5193*"],
+              comptesBrutsExclus: ["16449"],
+              comptesNegatifs: ["16449"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Dettes financières et autres emprunts",
+            key: "dettes-financieres-et-autres-emprunts",
+            // 165 , 166 , 167… , 1681... , 1682 , 1687 …, 16888
+            comptes: {
+              comptesBrut: [
+                "165",
+                "166",
+                "167*",
+                "1681*",
+                "1682",
+                "1687*",
+                "16888",
+              ],
+              comptesAmortissements: [],
+            },
+          },
+        ],
+      },
+      {
+        label: "DETTES NON FINANCIERES",
+        key: "dettes-non-financieres",
+        categories: [
+          {
+            label: "Dettes fournisseurs et comptes rattachés",
+            key: "dettes-fournisseurs-et-comptes-rattaches",
+            // 269 , 279 , 401… , 402… , 403 , 404… , 405 , 407... , 408
+            comptes: {
+              comptesBrut: [
+                "269",
+                "279",
+                "401*",
+                "402*",
+                "403",
+                "404*",
+                "405",
+                "407*",
+                "408",
+              ],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label:"Dettes fiscales et sociales",
+            key: "dettes-fiscales-et-sociales",
+            //421 , 427 , 4282 , 4286 , 431 , 437 , 4382 , 4386 , 442… , 4452 , 4453, 4455…, 4457... , 445885 , 447 , 4482 , 4486
+            comptes: {
+              comptesBrut: [
+                "421",
+                "427",
+                "4282",
+                "4286",
+                "431",
+                "437",
+                "4382",
+                "4386",
+                "442*",
+                "4452",
+                "4453",
+                "4455*",
+                "4457*",
+                "445885",
+                "447",
+                "4482",
+                "4486",
+              ],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Avances et acomptes reçus",
+            key: "avances-et-acomptes-recus",
+            // 4093C , 419...
+            comptes: {
+              comptesBrut: ["4093C", "419*"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Dettes correspondant à des opérations pour compte de tiers",
+            key: "dettes-correspondant-a-des-operations-pour-compte-de-tiers",
+            // 444 , 45412 , 45422 , 45432 , 45442 , 4552 , 4567 , 4568… , 4582 , 464...
+            comptes: {
+              comptesBrut: [
+                "444",
+                "45412",
+                "45422",
+                "45432",
+                "45442",
+                "4552",
+                "4567",
+                "4568*",
+                "4582",
+                "464*",
+              ],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Fonds gérés par la collectivité",
+            key: "fonds-geres-par-la-collectivite",
+            // 453...
+            comptes: {
+              comptesBrut: ["453*"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Dettes sur budgets annexes",
+            key: "dettes-sur-budgets-annexes",
+            // 451...C , 586C
+            comptes: {
+              comptesBrut: ["451*C", "586C"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Autres dettes non financières",
+            key: "autres-dettes-non-financieres",
+            // 4419…, 44311 , 44321 , 44331 , 44341 , 44351 , 44361 , 44371 , 44381 , 449 , 452 , 461C , 463… , 466 , 4671… , 46751C , 46771, 4686 , 4711 , 4712 , 4716
+            comptes: {
+              comptesBrut: [
+                "4419*",
+                "44311",
+                "44321",
+                "44331",
+                "44341",
+                "44351",
+                "44361",
+                "44371",
+                "44381",
+                "449",
+                "452",
+                "461C",
+                "463*",
+                "466",
+                "4671*",
+                "46751C",
+                "46771",
+                "4686",
+                "4711",
+                "4712",
+                "4716",
+              ],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "PRODUITS CONSTATES D'AVANCE",
+            key: "produits-constates-davance",
+            // 487…
+            comptes: {
+              comptesBrut: ["487*"],
+              comptesAmortissements: [],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "TRESORERIE",
+    key: "tresorerie-passif",
+    sections: [
+      {
+        label: "AUTRES ELEMENTS DE TRESORERIE PASSIVE",
+        key: "autres-elements-de-tresorerie-passive",
+        comptes: {
+          // 5191 , 5192 , 51931 , 5194 , 5198 , 5421C , 5428C , 5186
+          comptesBrut: [
+            "5191",
+            "5192",
+            "51931",
+            "5194",
+            "5198",
+            "5421C",
+            "5428C",
+            "5186",
+          ],
+          comptesAmortissements: [],
+        },
       }
-    ]
+    ],
   }
 ];
-
 
 // M57 pdf : page 23
 export const COMPTE_RESULTAT: ComptabiliteModele = [

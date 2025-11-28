@@ -265,6 +265,42 @@ export default function Communes() {
               </label>
             </fieldset>
           )}
+          {typeVue === "comptabilite" && (
+            <div className="d-flex flex-column align-items-center justify-content-center">
+            <select
+                  style={{ width: "300px", justifySelf: "center" }}
+                  name="comptaYear"
+                  aria-label="Année"
+                  value={comptaYear}
+                  onChange={(event) => {
+                    setComptaYear(parseInt(event.target.value));
+                  }}
+                  required
+                >
+                  {generateYearsArray().map((year) => (
+                    <option key={`yr${year}`} value={year}>
+                      {year}
+                    </option>
+                  ))}
+                </select>
+                <br />
+                <select
+                  style={{ width: "300px", justifySelf: "center" }}
+                  name="typeCompta"
+                  aria-label="Vue comptabilité"
+                  value={typeCompta}
+                  onChange={(event) => {
+                    setTypeCompta(event.target.value);
+                  }}
+                  required
+                >
+                  <option value="plancomptable">Plan comptable</option>
+                  <option value="actif">Actif</option>
+                  <option value="passif">Passif</option>
+                  <option value="resultat">Compte de résultat</option>
+                </select>
+            </div>
+          )}
         </div>
         {commune && (
           <div>
@@ -477,39 +513,7 @@ export default function Communes() {
             {typeVue === "comptabilite" && (
               <div style={{ textAlign: "center" }}>
                 <h2>Comptabilité</h2>
-                <select
-                  style={{ width: "300px", justifySelf: "center" }}
-                  name="comptaYear"
-                  aria-label="Année"
-                  value={comptaYear}
-                  onChange={(event) => {
-                    setComptaYear(parseInt(event.target.value));
-                  }}
-                  required
-                >
-                  {generateYearsArray().map((year) => (
-                    <option key={`yr${year}`} value={year}>
-                      {year}
-                    </option>
-                  ))}
-                </select>
-                <br />
-                <select
-                  style={{ width: "300px", justifySelf: "center" }}
-                  name="typeCompta"
-                  aria-label="Vue comptabilité"
-                  value={typeCompta}
-                  onChange={(event) => {
-                    setTypeCompta(event.target.value);
-                  }}
-                  required
-                >
-                  <option value="plancomptable">Plan comptable</option>
-                  <option value="actif">Actif</option>
-                  <option value="passif">Passif</option>
-                  <option value="resultat">Compte de résultat</option>
-                </select>
-                <br />
+                
                 {listeComptes?.length > 0 && nomenclature?.length > 0 && (
                   <>
                     {typeCompta === "plancomptable" && (
@@ -526,6 +530,7 @@ export default function Communes() {
                         listeComptes={listeComptes}
                         modele={BILAN_ACTIF}
                         nomenclature={nomenclature}
+                        propertyCompte="sd"
                       ></ModeleComptable>
                     )}
                     {typeCompta === "passif" && (
@@ -533,6 +538,7 @@ export default function Communes() {
                         listeComptes={listeComptes}
                         modele={BILAN_PASSIF}
                         nomenclature={nomenclature}
+                        propertyCompte="sc"
                       ></ModeleComptable>
                     )}
                     {typeCompta === "resultat" && (
@@ -540,6 +546,7 @@ export default function Communes() {
                         listeComptes={listeComptes}
                         modele={COMPTE_RESULTAT}
                         nomenclature={nomenclature}
+                        propertyCompte="sc"
                       ></ModeleComptable>
                     )}
                   </>

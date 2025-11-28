@@ -125,6 +125,13 @@ export async function getComptesForCommune(url: string){
   let results: BalanceCommuneResponse[] = [];
   let resultTmp = []
   let loopIdx = 0;
+
+  // get from localstorage first 
+  if (localStorage.getItem(url) != null) {
+    const jsonStored = localStorage.getItem(url);
+    return JSON.parse(jsonStored!);
+  }
+
   while(resultTmp.length == 100 || offset == 0){
     const urlFinale = url.replace("[OFFSET]", ""+offset)
     const response = await fetch(urlFinale);
@@ -145,6 +152,7 @@ export async function getComptesForCommune(url: string){
     loopIdx++;
     offset = loopIdx*100;
   }
+  localStorage.setItem(url, JSON.stringify(results));
   return results;
 }
 
@@ -159,10 +167,18 @@ export async function getCommunesData(codeCommune: string, codeDep : string){
   for (let i = 0; i < urlDataCommunesIdentifiers.length; i++) {
     const identifier = urlDataCommunesIdentifiers[i];
     const url = getCommuneUrlDataEconomie(identifier, codeCommune, codeDep);
+
+      if (localStorage.getItem(url) != null) {
+        const jsonStored = localStorage.getItem(url);
+        results.push(...JSON.parse(jsonStored!));
+        continue;
+      }
+
     const response = await fetch(url);
     if(!response.ok)
       continue;
     const json = await response.json();
+    localStorage.setItem(url, JSON.stringify(json.results));
     if(json.total_count && json.total_count > 0) {
       results.push(...json.results);
     }
@@ -271,13 +287,39 @@ export function getUrlDataEconomieForIdentifier(dataIdentifier: string){
   return urlDataEconomieTemplate.replace("[IDENTIFIER]", dataIdentifier);
 }
 
-export function getListeComptesForComptabilite(comptes: string[], listeComptes: BalanceCommuneInfos[]){
+export function getListeComptesForComptabilite(comptes: string[], listeComptes: BalanceCommuneInfos[], defaultProperty: "sd" | "sc" = "sd"): BalanceCommuneInfos[] {
   
+  const result = comptes.map(c => {
+    if(c.toLowerCase().indexOf("c") !== -1)
+      defaultProperty = "sc";
+    else if(c.toLowerCase().indexOf("d") !== -1)
+      defaultProperty = "sd";
+
+    if (c.indexOf("*") !== -1){
+      const prefix = c.substring(0, c.indexOf("*"));
+      return listeComptes
+      .filter(compte => compte.compte.startsWith(prefix) && compte.compte.length > prefix.length)
+      .map(compte => ({
+        ... compte,
+        propTarget: defaultProperty
+      }));
+    }
+    else {
+      return listeComptes.filter(compte => compte.compte === c)
+      .map(compte => ({
+        ... compte,
+        propTarget: defaultProperty
+      }));
+    }
+  })
+  .flat();
+  return result;
+
   // compteBrut contains "*" wildcard, e.g. "101*" : return all comptes starting with "101"
-  const result = comptes.reduce((acc: BalanceCommuneInfos[], compteBrut: string) => {
+  /*const result = comptes.reduce((acc: BalanceCommuneInfos[], compteBrut: string) => {
     const comptes = listeComptes.filter(c => {
-      if(compteBrut.endsWith("*")){
-        const prefix = compteBrut.substring(0, compteBrut.length - 1);
+      if(compteBrut.indexOf("*") !== -1){
+        const prefix = compteBrut.substring(0, compteBrut.indexOf("*"));
         return c.compte.startsWith(prefix) && c.compte.length > prefix.length;
       } else {
         return c.compte === compteBrut;
@@ -287,11 +329,12 @@ export function getListeComptesForComptabilite(comptes: string[], listeComptes: 
     // deduplicate comptes having same "compte" value
     const comptesMap: {[key: string]: BalanceCommuneInfos} = {};
     comptes.forEach(c => {
+      
       comptesMap[c.compte] = c;
     });
 
     acc.push(...Object.values(comptesMap));
     return acc;
-  }, [] as BalanceCommuneInfos[]);
+  }, [] as BalanceCommuneInfos[]);*/
   return result;
 }

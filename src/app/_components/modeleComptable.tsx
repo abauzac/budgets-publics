@@ -19,11 +19,13 @@ export function LigneComptable({
 }) {
   let listeComptesBruts = getListeComptesForComptabilite(
     ligne.comptesBrut,
-    listeComptes
+    listeComptes,
+    propertyCompte
   );
   const listeComptesAmortissements = getListeComptesForComptabilite(
     ligne.comptesAmortissements,
-    listeComptes
+    listeComptes,
+    propertyCompte
   );
   if (ligne.comptesBrutsExclus && ligne.comptesBrutsExclus.length > 0)
     listeComptesBruts = listeComptesBruts.filter(
@@ -33,15 +35,15 @@ export function LigneComptable({
   if (ligne.comptesNegatifs && ligne.comptesNegatifs.length > 0)
     listeComptesBruts.forEach((c) => {
       if (ligne.comptesNegatifs?.indexOf(c.compte) !== -1) {
-        c.sd = c.sd * -1;
+        c[c.propTarget] = c[c.propTarget] * -1;
       }
     });
   const totalBrut = listeComptesBruts.reduce(
-    (acc, curr) => acc + (curr[propertyCompte] ?? 0),
+    (acc, curr) => acc + (curr[curr.propTarget] ?? 0),
     0
   );
   const totalAmortissements = listeComptesAmortissements.reduce(
-    (acc, curr) => acc + (curr[propertyCompte] ?? 0),
+    (acc, curr) => acc + ((curr["sc"] ? curr["sc"] : curr["sd"]) ?? 0),
     0
   );
   const totalNet = totalBrut - totalAmortissements;
@@ -77,11 +79,13 @@ export function SectionComptableTotal({
     debugger;
     listeComptesBruts = getListeComptesForComptabilite(
       ligne.comptes.comptesBrut,
-      listeComptes
+      listeComptes,
+      propertyCompte
     );
     listeComptesAmortissements = getListeComptesForComptabilite(
       ligne.comptes.comptesAmortissements,
-      listeComptes
+      listeComptes,
+      propertyCompte
     );
     if (
       ligne.comptes.comptesBrutsExclus &&
@@ -143,7 +147,7 @@ export function SectionComptableTotal({
     0
   );
   totalAmortissements = listeComptesAmortissements.reduce(
-    (acc, curr) => acc + (curr[propertyCompte] ?? 0),
+    (acc, curr) => acc + ((curr["sc"] ? curr["sc"] : curr["sd"]) ?? 0),
     0
   );
   totalNet = totalBrut - totalAmortissements;
@@ -164,10 +168,12 @@ export function ModeleComptable({
   modele,
   listeComptes,
   nomenclature,
+  propertyCompte
 }: {
   modele: ComptabiliteModele;
   listeComptes: BalanceCommuneInfos[];
   nomenclature: any[];
+  propertyCompte: "sd" | "sc"; // probably not a good idea. Should be in comptabilite.ts i guess
 }) {
   if (listeComptes.length == 0 || !nomenclature || nomenclature.length == 0)
     return <p>Aucune comptabilité trouvée pour l'année sélectionnée</p>;
@@ -200,7 +206,7 @@ export function ModeleComptable({
                             ligne={category.comptes}
                             listeComptes={listeComptes}
                             label={category.label}
-                            propertyCompte="sd"
+                            propertyCompte={propertyCompte}
                           ></LigneComptable>
                         </div>
                       );
@@ -210,13 +216,13 @@ export function ModeleComptable({
                       ligne={section.comptes}
                       listeComptes={listeComptes}
                       label={section.label}
-                      propertyCompte="sd"
+                      propertyCompte={propertyCompte}
                     ></LigneComptable>
                   )}
                   <SectionComptableTotal
                     ligne={section}
                     listeComptes={listeComptes}
-                    propertyCompte="sd"
+                    propertyCompte={propertyCompte}
                   ></SectionComptableTotal>
                 </div>
               );
