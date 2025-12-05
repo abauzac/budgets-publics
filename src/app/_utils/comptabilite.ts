@@ -713,7 +713,7 @@ export const BILAN_PASSIF: ComptabiliteModele = [
             },
           },
           {
-            label:"Dettes fiscales et sociales",
+            label: "Dettes fiscales et sociales",
             key: "dettes-fiscales-et-sociales",
             //421 , 427 , 4282 , 4286 , 431 , 437 , 4382 , 4386 , 442… , 4452 , 4453, 4455…, 4457... , 445885 , 447 , 4482 , 4486
             comptes: {
@@ -851,12 +851,371 @@ export const BILAN_PASSIF: ComptabiliteModele = [
           ],
           comptesAmortissements: [],
         },
-      }
+      },
     ],
-  }
+  },
 ];
 
 // M57 pdf : page 23
-export const COMPTE_RESULTAT: ComptabiliteModele = [
-  // To be implemented
+export const COMPTE_RESULTAT_PRODUITS: ComptabiliteModele = [
+  {
+    label: "Produits de fonctionnement",
+    key: "produits-de-fonctionnement",
+    sections: [
+      {
+        label: "Produits sans contrepartie directe",
+        key: "produits-sans-contrepartie-directe",
+        categories: [
+          {
+            label: "Dotations de l'Etat",
+            key: "dotations-de-letat",
+            comptes: {
+              // 741… sauf 74119, (-74119), 742, 743, 744, 745…, 746…, (-7491)
+              comptesBrut: ["741*", "742", "743", "744", "745*", "746*"],
+              comptesBrutsExclus: ["74119"],
+              comptesNegatifs: ["74119", "7491"],
+              comptesAmortissements: [],
+            },
+          },
+          {
+            label: "Participations",
+            key: "participations",
+            comptes: {
+              // 747…
+              comptesBrut: ["747*"],
+            },
+          },
+          {
+            label:
+              "Compensations, autres attributions et autres participations",
+            key: "compensations-autres-attributions-et-autres-participations",
+            comptes: {
+              // 748… sauf 74869 sauf 748719 sauf 748729, (-74869), (-748719), (-748729), (-7498)
+              comptesBrut: ["748*"],
+              comptesBrutsExclus: ["74869", "748719", "748729"],
+              comptesNegatifs: ["74869", "748719", "748729", "7498"],
+            },
+          },
+          {
+            label: "Dons et legs",
+            key: "dons-et-legs",
+            comptes: {
+              // 756
+              comptesBrut: ["756"],
+            },
+          },
+          {
+            label: "Impôts et taxes",
+            key: "impots-et-taxes",
+            comptes: {
+              // 73… sauf 739…, (-739…)
+              comptesBrut: ["73*"],
+              comptesBrutsExclus: ["739*"],
+              comptesNegatifs: ["739*"],
+            },
+          },
+        ],
+      },
+      {
+        label: "PRODUITS AVEC CONTREPARTIE DIRECTE",
+        key: "produits-avec-contrepartie-directe",
+        categories: [
+          {
+            label: "Ventes de biens ou prestations de services",
+            key: "ventes-de-biens-ou-prestations-de-services",
+            comptes: {
+              //70… sauf 701249 sauf 70389… sauf 70619 sauf 7068129, (-701249), (-70389...), (-70619), (-7068129), (-709)
+              comptesBrut: ["70*"],
+              comptesBrutsExclus: ["701249", "70389*", "70619", "7068129"],
+              comptesNegatifs: ["701249", "70389*", "70619", "7068129", "709"],
+            },
+          },
+          {
+            label: "Produits des cessions d'actifs",
+            key: "produits-des-cessions-dactifs",
+            comptes: {
+              // 775
+              comptesBrut: ["775"],
+            },
+          },
+          {
+            label: "Autres produits de gestion",
+            key: "autres-produits-de-gestion",
+            comptes: {
+              // 75… (sauf 756), 773
+              comptesBrut: ["75*", "773"],
+              comptesBrutsExclus: ["756"],
+            },
+          },
+          {
+            label: "Production stockée et immobilisée",
+            key: "production-stockee-et-immobilisee",
+            comptes: {
+              // SC 713…, (-SD 713), 72…
+              comptesBrut: ["713*C", "72*"],
+              comptesNegatifs: ["713D"],
+            },
+          },
+        ],
+      },
+      {
+        label: "AUTRES PRODUITS",
+        key: "autres-produits",
+        categories: [
+          {
+            label:
+              "Reprises sur amortissement, dépréciations, provisions et transferts de charges",
+            key: "reprises-sur-amortissement-depreciations-provisions-et-transferts-de-charges",
+            comptes: {
+              // 781…, 791
+              comptesBrut: ["781*", "791"],
+            },
+          },
+          {
+            label: "Reprises du financement rattaché à un actif",
+            key: "reprises-du-financement-rattache-a-un-actif",
+            comptes: {
+              // 777
+              comptesBrut: ["777"],
+            },
+          },
+          {
+            label:
+              "Neutralisation des amortissements, dépréciations et provisions",
+            key: "neutralisation-des-amortissements-depreciations-et-provisions",
+            comptes: {
+              // 7768...
+              comptesBrut: ["7768*"],
+            },
+          },
+          {
+            label: "Neutralisation des moins-values de cession",
+            key: "neutralisation-des-moins-values-de-cession",
+            comptes: {
+              // 7761
+              comptesBrut: ["7761"],
+            },
+          },
+        ],
+      },
+    ],
+  },
+];
+export const COMPTE_RESULTAT_CHARGES: ComptabiliteModele = [
+  {
+    label: "Charges de fonctionnement",
+    key: "charges-de-fonctionnement",
+    sections: [
+      {
+        label: "Achats et charges externes",
+        key: "achats-et-charges-externes",
+        comptes: {
+          // 601…, 602…, SD6031…, (- SC6031…), SD6032, (- SC6032), SD6037, (- SC6037),
+          // 604…, 605, 606…, 607…, 608, (- 609…), 61… sauf 619, (-619), 62… sauf 629, (-629)
+          comptesBrut: [
+            "601*",
+            "602*",
+            "6031*D",
+            "6032D",
+            "6037D",
+            "604*",
+            "605",
+            "606*",
+            "607*",
+            "608",
+            "61*",
+            "62*",
+          ],
+          comptesBrutsExclus: ["619", "629"],
+          comptesNegatifs: ["6031*C", "6032C", "6037C", "609*", "619", "629"],
+        },
+      },
+      {
+        label: "Charges de personnel",
+        key: "charges-de-personnel",
+        categories: [
+          {
+            label: "Dont salaires, traitements et rémunérations diverses",
+            key: "dont-salaires-traitements-et-remunerations-diverses",
+            comptes: {
+              // 641… sauf 6419, (-6419), 642, 643 sauf 6439, (-6439), 646, 648...
+              comptesBrut: ["641*", "642", "643*", "646", "648*"],
+              comptesBrutsExclus: ["6419", "6439"],
+              comptesNegatifs: ["6419", "6439"],
+            },
+          },
+          {
+            label: "Dont charges sociales",
+            key: "dont-charges-sociales",
+            comptes: {
+              // 645… sauf 6459, (-6459), 647… sauf 6479, (-6479)
+              comptesBrut: ["645*", "647*"],
+              comptesBrutsExclus: ["6459", "6479"],
+              comptesNegatifs: ["6459", "6479"],
+            },
+          },
+        ],
+      },
+      {
+        label: "Indemnités des élus (et membres du CESR)",
+        key: "indemnites-des-elus-et-membres-du-cesr",
+        comptes: {
+          // 653...
+          comptesBrut: ["653*"],
+        },
+      },
+      {
+        label: "Autres charges de fonctionnement (dont pertes sur créances irrécouvrables)",
+        key: "autres-charges-de-fonctionnement-dont-pertes-sur-creances-irrecoverables",
+        comptes: {
+          // 654…, 658…, 673
+          comptesBrut: ["654*", "658*", "673"],
+        },
+      },
+      {
+        label: "Impôts et taxes",
+        key: "impots-et-taxes",
+        comptes: {
+          // 63…
+          comptesBrut: ["63*"],
+        },
+      },
+      {
+        label: "Dotations aux amortissements, dépréciations, provisions",
+        key: "dotations-aux-amortissements-depreciations-provisions",
+        comptes: {
+          // 681…
+          comptesBrut: ["681*"],
+        },
+      },
+      {
+        label: "Valeurs nettes comptables des éléments d'actifs cédés",
+        key: "valeurs-nettes-comptables-des-elements-d-actifs-cedes",
+        comptes: {
+          // 675
+          comptesBrut: ["675"],
+        },
+      },
+      {
+        label: "Neutralisation des dépréciations et provisions",
+        key: "neutralisation-des-depreciations-et-provisions",
+        comptes: {
+          // 6768
+          comptesBrut: ["6768"],
+        },
+      },
+      {
+        label: "Neutralisation des plus-values de cession",
+        key: "neutralisation-des-plus-values-de-cession",
+        comptes: {
+          // 6761
+          comptesBrut: ["6761"],
+        },
+      },
+    ],
+  },
+  {
+    label: "CHARGES D'INTERVENTION",
+    key: "charges-dintervention",
+    sections: [
+      {
+        label: "Dispositifs d'intervention pour compte propre",
+        key: "dispositifs-dintervention-pour-compte-propre",
+        categories: [
+          {
+            label: "Dont ménages",
+            key: "dont-menages",
+            comptes: {
+              // 651…sauf 65182, 652…, 65741, 6565, 6566, 6567…, 6575
+              comptesBrut: [
+                "651*",
+                "652*",
+                "65741",
+                "6565",
+                "6566",
+                "6567*",
+                "6575",
+              ],
+              comptesBrutsExclus: ["65182"],
+            }
+          },
+          {
+            label: "Dont personnes morales de droit privé",
+            key: "dont-personnes-morales-de-droit-prive",
+            comptes: {
+              // 65521, 65641, 65737, 65742, 65748
+              comptesBrut: [
+                "65521",
+                "65641",
+                "65737",
+                "65742",
+                "65748",
+              ],
+            }
+          },
+          {
+            label: "Dont collectivités territoriales",
+            key: "dont-collectivites-territoriales",
+            comptes: {
+              // 65522, 6554…, 65732, 65733, 65734…
+              comptesBrut: [
+                "65522",
+                "6554*",
+                "65732",
+                "65733",
+                "65734*",
+              ],
+            }
+          },
+          {
+            label: "Dont autres organismes publics",
+            key: "dont-autres-organismes-publics",
+            comptes: {
+              // 655238, 6553, 6555, 65561, 6561, 6562, 65642, 65731, 65735…, 65736…, 65738…
+              comptesBrut: [
+                "655238",
+                "6553",
+                "6555",
+                "65561",
+                "6561",
+                "6562",
+                "65642",
+                "65731",
+                "65735*",
+                "65736*",
+                "65738*",
+              ],
+            }
+          },
+          {
+            label: "Dont établissements d'enseignement",
+            key: "dont-etablissements-denseignement",
+            comptes: {
+              // 6551…, 655231
+              comptesBrut: [
+                "6551*",
+                "655231",
+              ],
+            }
+          }
+        ]
+      },
+      {
+        label: "Charges résultant de la mise en jeu de la garantie de la collectivité",
+        key: "charges-resultant-de-la-mise-en-jeu-de-la-garantie-de-la-collectivite",
+        comptes: {
+          // 65182
+          comptesBrut: ["65182"],
+        },
+      },
+      {
+        label: "Autres charges",
+        key: "autres-charges-intervention",
+        comptes: {
+          // 65568, 6557…, 6558…, 65648, 6568, 6577
+          comptesBrut: ["65568", "6557*", "6558*", "65648", "6568", "6577"],
+        },
+      }
+    ]
+  }
 ];

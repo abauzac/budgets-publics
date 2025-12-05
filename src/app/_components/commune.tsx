@@ -30,7 +30,8 @@ import {ModeleComptable} from "./modeleComptable";
 import {
   BILAN_ACTIF,
   BILAN_PASSIF,
-  COMPTE_RESULTAT,
+  COMPTE_RESULTAT_CHARGES,
+  COMPTE_RESULTAT_PRODUITS,
 } from "../_utils/comptabilite";
 
 export default function Communes() {
@@ -542,12 +543,21 @@ export default function Communes() {
                       ></ModeleComptable>
                     )}
                     {typeCompta === "resultat" && (
+                      <>
                       <ModeleComptable
                         listeComptes={listeComptes}
-                        modele={COMPTE_RESULTAT}
+                        modele={COMPTE_RESULTAT_PRODUITS}
                         nomenclature={nomenclature}
                         propertyCompte="sc"
                       ></ModeleComptable>
+                      <ModeleComptable
+                        listeComptes={listeComptes}
+                        modele={COMPTE_RESULTAT_CHARGES}
+                        nomenclature={nomenclature}
+                        propertyCompte="sd"
+                      ></ModeleComptable>
+
+                      </>
                     )}
                   </>
                 )}

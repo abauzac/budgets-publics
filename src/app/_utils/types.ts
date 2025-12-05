@@ -177,7 +177,7 @@ export type ComptabiliteCategory = {
 
 export type ComptabiliteCompte = {
   comptesBrut: string[];
-  comptesAmortissements: string[];
+  comptesAmortissements?: string[];
   comptesBrutsExclus?: string[];
   comptesNegatifs?: string[];
 }

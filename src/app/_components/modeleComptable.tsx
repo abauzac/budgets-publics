@@ -23,7 +23,7 @@ export function LigneComptable({
     propertyCompte
   );
   const listeComptesAmortissements = getListeComptesForComptabilite(
-    ligne.comptesAmortissements,
+    ligne.comptesAmortissements ?? [],
     listeComptes,
     propertyCompte
   );
@@ -83,7 +83,7 @@ export function SectionComptableTotal({
       propertyCompte
     );
     listeComptesAmortissements = getListeComptesForComptabilite(
-      ligne.comptes.comptesAmortissements,
+      ligne.comptes.comptesAmortissements ?? [],
       listeComptes,
       propertyCompte
     );
@@ -113,7 +113,7 @@ export function SectionComptableTotal({
     });
     ligne.categories.forEach((category) => {
       const categoryComptesAmortissements = getListeComptesForComptabilite(
-        category.comptes.comptesAmortissements,
+        category.comptes.comptesAmortissements ?? [],
         listeComptes
       );
       listeComptesAmortissements = listeComptesAmortissements.concat(
