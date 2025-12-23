@@ -532,6 +532,7 @@ export default function Communes() {
                         modele={BILAN_ACTIF}
                         nomenclature={nomenclature}
                         propertyCompte="sd"
+                        includeAmortissements={true}
                       ></ModeleComptable>
                     )}
                     {typeCompta === "passif" && (

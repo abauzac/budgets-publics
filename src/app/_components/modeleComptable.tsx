@@ -54,8 +54,8 @@ export function LigneComptable({
   return (
     <div className="d-flex flex-row justify-content-center ligneComptable">
       <div style={{ width: "400px", textAlign: "left" }}>{label}</div>
-      <div className="ligneComptableMontant">{toEuro(totalBrut)}</div>
-      <div className="ligneComptableMontant">{toEuro(totalAmortissements)}</div>
+      <div className="ligneComptableMontant">{totalAmortissements > 0 ? toEuro(totalBrut) : ""}</div>
+      <div className="ligneComptableMontant">{totalAmortissements > 0 ? toEuro(totalAmortissements) : ""}</div>
       <div className="ligneComptableMontant">{toEuro(totalNet)}</div>
     </div>
   );
@@ -76,7 +76,6 @@ export function SectionComptableTotal({
   let totalAmortissements = 0;
   let totalNet = 0;
   if (ligne.comptes!) {
-    debugger;
     listeComptesBruts = getListeComptesForComptabilite(
       ligne.comptes.comptesBrut,
       listeComptes,
@@ -157,8 +156,8 @@ export function SectionComptableTotal({
       <div style={{ width: "400px", textAlign: "left", fontWeight: "bold" }}>
         TOTAL
       </div>
-      <div className="ligneComptableMontant">{toEuro(totalBrut)}</div>
-      <div className="ligneComptableMontant">{toEuro(totalAmortissements)}</div>
+      <div className="ligneComptableMontant">{totalAmortissements > 0 ? toEuro(totalBrut) : ""}</div>
+      <div className="ligneComptableMontant">{totalAmortissements > 0 ? toEuro(totalAmortissements) : ""}</div>
       <div className="ligneComptableMontant">{toEuro(totalNet)}</div>
     </div>
   );
@@ -168,12 +167,14 @@ export function ModeleComptable({
   modele,
   listeComptes,
   nomenclature,
-  propertyCompte
+  propertyCompte,
+  includeAmortissements = false
 }: {
   modele: ComptabiliteModele;
   listeComptes: BalanceCommuneInfos[];
   nomenclature: any[];
   propertyCompte: "sd" | "sc"; // probably not a good idea. Should be in comptabilite.ts i guess
+  includeAmortissements?: boolean;
 }) {
   if (listeComptes.length == 0 || !nomenclature || nomenclature.length == 0)
     return <p>Aucune comptabilité trouvée pour l'année sélectionnée</p>;
@@ -193,6 +194,15 @@ export function ModeleComptable({
                   <h5 style={{ textAlign: "left", margin: "0 auto" }}>
                     {section.label}
                   </h5>
+                  {includeAmortissements &&
+                  <div className="comptaModeleCategory">
+                    <div className="d-flex flex-row justify-content-center ligneComptable">
+                      <div style={{ width: "400px", textAlign: "left" }}>&nbsp;</div>
+                      <div className="ligneComptableMontant"><b>Brut</b></div>
+                      <div className="ligneComptableMontant"><b>Amortissement</b></div>
+                      <div className="ligneComptableMontant"><b>Net</b></div>
+                    </div>
+                  </div>}
                   {section.categories &&
                     section.categories.map((category, idxCategory) => {
                       return (

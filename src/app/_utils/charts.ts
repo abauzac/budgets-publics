@@ -108,7 +108,10 @@ export function getChartJs(
                   yAxisID: "y",
                   tooltip: {
                     callbacks: {
-                      label: (context) => `${context.dataset.label || ""} : ${context.parsed.y || ""}`,
+                      label: (context) =>
+                        `${context.dataset.label || ""} : ${
+                          context.parsed.y || ""
+                        }`,
                     },
                   },
                   data: data.map((item) => item[yProp.yAxis]),
@@ -117,14 +120,14 @@ export function getChartJs(
                 } as ChartDataset<"line">)
             ),
     },
-    
+
     options: {
       responsive: true,
       maintainAspectRatio: false,
       interaction: {
-      intersect: false,
-      mode: 'index',
-    },
+        intersect: false,
+        mode: "index",
+      },
       scales: {
         x: {
           title: {
@@ -137,6 +140,16 @@ export function getChartJs(
             display: false,
           },
           beginAtZero: true,
+          border: {
+            display: false,
+          },
+          grid: {
+            color: (context) => {
+              return context.tick.value === 0
+                ? "rgb(0,0,0)"
+                : "rgba(0,0,0,0.05)";
+            },
+          },
         },
       },
       plugins: {
