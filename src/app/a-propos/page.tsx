@@ -1,4 +1,10 @@
-import { urlDataCommunesIdentifiers, urlDataEconomieTemplate } from "../_utils/charts";
+import {
+  urlDataCommunesIdentifiers,
+  urlDataDepartementsIdentifiers,
+  urlDataEconomieTemplate,
+  urlDataGroupementFiscalitePropreIdentifiers,
+  urlDataRegionsIdentifiers,
+} from "../_utils/charts";
 
 export default function APropos() {
   return (
@@ -10,6 +16,12 @@ export default function APropos() {
         locales (communes, départements, régions) en France.
       </p>
       <p>
+        Des bugs peuvent subsister, n'hésitez pas à ouvrir un ticket ou à
+        suggérer des améliorations sur&nbsp;
+        <a href="https://github.com/abauzac/budgets-publics">GitHub</a>.
+      </p>
+      <h2>Sources des données</h2>
+      <p>
         Les données sont issues de la base de données du Ministère de l'économie
         :
       </p>
@@ -17,14 +29,21 @@ export default function APropos() {
         <li>
           Communes :{" "}
           <ul>
-          {urlDataCommunesIdentifiers.map(id => {
-            const url = urlDataEconomieTemplate
-            .replace("[IDENTIFIER]", id)
-            .replace("/records", "/information")
-            .replace("api/explore/v2.1/catalog/datasets", "explore/dataset");
+            {urlDataCommunesIdentifiers.map((id) => {
+              const url = urlDataEconomieTemplate
+                .replace("[IDENTIFIER]", id)
+                .replace("/records", "/information")
+                .replace(
+                  "api/explore/v2.1/catalog/datasets",
+                  "explore/dataset"
+                );
 
-            return (<li key={id}><a href={url}>{id.replaceAll("-", " ")}</a></li>)
-          })}
+              return (
+                <li key={id}>
+                  <a href={url}>{id.replaceAll("-", " ")}</a>
+                </li>
+              );
+            })}
           </ul>
           et{" "}
           <ul>
@@ -36,24 +55,65 @@ export default function APropos() {
           </ul>
         </li>
         <li>
+          Groupement à fiscalité propre :
+          <ul>
+            {urlDataGroupementFiscalitePropreIdentifiers.map((id) => {
+              const url = urlDataEconomieTemplate
+                .replace("[IDENTIFIER]", id)
+                .replace("/records", "/information")
+                .replace(
+                  "api/explore/v2.1/catalog/datasets",
+                  "explore/dataset"
+                );
+              return (
+                <li key={id}>
+                  <a href={url}>{id.replaceAll("-", " ")}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+        <li>
           Départements :{" "}
-          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques0/table/">
-            Comptes individuels des départements & collectivités territoriales
-            uniques
-          </a>
+          <ul>
+            {urlDataDepartementsIdentifiers.map((id) => {
+              const url = urlDataEconomieTemplate
+                .replace("[IDENTIFIER]", id)
+                .replace("/records", "/information")
+                .replace(
+                  "api/explore/v2.1/catalog/datasets",
+                  "explore/dataset"
+                );
+              return (
+                <li key={id}>
+                  <a href={url}>{id.replaceAll("-", " ")}</a>
+                </li>
+              );
+            })}
+          </ul>
         </li>
         <li>
           Régions :{" "}
-          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-regions-fichier-global/table/">
-            Comptes individuels des régions
-          </a>
+          <ul>
+            <li>
+              {urlDataRegionsIdentifiers.map((id) => {
+                const url = urlDataEconomieTemplate
+                  .replace("[IDENTIFIER]", id)
+                  .replace("/records", "/information")
+                  .replace(
+                    "api/explore/v2.1/catalog/datasets",
+                    "explore/dataset"
+                  );
+                return (
+                  <li key={id}>
+                    <a href={url}>{id.replaceAll("-", " ")}</a>
+                  </li>
+                );
+              })}
+            </li>
+          </ul>
         </li>
-        <li>
-          Collectivités :{" "}
-          <a href="https://data.economie.gouv.fr/explore/dataset/comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-a-compter-/table/">
-            Comptes individuels des groupements à fiscalité propre
-          </a>
-        </li>
+        
       </ul>
       <hr />
       <p>
