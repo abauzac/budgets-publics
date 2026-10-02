@@ -37,6 +37,7 @@ export const urlDataCommunesIdentifiers = [
   "comptes-individuels-des-communes-fichier-global-2021",
   "comptes-individuels-des-communes-fichier-global-2022",
   "comptes-individuels-des-communes-fichier-global-2023-2024",
+  "comptes-individuels-des-communes-fichier-global-2025",
 ];
 
 export const urlDataGroupementFiscalitePropreIdentifiers = [
@@ -49,7 +50,7 @@ export const urlDataGroupementFiscalitePropreIdentifiers = [
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2020",
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2021",
   "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2022",
-  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2023-2024",
+  "comptes-individuels-des-groupements-a-fiscalite-propre-fichier-global-2023-2024", // + 2025
 ];
 
 export const urlDataDepartementsIdentifiers = [
@@ -63,6 +64,7 @@ export const urlDataDepartementsIdentifiers = [
   "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2019-2020",
   "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2021-2022",
   "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2023-2024",
+  "comptes-individuels-des-departements-et-des-collectivites-territoriales-uniques-fichier-global-2025",
 ];
 
 export const urlDataRegionsIdentifiers = [
@@ -75,6 +77,7 @@ export const urlDataRegionsIdentifiers = [
   "comptes-individuels-des-regions-fichier-global-2017", // 2018
   "comptes-individuels-des-regions-fichier-global-2019-2020",
   "comptes-individuels-des-regions-fichier-global-2021-2024",
+  "comptes-individuels-des-regions-fichier-global-2025",
 ];
 
 export function getChartJs(
